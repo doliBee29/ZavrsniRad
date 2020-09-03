@@ -21,7 +21,7 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Termin extends Entitet {
 
-    private Date vrjemePocetka;
+    private Date vrijemePocetka;
     private Date vrijemeZavrsetka;
     private Boolean otkazan;
 
@@ -39,12 +39,12 @@ public class Termin extends Entitet {
 
     private List<Usluga> usluge;
 
-    public Date getVrjemePocetka() {
-        return vrjemePocetka;
+    public Date getVrijemePocetka() {
+        return vrijemePocetka;
     }
 
-    public void setVrjemePocetka(Date vrjemePocetka) {
-        this.vrjemePocetka = vrjemePocetka;
+    public void setVrijemePocetka(Date vrijemePocetka) {
+        this.vrijemePocetka = vrijemePocetka;
     }
 
     public Date getVrijemeZavrsetka() {
