@@ -34,6 +34,7 @@ public class PocetniInsert {
             session.save(o);
 
         }
+        
         session.getTransaction().commit();
 
     }
