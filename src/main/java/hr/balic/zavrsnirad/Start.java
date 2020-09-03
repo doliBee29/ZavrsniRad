@@ -5,10 +5,17 @@
  */
 package hr.balic.zavrsnirad;
 
+import hr.balic.zavrsnirad.utility.HibernateUtil;
+
 /**
  *
  * @author Kira
  */
 public class Start {
+    
+    public static void main(String[] args) {
+        
+         HibernateUtil.getSessionFactory().openSession();
+    }
     
 }
