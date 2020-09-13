@@ -6,6 +6,7 @@
 package hr.balic.zavrsnirad.utility;
 
 import com.github.javafaker.Faker;
+import hr.balic.zavrsnirad.model.Klijent;
 import hr.balic.zavrsnirad.model.Osoba;
 import org.hibernate.Session;
 
@@ -35,8 +36,24 @@ public class PocetniInsert {
 
         }
         
-        session.getTransaction().commit();
+//        Klijent k;
+//        
+//        for (int i = 0; i < 10; i++){
+//            k = new Klijent();
+//            k.setSpol(Klijent.Spol.Muško);
+//            k.setOsoba(o);
+//        }
+//        
+//        session.getTransaction().commit();
+//        
+//        
+        
+       
+        
 
     }
 
+    
+   
+    
 }

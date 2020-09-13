@@ -6,6 +6,7 @@
 package hr.balic.zavrsnirad.model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 
@@ -19,10 +20,10 @@ public class Klijent extends Entitet {
     @ManyToOne
     private Osoba osoba;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private Spol spol;
 
-    private static enum Spol {
+    public static enum Spol {
         Muško,
         Žensko
     }
