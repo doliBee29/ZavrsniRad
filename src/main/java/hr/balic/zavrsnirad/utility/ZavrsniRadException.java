@@ -10,16 +10,16 @@ package hr.balic.zavrsnirad.utility;
  * @author Kira
  */
 public class ZavrsniRadException extends Exception {
-    
+
     private String poruka;
-    
+
     public ZavrsniRadException(String poruka) {
-        this.poruka=poruka;
+        this.poruka = poruka;
     }
-    
+
     public String getPoruka() {
-        
+
         return poruka;
     }
-    
+
 }

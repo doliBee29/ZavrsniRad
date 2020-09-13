@@ -40,12 +40,12 @@ public abstract class Obrada<T> {
         return entitet;
     }
 
-    public T update() throws ZavrsniRadException{
+    public T update() throws ZavrsniRadException {
         kontrolaUpdate();
         save();
         return entitet;
     }
-    
+
     public boolean delete() throws ZavrsniRadException {
         kontrolaDelete();
         session.beginTransaction();
@@ -53,7 +53,7 @@ public abstract class Obrada<T> {
         session.getTransaction().commit();
         return true;
     }
-    
+
     private void save() {
         session.beginTransaction();
         session.save(entitet);

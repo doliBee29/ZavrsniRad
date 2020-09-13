@@ -8,18 +8,16 @@ package hr.balic.zavrsnirad;
 import hr.balic.zavrsnirad.utility.HibernateUtil;
 import hr.balic.zavrsnirad.utility.PocetniInsert;
 
-
 /**
  *
  * @author Kira
  */
 public class Start {
-    
+
     public static void main(String[] args) {
-        
-         //HibernateUtil.getSessionFactory().openSession();
-         
-         PocetniInsert.izvedi();
+
+        //HibernateUtil.getSessionFactory().openSession();
+        //PocetniInsert.izvedi();
     }
-    
+
 }
