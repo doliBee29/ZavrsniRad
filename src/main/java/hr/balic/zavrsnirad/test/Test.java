@@ -5,7 +5,9 @@
  */
 package hr.balic.zavrsnirad.test;
 
+import hr.balic.zavrsnirad.controller.ObradaKlijent;
 import hr.balic.zavrsnirad.controller.ObradaOsoba;
+import hr.balic.zavrsnirad.model.Klijent;
 import hr.balic.zavrsnirad.model.Osoba;
 import hr.balic.zavrsnirad.utility.ZavrsniRadException;
 
@@ -17,19 +19,29 @@ public class Test {
 
     public static void main(String[] args) {
 
-        Osoba osoba = new Osoba();
+//        Osoba osoba = new Osoba();
+//
+//        ObradaOsoba obradaOsoba = new ObradaOsoba(osoba);
+//        osoba.setIme("Test");
+//        osoba.setPrezime("Test1");
+//        osoba.setKontaktBroj("Test");
+//
+//        try {
+//            obradaOsoba.create();
+//        } catch (ZavrsniRadException ex) {
+//            System.out.println(ex.getPoruka());
+//        }
+        Klijent klijent = new Klijent();
 
-        ObradaOsoba obradaOsoba = new ObradaOsoba(osoba);
-        osoba.setIme("Test");
-        osoba.setPrezime("Test1");
-        osoba.setKontaktBroj("Test");
+        ObradaKlijent obradaKlijent = new ObradaKlijent(klijent);
+        
+        
 
         try {
-            obradaOsoba.create();
-        } catch (ZavrsniRadException ex) {
-            System.out.println(ex.getPoruka());
+            obradaKlijent.create();
+        } catch (ZavrsniRadException e) {
+            System.out.println(e.getPoruka());
         }
-
     }
 
 }
