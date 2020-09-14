@@ -7,9 +7,12 @@ package hr.balic.zavrsnirad.test;
 
 import hr.balic.zavrsnirad.controller.ObradaKlijent;
 import hr.balic.zavrsnirad.controller.ObradaOsoba;
+import hr.balic.zavrsnirad.controller.ObradaUsluga;
 import hr.balic.zavrsnirad.model.Klijent;
 import hr.balic.zavrsnirad.model.Osoba;
+import hr.balic.zavrsnirad.model.Usluga;
 import hr.balic.zavrsnirad.utility.ZavrsniRadException;
+import java.math.BigDecimal;
 
 /**
  *
@@ -31,17 +34,30 @@ public class Test {
 //        } catch (ZavrsniRadException ex) {
 //            System.out.println(ex.getPoruka());
 //        }
-        Klijent klijent = new Klijent();
+//        Klijent klijent = new Klijent();
+//
+//        ObradaKlijent obradaKlijent = new ObradaKlijent(klijent);
+//
+//        
+//
+//        try {
+//            obradaKlijent.create();
+//        } catch (ZavrsniRadException e) {
+//            System.out.println(e.getPoruka());
+//    }
+        Usluga usluga = new Usluga();
 
-        ObradaKlijent obradaKlijent = new ObradaKlijent(klijent);
-        
-        
+        ObradaUsluga obradaUsluga = new ObradaUsluga(usluga);
+        usluga.setNaziv("šćčđž");
+        usluga.setCijena(new BigDecimal(10580.23));
 
         try {
-            obradaKlijent.create();
+            obradaUsluga.create();
         } catch (ZavrsniRadException e) {
             System.out.println(e.getPoruka());
+
         }
+
     }
 
 }
