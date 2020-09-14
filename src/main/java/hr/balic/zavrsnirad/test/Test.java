@@ -7,10 +7,12 @@ package hr.balic.zavrsnirad.test;
 
 import hr.balic.zavrsnirad.controller.ObradaKlijent;
 import hr.balic.zavrsnirad.controller.ObradaOsoba;
+import hr.balic.zavrsnirad.controller.ObradaTermin;
 import hr.balic.zavrsnirad.controller.ObradaUsluga;
 import hr.balic.zavrsnirad.controller.ObradaZaposlenik;
 import hr.balic.zavrsnirad.model.Klijent;
 import hr.balic.zavrsnirad.model.Osoba;
+import hr.balic.zavrsnirad.model.Termin;
 import hr.balic.zavrsnirad.model.Usluga;
 import hr.balic.zavrsnirad.model.Zaposlenik;
 import hr.balic.zavrsnirad.utility.ZavrsniRadException;
@@ -59,16 +61,26 @@ public class Test {
 //            System.out.println(e.getPoruka());
 //
 //        }
-        Zaposlenik zaposlenik = new Zaposlenik();
+//        Zaposlenik zaposlenik = new Zaposlenik();
+//
+//        ObradaZaposlenik obradaZaposlenik = new ObradaZaposlenik(zaposlenik);
+//
+//        try {
+//            obradaZaposlenik.create();
+//        } catch (ZavrsniRadException e) {
+//            System.out.println(e.getPoruka());
+//        }
+//
+        Termin termin = new Termin();
 
-        ObradaZaposlenik obradaZaposlenik = new ObradaZaposlenik(zaposlenik);
+        ObradaTermin obradaTermin = new ObradaTermin(termin);
+       
 
         try {
-            obradaZaposlenik.create();
+            obradaTermin.create();
         } catch (ZavrsniRadException e) {
             System.out.println(e.getPoruka());
         }
-
     }
 
 }
