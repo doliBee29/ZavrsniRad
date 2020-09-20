@@ -5,6 +5,8 @@
  */
 package hr.balic.zavrsnirad;
 
+import hr.balic.zavrsnirad.controller.ObradaZaposlenik;
+import hr.balic.zavrsnirad.model.Zaposlenik;
 import hr.balic.zavrsnirad.utility.HibernateUtil;
 import hr.balic.zavrsnirad.utility.PocetniInsert;
 
@@ -17,9 +19,18 @@ public class Start {
     public static void main(String[] args) {
 
         
-        System.out.println("šćđž");
+        //System.out.println("šćđž");
         //HibernateUtil.getSessionFactory().openSession();
         //PocetniInsert.izvedi();
+        
+//        ObradaZaposlenik obradaZaposlenik = new ObradaZaposlenik();
+//        for (Zaposlenik z : obradaZaposlenik.getPodaci()) {
+//            System.out.println(z.getIme() + " " + z.getPrezime());
+//            
+//        }
+//        
+        
+        
     }
 
 }

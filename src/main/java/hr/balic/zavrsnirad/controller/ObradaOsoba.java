@@ -7,6 +7,7 @@ package hr.balic.zavrsnirad.controller;
 
 import hr.balic.zavrsnirad.model.Osoba;
 import hr.balic.zavrsnirad.utility.ZavrsniRadException;
+import java.util.List;
 
 /**
  *
@@ -19,6 +20,12 @@ public class ObradaOsoba extends Obrada<Osoba> {
 
     public ObradaOsoba(Osoba osoba) {
         super(osoba);
+    }
+
+    @Override
+    public List<Osoba> getPodaci() {
+        return session.createQuery("from Osoba").list();
+
     }
 
     @Override

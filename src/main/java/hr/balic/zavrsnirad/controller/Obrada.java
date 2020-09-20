@@ -7,6 +7,7 @@ package hr.balic.zavrsnirad.controller;
 
 import hr.balic.zavrsnirad.utility.HibernateUtil;
 import hr.balic.zavrsnirad.utility.ZavrsniRadException;
+import java.util.List;
 
 import org.hibernate.Session;
 
@@ -18,6 +19,8 @@ public abstract class Obrada<T> {
 
     protected T entitet;
     protected Session session;
+
+    public abstract List<T> getPodaci();
 
     protected abstract void kontrolaCreate() throws ZavrsniRadException;
 
@@ -40,6 +43,18 @@ public abstract class Obrada<T> {
         return entitet;
     }
 
+    public T createAll(List<T> lista) throws ZavrsniRadException {
+        session.beginTransaction();
+        for (T t : lista) {
+            setEntitet(t);
+            kontrolaCreate();
+            session.save(t);
+        }
+        session.getTransaction().commit();
+
+        return entitet;
+    }
+
     public T update() throws ZavrsniRadException {
         kontrolaUpdate();
         save();
@@ -58,6 +73,14 @@ public abstract class Obrada<T> {
         session.beginTransaction();
         session.save(entitet);
         session.getTransaction().commit();
+    }
+
+    public T getEntitet() {
+        return entitet;
+    }
+
+    public void setEntitet(T entitet) {
+        this.entitet = entitet;
     }
 
 }

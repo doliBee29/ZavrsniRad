@@ -6,8 +6,10 @@
 package hr.balic.zavrsnirad.controller;
 
 import hr.balic.zavrsnirad.model.Usluga;
+import hr.balic.zavrsnirad.model.Zaposlenik;
 import hr.balic.zavrsnirad.utility.ZavrsniRadException;
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  *
@@ -19,8 +21,12 @@ public class ObradaUsluga extends Obrada<Usluga> {
         super(usluga);
     }
 
-    
-    
+    @Override
+    public List<Usluga> getPodaci() {
+        return session.createQuery("from Usluga").list();
+
+    }
+
     @Override
     protected void kontrolaCreate() throws ZavrsniRadException {
         kontrolaNaziv();
@@ -36,9 +42,6 @@ public class ObradaUsluga extends Obrada<Usluga> {
     protected void kontrolaDelete() throws ZavrsniRadException {
 
     }
-    
-    
-    
 
     private void kontrolaNaziv() throws ZavrsniRadException {
         kontrolaNull(entitet.getNaziv(), "Naziv nije definiran.");

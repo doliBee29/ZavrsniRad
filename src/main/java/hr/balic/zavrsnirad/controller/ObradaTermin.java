@@ -7,6 +7,7 @@ package hr.balic.zavrsnirad.controller;
 
 import hr.balic.zavrsnirad.model.Termin;
 import hr.balic.zavrsnirad.utility.ZavrsniRadException;
+import java.util.List;
 
 /**
  *
@@ -16,6 +17,12 @@ public class ObradaTermin extends Obrada<Termin> {
 
     public ObradaTermin(Termin termin) {
         super(termin);
+    }
+
+    @Override
+    public List<Termin> getPodaci() {
+        return session.createQuery("from Termin").list();
+
     }
 
     @Override
