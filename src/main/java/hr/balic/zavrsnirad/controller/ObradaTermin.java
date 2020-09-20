@@ -7,7 +7,6 @@ package hr.balic.zavrsnirad.controller;
 
 import hr.balic.zavrsnirad.model.Termin;
 import hr.balic.zavrsnirad.utility.ZavrsniRadException;
-import java.text.SimpleDateFormat;
 
 /**
  *
@@ -56,5 +55,6 @@ public class ObradaTermin extends Obrada<Termin> {
             throw new ZavrsniRadException("Obavezan unos otkazivanja termina: DA/NE?");
 
         }
+
     }
 }

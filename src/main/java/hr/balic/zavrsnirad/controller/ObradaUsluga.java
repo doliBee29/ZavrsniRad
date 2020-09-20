@@ -59,10 +59,10 @@ public class ObradaUsluga extends Obrada<Usluga> {
         kontrolaNull(entitet.getCijena(), "Cijena nije definirana.");
 
         if (entitet.getCijena().compareTo(BigDecimal.ZERO) <= 0) {
-            throw new ZavrsniRadException("Cijena ne mže biti manja ili jednaka nuli!");
+            throw new ZavrsniRadException("Cijena ne može biti manja ili jednaka nuli!");
         }
         if (entitet.getCijena().compareTo(new BigDecimal(10000)) == 1) {
-            throw new ZavrsniRadException("Cijena ne mže biti veća od 10.000,00 kn");
+            throw new ZavrsniRadException("Cijena ne može biti veća od 10.000,00 kn");
         }
     }
 
