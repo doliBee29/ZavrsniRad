@@ -5,6 +5,7 @@
  */
 package hr.balic.zavrsnirad.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -26,10 +27,10 @@ public class Termin extends Entitet {
     private Boolean otkazan;
 
     @ManyToOne
-    private Zaposlenik zaposlenik;
+    private List<Zaposlenik> zaposlenik = new ArrayList<>();
 
     @ManyToOne
-    private Klijent klijent;
+    private List<Klijent> klijent = new ArrayList<>();
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "usluga_termin", joinColumns = {
@@ -63,19 +64,19 @@ public class Termin extends Entitet {
         this.otkazan = otkazan;
     }
 
-    public Zaposlenik getZaposlenik() {
+    public List<Zaposlenik> getZaposlenik() {
         return zaposlenik;
     }
 
-    public void setZaposlenik(Zaposlenik zaposlenik) {
+    public void setZaposlenik(List<Zaposlenik> zaposlenik) {
         this.zaposlenik = zaposlenik;
     }
 
-    public Klijent getKlijent() {
+    public List<Klijent> getKlijent() {
         return klijent;
     }
 
-    public void setKlijent(Klijent klijent) {
+    public void setKlijent(List<Klijent> klijent) {
         this.klijent = klijent;
     }
 

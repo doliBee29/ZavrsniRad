@@ -5,9 +5,11 @@
  */
 package hr.balic.zavrsnirad.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -16,8 +18,8 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Zaposlenik extends Osoba {
 
-    @ManyToOne
-    private Usluga usluga;
+    @OneToMany(mappedBy = "zaposlenik")
+    private List<Usluga> usluga = new ArrayList<>();
 
     @Enumerated
     private Zanimanje zanimanje;
@@ -28,11 +30,11 @@ public class Zaposlenik extends Osoba {
 
     }
 
-    public Usluga getUsluga() {
+    public List<Usluga> getUsluga() {
         return usluga;
     }
 
-    public void setUsluga(Usluga usluga) {
+    public void setUsluga(List<Usluga> usluga) {
         this.usluga = usluga;
     }
 
