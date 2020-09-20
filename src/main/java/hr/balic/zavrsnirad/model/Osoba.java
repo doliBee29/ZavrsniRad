@@ -5,14 +5,14 @@
  */
 package hr.balic.zavrsnirad.model;
 
-import javax.persistence.Entity;
+import javax.persistence.MappedSuperclass;
 
 /**
  *
  * @author Kira
  */
-@Entity
-public class Osoba extends Entitet{
+@MappedSuperclass
+public abstract class Osoba extends Entitet{
     
     private String ime;
     private String prezime;

@@ -28,7 +28,7 @@ public class PocetniInsert {
         Osoba o;
 
         for (int i = 0; i < 10; i++) {
-            o = new Osoba();
+            o = new Osoba() {};
             o.setIme(faker.name().firstName());
             o.setPrezime(faker.name().lastName());
             o.setKontaktBroj(kontaktBroj[i]);

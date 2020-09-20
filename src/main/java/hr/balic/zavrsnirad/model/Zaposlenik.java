@@ -14,10 +14,7 @@ import javax.persistence.ManyToOne;
  * @author Kira
  */
 @Entity
-public class Zaposlenik extends Entitet {
-
-    @ManyToOne
-    private Osoba osoba;
+public class Zaposlenik extends Osoba {
 
     @ManyToOne
     private Usluga usluga;
@@ -29,14 +26,6 @@ public class Zaposlenik extends Entitet {
         Frizer,
         Kozmetičar
 
-    }
-
-    public Osoba getOsoba() {
-        return osoba;
-    }
-
-    public void setOsoba(Osoba osoba) {
-        this.osoba = osoba;
     }
 
     public Usluga getUsluga() {

@@ -15,10 +15,7 @@ import javax.persistence.ManyToOne;
  * @author Kira
  */
 @Entity
-public class Klijent extends Entitet {
-
-    @ManyToOne
-    private Osoba osoba;
+public class Klijent extends Osoba {
 
     @Enumerated(EnumType.STRING)
     private Spol spol;
@@ -26,14 +23,6 @@ public class Klijent extends Entitet {
     public static enum Spol {
         Muško,
         Žensko
-    }
-
-    public Osoba getOsoba() {
-        return osoba;
-    }
-
-    public void setOsoba(Osoba osoba) {
-        this.osoba = osoba;
     }
 
     public Spol getSpol() {
