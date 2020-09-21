@@ -25,6 +25,16 @@ public class Klijent extends Osoba {
         Žensko
     }
 
+    private String kontaktBroj;
+
+    public String getKontaktBroj() {
+        return kontaktBroj;
+    }
+
+    public void setKontaktBroj(String kontaktBroj) {
+        this.kontaktBroj = kontaktBroj;
+    }
+
     public Spol getSpol() {
         return spol;
     }

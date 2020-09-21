@@ -12,11 +12,11 @@ import javax.persistence.MappedSuperclass;
  * @author Kira
  */
 @MappedSuperclass
-public abstract class Osoba extends Entitet{
-    
+public abstract class Osoba extends Entitet {
+
     private String ime;
     private String prezime;
-    private String kontaktBroj;
+    private String email;
 
     public String getIme() {
         return ime;
@@ -24,6 +24,14 @@ public abstract class Osoba extends Entitet{
 
     public void setIme(String ime) {
         this.ime = ime;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPrezime() {
@@ -34,14 +42,6 @@ public abstract class Osoba extends Entitet{
         this.prezime = prezime;
     }
 
-    public String getKontaktBroj() {
-        return kontaktBroj;
-    }
+   
 
-    public void setKontaktBroj(String kontaktBroj) {
-        this.kontaktBroj = kontaktBroj;
-    }
-    
-    
-    
 }

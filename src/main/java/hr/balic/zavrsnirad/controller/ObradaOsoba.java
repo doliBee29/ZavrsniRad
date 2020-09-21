@@ -13,26 +13,13 @@ import java.util.List;
  *
  * @author Kira
  */
-public class ObradaOsoba extends Obrada<Osoba> {
-
-    public ObradaOsoba() {
-    }
-
-    public ObradaOsoba(Osoba osoba) {
-        super(osoba);
-    }
-
-    @Override
-    public List<Osoba> getPodaci() {
-        return session.createQuery("from Osoba").list();
-
-    }
+public abstract class ObradaOsoba<T extends Osoba> extends Obrada<T> {
 
     @Override
     protected void kontrolaCreate() throws ZavrsniRadException {
         kontrolaIme();
         kontrolaPrezime();
-        kontrolaTelefon();
+        kontrolaEmail();
 
     }
 
@@ -46,7 +33,7 @@ public class ObradaOsoba extends Obrada<Osoba> {
 
     }
 
-    private void kontrolaIme() throws ZavrsniRadException {
+    protected void kontrolaIme() throws ZavrsniRadException {
 
         if (entitet.getIme().isEmpty() || entitet.getIme() == null) {
             throw new ZavrsniRadException("Unos imena je obavezan!");
@@ -58,7 +45,7 @@ public class ObradaOsoba extends Obrada<Osoba> {
 
     }
 
-    private void kontrolaPrezime() throws ZavrsniRadException {
+    protected void kontrolaPrezime() throws ZavrsniRadException {
         if (entitet.getPrezime().isEmpty() || entitet.getPrezime() == null) {
             throw new ZavrsniRadException("Unos prezimena je obavezan!");
         }
@@ -67,14 +54,13 @@ public class ObradaOsoba extends Obrada<Osoba> {
         }
     }
 
-    private void kontrolaTelefon() throws ZavrsniRadException {
-        if (entitet.getKontaktBroj().isEmpty() || entitet.getKontaktBroj() == null) {
-            throw new ZavrsniRadException("Unos kontakt broja je obavezan!");
+    protected void kontrolaEmail() throws ZavrsniRadException {
+        if (entitet.getEmail().isEmpty()) {
+            throw new ZavrsniRadException("Email ne smije biti prazan!");
         }
-        if (!entitet.getKontaktBroj().matches("^(\\d{3}[- .]?){2}\\d{4}$")) {
-            throw new ZavrsniRadException("Format unosa broja je 091-123-4567 ili 091 123 4567:");
+        if (entitet.getEmail().length() >= 50) {
+            throw new ZavrsniRadException("Email nije valjan!");
+        }
 
-        }
     }
-
 }

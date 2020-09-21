@@ -9,28 +9,18 @@ import hr.balic.zavrsnirad.controller.ObradaZaposlenik;
 import hr.balic.zavrsnirad.model.Zaposlenik;
 import hr.balic.zavrsnirad.utility.HibernateUtil;
 import hr.balic.zavrsnirad.utility.PocetniInsert;
+import hr.balic.zavrsnirad.view.Pocetna;
 
 /**
  *
  * @author Kira
  */
 public class Start {
-
+    
     public static void main(String[] args) {
-
         
-        //System.out.println("šćđž");
-        //HibernateUtil.getSessionFactory().openSession();
-        //PocetniInsert.izvedi();
-        
-//        ObradaZaposlenik obradaZaposlenik = new ObradaZaposlenik();
-//        for (Zaposlenik z : obradaZaposlenik.getPodaci()) {
-//            System.out.println(z.getIme() + " " + z.getPrezime());
-//            
-//        }
-//        
-        
+        new Pocetna().setVisible(true);
         
     }
-
+    
 }

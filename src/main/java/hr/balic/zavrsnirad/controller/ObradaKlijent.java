@@ -28,6 +28,8 @@ public class ObradaKlijent extends Obrada<Klijent> {
     @Override
     protected void kontrolaCreate() throws ZavrsniRadException {
         kontrolaSpol();
+        kontrolaTelefon();
+       
 
     }
 
@@ -44,6 +46,16 @@ public class ObradaKlijent extends Obrada<Klijent> {
     private void kontrolaSpol() throws ZavrsniRadException {
         if (entitet.getSpol() == null) {
             throw new ZavrsniRadException("Unos spola je obavezan!");
+        }
+    }
+    
+    protected void kontrolaTelefon() throws ZavrsniRadException {
+        if (entitet.getKontaktBroj().isEmpty() || entitet.getKontaktBroj() == null) {
+            throw new ZavrsniRadException("Unos kontakt broja je obavezan!");
+        }
+        if (!entitet.getKontaktBroj().matches("^(\\d{3}[- .]?){2}\\d{4}$")) {
+            throw new ZavrsniRadException("Format unosa broja je 091-123-4567 ili 091 123 4567:");
+
         }
     }
 

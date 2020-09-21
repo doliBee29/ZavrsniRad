@@ -45,6 +45,7 @@
         
         <!-- Ovdje navodimo naše mapirane klase -->
          
+         <mapping class="hr.balic.zavrsnirad.model.Operater" />
          <mapping class="hr.balic.zavrsnirad.model.Klijent" />
          <mapping class="hr.balic.zavrsnirad.model.Usluga" />
          <mapping class="hr.balic.zavrsnirad.model.Zaposlenik" />
