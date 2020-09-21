@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 /**
@@ -18,8 +19,8 @@ import javax.persistence.OneToMany;
 @Entity
 public class Zaposlenik extends Osoba {
 
-    @OneToMany
-    private List<Usluga> usluga = new ArrayList<>();
+    @ManyToOne
+    private Usluga usluga;
 
     @Enumerated
     private Zanimanje zanimanje;
@@ -33,13 +34,15 @@ public class Zaposlenik extends Osoba {
 
     }
 
-    public List<Usluga> getUsluga() {
+    public Usluga getUsluga() {
         return usluga;
     }
 
-    public void setUsluga(List<Usluga> usluga) {
+    public void setUsluga(Usluga usluga) {
         this.usluga = usluga;
     }
+
+    
 
     public Zanimanje getZanimanje() {
         return zanimanje;

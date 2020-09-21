@@ -19,12 +19,6 @@ public class ObradaZaposlenik extends Obrada<Zaposlenik> {
         super(zaposlenik);
     }
 
-   
-
-   
-
-   
-
     @Override
     public List<Zaposlenik> getPodaci() {
         return session.createQuery("from Zaposlenik").list();

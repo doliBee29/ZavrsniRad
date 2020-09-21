@@ -23,7 +23,7 @@ public class Start {
       //new Autorizacija().setVisible(true);
       
         HibernateUtil.getSessionFactory().openSession();
-        PocetniInsert.izvedi();
+//        PocetniInsert.izvedi();
     }
     
 }
