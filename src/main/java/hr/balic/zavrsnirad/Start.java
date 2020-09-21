@@ -20,10 +20,10 @@ public class Start {
     
     public static void main(String[] args) {
         
-      //new Autorizacija().setVisible(true);
+      new Autorizacija().setVisible(true);
       
-        HibernateUtil.getSessionFactory().openSession();
-//        PocetniInsert.izvedi();
+//        HibernateUtil.getSessionFactory().openSession();
+     //PocetniInsert.izvedi();
     }
     
 }

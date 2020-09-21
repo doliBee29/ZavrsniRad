@@ -117,8 +117,10 @@ public class Autorizacija extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEmailKeyReleased
 
     private void pswLozinkaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pswLozinkaKeyReleased
-
-        prijaviSe();
+        if(evt.getKeyCode()== KeyEvent.VK_ENTER && pswLozinka.getPassword().length>0) {
+            prijaviSe();
+        }
+        
 
 
     }//GEN-LAST:event_pswLozinkaKeyReleased
