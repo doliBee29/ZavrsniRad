@@ -9,7 +9,8 @@ import hr.balic.zavrsnirad.controller.ObradaZaposlenik;
 import hr.balic.zavrsnirad.model.Zaposlenik;
 import hr.balic.zavrsnirad.utility.HibernateUtil;
 import hr.balic.zavrsnirad.utility.PocetniInsert;
-import hr.balic.zavrsnirad.view.Pocetna;
+import hr.balic.zavrsnirad.view.Autorizacija;
+
 
 /**
  *
@@ -19,7 +20,7 @@ public class Start {
     
     public static void main(String[] args) {
         
-        new Pocetna().setVisible(true);
+      new Autorizacija().setVisible(true);
         
     }
     
