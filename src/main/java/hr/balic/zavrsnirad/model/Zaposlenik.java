@@ -18,13 +18,16 @@ import javax.persistence.OneToMany;
 @Entity
 public class Zaposlenik extends Osoba {
 
-    @OneToMany(mappedBy = "zaposlenik")
+    @OneToMany
     private List<Usluga> usluga = new ArrayList<>();
 
     @Enumerated
     private Zanimanje zanimanje;
 
-    private static enum Zanimanje {
+    /**
+     *
+     */
+    public static enum Zanimanje {
         Frizer,
         Kozmetičar
 

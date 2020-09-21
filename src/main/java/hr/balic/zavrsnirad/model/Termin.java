@@ -27,10 +27,11 @@ public class Termin extends Entitet {
     private Boolean otkazan;
 
     @ManyToOne
-    private List<Zaposlenik> zaposlenik = new ArrayList<>();
+    private Zaposlenik zaposlenik;
 
     @ManyToOne
-    private List<Klijent> klijent = new ArrayList<>();
+    private Klijent klijent;
+            
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "usluga_termin", joinColumns = {
@@ -64,21 +65,23 @@ public class Termin extends Entitet {
         this.otkazan = otkazan;
     }
 
-    public List<Zaposlenik> getZaposlenik() {
+    public Zaposlenik getZaposlenik() {
         return zaposlenik;
     }
 
-    public void setZaposlenik(List<Zaposlenik> zaposlenik) {
+    public void setZaposlenik(Zaposlenik zaposlenik) {
         this.zaposlenik = zaposlenik;
     }
 
-    public List<Klijent> getKlijent() {
+    public Klijent getKlijent() {
         return klijent;
     }
 
-    public void setKlijent(List<Klijent> klijent) {
+    public void setKlijent(Klijent klijent) {
         this.klijent = klijent;
     }
+
+    
 
     public List<Usluga> getUsluge() {
         return usluge;

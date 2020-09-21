@@ -5,10 +5,13 @@
  */
 package hr.balic.zavrsnirad.model;
 
+import javax.persistence.Entity;
+
 /**
  *
  * @author Kira
  */
+@Entity
 public class Operater extends Osoba{
     
     private String lozinka;
