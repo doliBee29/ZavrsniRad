@@ -10,6 +10,7 @@ import hr.balic.zavrsnirad.model.Zaposlenik;
 import hr.balic.zavrsnirad.utility.HibernateUtil;
 import hr.balic.zavrsnirad.utility.PocetniInsert;
 import hr.balic.zavrsnirad.view.Autorizacija;
+import hr.balic.zavrsnirad.view.Izbornik;
 
 
 /**
@@ -20,7 +21,7 @@ public class Start {
     
     public static void main(String[] args) {
         
-      new Autorizacija().setVisible(true);
+      new Izbornik().setVisible(true);
       
 //        HibernateUtil.getSessionFactory().openSession();
      //PocetniInsert.izvedi();
