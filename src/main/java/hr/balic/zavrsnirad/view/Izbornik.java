@@ -21,12 +21,7 @@ public class Izbornik extends javax.swing.JFrame {
     public Izbornik() {
         initComponents();
         setTitle("Beauty salon");
-        
-        
-    
-        
-        
-        
+
     }
 
     /**
@@ -51,7 +46,7 @@ public class Izbornik extends javax.swing.JFrame {
         pnlUsluga = new javax.swing.JPanel();
         lblUsluga = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        pnlPostavke = new javax.swing.JPanel();
+        pnlKlijenti = new javax.swing.JPanel();
         lblPostavke = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -230,10 +225,10 @@ public class Izbornik extends javax.swing.JFrame {
 
         jPanel1.add(pnlUsluga, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, -1, -1));
 
-        pnlPostavke.setBackground(new java.awt.Color(23, 35, 51));
-        pnlPostavke.addMouseListener(new java.awt.event.MouseAdapter() {
+        pnlKlijenti.setBackground(new java.awt.Color(23, 35, 51));
+        pnlKlijenti.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                pnlPostavkeMousePressed(evt);
+                pnlKlijentiMousePressed(evt);
             }
         });
 
@@ -244,28 +239,28 @@ public class Izbornik extends javax.swing.JFrame {
 
         jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_card_payment_24px.png")); // NOI18N
 
-        javax.swing.GroupLayout pnlPostavkeLayout = new javax.swing.GroupLayout(pnlPostavke);
-        pnlPostavke.setLayout(pnlPostavkeLayout);
-        pnlPostavkeLayout.setHorizontalGroup(
-            pnlPostavkeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPostavkeLayout.createSequentialGroup()
+        javax.swing.GroupLayout pnlKlijentiLayout = new javax.swing.GroupLayout(pnlKlijenti);
+        pnlKlijenti.setLayout(pnlKlijentiLayout);
+        pnlKlijentiLayout.setHorizontalGroup(
+            pnlKlijentiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlKlijentiLayout.createSequentialGroup()
                 .addGap(0, 10, Short.MAX_VALUE)
                 .addComponent(jLabel5)
                 .addGap(18, 18, 18)
                 .addComponent(lblPostavke, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        pnlPostavkeLayout.setVerticalGroup(
-            pnlPostavkeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlPostavkeLayout.createSequentialGroup()
+        pnlKlijentiLayout.setVerticalGroup(
+            pnlKlijentiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlKlijentiLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(pnlPostavkeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlKlijentiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblPostavke, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
-        jPanel1.add(pnlPostavke, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, -1, -1));
+        jPanel1.add(pnlKlijenti, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -314,29 +309,49 @@ public class Izbornik extends javax.swing.JFrame {
     }//GEN-LAST:event_lblZaposlenikMousePressed
 
     private void pnlPocetnaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlPocetnaMousePressed
-     
+        setColor(pnlPocetna);
+        resetColor(pnlKlijenti);
+        resetColor(pnlTermin);
+        resetColor(pnlUsluga);
+        resetColor(pnlZaposlenik);
     }//GEN-LAST:event_pnlPocetnaMousePressed
 
     private void pnlTerminMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlTerminMousePressed
-        
+        setColor(pnlTermin);
+        resetColor(pnlKlijenti);
+        resetColor(pnlPocetna);
+        resetColor(pnlUsluga);
+        resetColor(pnlZaposlenik);
     }//GEN-LAST:event_pnlTerminMousePressed
 
     private void pnlUslugaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlUslugaMousePressed
-       
+        setColor(pnlUsluga);
+        resetColor(pnlKlijenti);
+        resetColor(pnlTermin);
+        resetColor(pnlPocetna);
+        resetColor(pnlZaposlenik);
     }//GEN-LAST:event_pnlUslugaMousePressed
 
     private void pnlZaposlenikMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlZaposlenikMousePressed
-       
+        setColor(pnlZaposlenik);
+        resetColor(pnlKlijenti);
+        resetColor(pnlTermin);
+        resetColor(pnlUsluga);
+        resetColor(pnlPocetna);
     }//GEN-LAST:event_pnlZaposlenikMousePressed
 
-    private void pnlPostavkeMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlPostavkeMousePressed
-        
-    }//GEN-LAST:event_pnlPostavkeMousePressed
+    private void pnlKlijentiMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlKlijentiMousePressed
+        setColor(pnlKlijenti);
+        resetColor(pnlPocetna);
+        resetColor(pnlTermin);
+        resetColor(pnlUsluga);
+        resetColor(pnlZaposlenik);
+    }//GEN-LAST:event_pnlKlijentiMousePressed
 
     /**
      * @param args the command line arguments
      */
-   
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -353,28 +368,22 @@ public class Izbornik extends javax.swing.JFrame {
     private javax.swing.JLabel lblTermin;
     private javax.swing.JLabel lblUsluga;
     private javax.swing.JLabel lblZaposlenik;
+    private javax.swing.JPanel pnlKlijenti;
     private javax.swing.JPanel pnlPocetna;
-    private javax.swing.JPanel pnlPostavke;
     private javax.swing.JPanel pnlTermin;
     private javax.swing.JPanel pnlUsluga;
     private javax.swing.JPanel pnlZaposlenik;
     // End of variables declaration//GEN-END:variables
 
-    
-    
     private void setColor(JPanel panel) {
-        
-        panel.setBackground(new Color(41,57,80));
+
+        panel.setBackground(new Color(41, 57, 80));
     }
-    
-    private void resetColor(JPanel [] panel, JPanel [] indicators) {
-        
-        for(int i=0; i<panel.length; i++){
-            panel[i].setBackground(new Color(23,35,51));
-        }
-        for(int i=0; i<indicators.length; i++){
-            indicators[i].setOpaque(false);
-        }
+
+    private void resetColor(JPanel panel) {
+
+        panel.setBackground(new Color(23, 35, 51));
+
     }
-    
+
 }
