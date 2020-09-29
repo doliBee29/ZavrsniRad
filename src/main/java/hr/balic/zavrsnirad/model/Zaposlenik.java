@@ -5,12 +5,10 @@
  */
 package hr.balic.zavrsnirad.model;
 
-import java.util.ArrayList;
-import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 /**
  *
@@ -22,7 +20,7 @@ public class Zaposlenik extends Osoba {
     @ManyToOne
     private Usluga usluga;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private Zanimanje zanimanje;
 
     /**
