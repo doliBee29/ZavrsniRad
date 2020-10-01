@@ -15,10 +15,8 @@ import java.util.List;
  */
 public class ObradaKlijent extends ObradaOsoba<Klijent> {
 
-   
-
     public ObradaKlijent() {
-       
+
     }
 
     @Override
@@ -26,28 +24,29 @@ public class ObradaKlijent extends ObradaOsoba<Klijent> {
         return session.createQuery("from Klijent").list();
 
     }
-    
+
     public List<Klijent> getPodaci(String uvjet) {
-      return session.createQuery("from Klijent k "
-              + " where concat(k.ime, ' ', k.prezime) "
-              + " like :uvjet ")
-              .setParameter("uvjet", "%"+uvjet+"%")
-              .setMaxResults(20)
-              .list();
+        return session.createQuery("from Klijent k "
+                + " where concat(k.ime, ' ', k.prezime) "
+                + " like :uvjet ")
+                .setParameter("uvjet", "%" + uvjet + "%")
+                .setMaxResults(20)
+                .list();
     }
 
     @Override
     protected void kontrolaCreate() throws ZavrsniRadException {
-        
+
         super.kontrolaCreate();
         kontrolaSpol();
         kontrolaTelefon();
-       
 
     }
 
     @Override
     protected void kontrolaUpdate() throws ZavrsniRadException {
+
+        super.kontrolaUpdate();
         kontrolaSpol();
         kontrolaTelefon();
     }
@@ -62,7 +61,7 @@ public class ObradaKlijent extends ObradaOsoba<Klijent> {
             throw new ZavrsniRadException("Unos spola je obavezan!");
         }
     }
-    
+
     protected void kontrolaTelefon() throws ZavrsniRadException {
         if (entitet.getKontaktBroj().isEmpty() || entitet.getKontaktBroj() == null) {
             throw new ZavrsniRadException("Unos kontakt broja je obavezan!");
@@ -72,7 +71,5 @@ public class ObradaKlijent extends ObradaOsoba<Klijent> {
 
         }
     }
-
-   
 
 }
