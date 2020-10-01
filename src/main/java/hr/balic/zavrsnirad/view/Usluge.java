@@ -322,13 +322,8 @@ public class Usluge extends javax.swing.JFrame {
 
         txtNaziv.setText(entitet.getNaziv());
         txtOpis.setText(entitet.getOpis());
-
-        try {
-            entitet.setCijena(new BigDecimal(txtCijena.getText()));
-        } catch (Exception e) {
-            entitet.setCijena(BigDecimal.ZERO);
-        }
-        entitet.setVrsta((String) cmbxVrstaUsluge.getSelectedItem());
+        txtCijena.setText(entitet.getCijena().toString());
+        cmbxVrstaUsluge.setSelectedItem(entitet.getVrsta());
 
     }//GEN-LAST:event_lstUslugeValueChanged
 
