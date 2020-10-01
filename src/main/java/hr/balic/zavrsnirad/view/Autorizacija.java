@@ -28,6 +28,7 @@ public class Autorizacija extends javax.swing.JFrame {
         initComponents();
 
         txtEmail.requestFocus();
+        txtEmail.setText("dolores.balic@gmail.com");
 //        jPanel1.setBackground( new Color(0, 0, 0, 65));
 //        jPanel1.setOpaque(false);
 
