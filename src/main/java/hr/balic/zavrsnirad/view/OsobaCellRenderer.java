@@ -22,12 +22,14 @@ public class OsobaCellRenderer extends JLabel implements ListCellRenderer<Osoba>
     public Component getListCellRendererComponent(JList<? extends Osoba> list, Osoba value, int index, boolean isSelected, boolean cellHasFocus) {
         setText(value.getIme() + " " + value.getPrezime());
         if (isSelected) {
-            setBackground(new Color(71,120,197));
-            setForeground(new Color(204, 204,204));
+            setBackground(new Color(41,57,80));
+            setForeground(new Color(204, 204, 204));
         } else {
-            setBackground(new Color(23,35,51));
-                        setForeground(new Color(204, 204,204));
+            setBackground(list.getBackground());
+            setForeground(list.getForeground());
         }
+        setFont(list.getFont());
+                setOpaque(true);
         return this;
     }
 
