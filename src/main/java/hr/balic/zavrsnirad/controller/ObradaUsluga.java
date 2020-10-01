@@ -21,10 +21,23 @@ public class ObradaUsluga extends Obrada<Usluga> {
         super(usluga);
     }
 
+    public ObradaUsluga() {
+        
+    }
+
     @Override
     public List<Usluga> getPodaci() {
         return session.createQuery("from Usluga").list();
 
+    }
+    
+    public List<Usluga> getPodaci(String uvjet) {
+        return session.createQuery("from Usluga u"
+                + " where concat(u.naziv) "
+                + " like :uvjet ")
+                .setParameter("uvjet", "%" + uvjet + "%")
+                .setMaxResults(20)
+                .list();
     }
 
     @Override

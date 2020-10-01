@@ -5,7 +5,7 @@
  */
 package hr.balic.zavrsnirad.view;
 
-import hr.balic.zavrsnirad.model.Osoba;
+import hr.balic.zavrsnirad.model.Usluga;
 import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JLabel;
@@ -16,13 +16,13 @@ import javax.swing.ListCellRenderer;
  *
  * @author Kira
  */
-public class OsobaCellRenderer extends JLabel implements ListCellRenderer<Osoba> {
+public class UslugaCellRenderer extends JLabel implements ListCellRenderer<Usluga> {
 
    
 
     @Override
-    public Component getListCellRendererComponent(JList<? extends Osoba> list, Osoba value, int index, boolean isSelected, boolean cellHasFocus) {
-        setText(value.getIme() + " " + value.getPrezime());
+    public Component getListCellRendererComponent(JList<? extends Usluga> list, Usluga value, int index, boolean isSelected, boolean cellHasFocus) {
+        setText(value.getNaziv());
         if (isSelected) {
             setBackground(new Color(41,57,80));
             setForeground(new Color(204, 204, 204));
@@ -34,5 +34,7 @@ public class OsobaCellRenderer extends JLabel implements ListCellRenderer<Osoba>
                 setOpaque(true);
         return this;
     }
+
+    
 
 }
