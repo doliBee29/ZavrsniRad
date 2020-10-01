@@ -26,6 +26,15 @@ public class ObradaKlijent extends Obrada<Klijent> {
         return session.createQuery("from Klijent").list();
 
     }
+    
+    public List<Klijent> getPodaci(String uvjet) {
+      return session.createQuery("from Klijent k "
+              + " where concat(k.ime, ' ', k.prezime) "
+              + " like :uvjet ")
+              .setParameter("uvjet", "%"+uvjet+"%")
+              .setMaxResults(20)
+              .list();
+    }
 
     @Override
     protected void kontrolaCreate() throws ZavrsniRadException {
@@ -60,5 +69,7 @@ public class ObradaKlijent extends Obrada<Klijent> {
 
         }
     }
+
+   
 
 }

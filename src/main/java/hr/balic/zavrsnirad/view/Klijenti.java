@@ -33,7 +33,7 @@ public class Klijenti extends javax.swing.JFrame {
         obrada = new ObradaKlijent();
         ucitajPodatke();
 
-        cmbxSpol.setRenderer(new MyComboBoxRenderer("Spol"));
+        cmbxSpol.setRenderer(new MyComboBoxRenderer("Odaberite spol"));
         cmbxSpol.setSelectedIndex(-1); // po default-u odabire prvi item, no potrebno postaviti bez odabira
 
         setTitle("Klijenti");
@@ -70,7 +70,7 @@ public class Klijenti extends javax.swing.JFrame {
         btnDodaj = new javax.swing.JButton();
         btnPromijeni = new javax.swing.JButton();
         btnObrisi = new javax.swing.JButton();
-        txtTrazi = new javax.swing.JTextField();
+        txtUvjet = new javax.swing.JTextField();
         btnTrazi = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -162,7 +162,7 @@ public class Klijenti extends javax.swing.JFrame {
 
         txtEmail.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        cmbxSpol.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        cmbxSpol.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         cmbxSpol.setModel(new DefaultComboBoxModel(Spol.values()));
         cmbxSpol.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -220,7 +220,6 @@ public class Klijenti extends javax.swing.JFrame {
                 .addComponent(lblPoruka, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
         );
 
-        btnDodaj.setBackground(new java.awt.Color(41, 57, 80));
         btnDodaj.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_add_user_group_woman_man_30px.png")); // NOI18N
         btnDodaj.setText("Dodaj");
         btnDodaj.addActionListener(new java.awt.event.ActionListener() {
@@ -245,9 +244,9 @@ public class Klijenti extends javax.swing.JFrame {
             }
         });
 
-        txtTrazi.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtUvjet.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtTraziKeyReleased(evt);
+                txtUvjetKeyReleased(evt);
             }
         });
 
@@ -273,7 +272,7 @@ public class Klijenti extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtTrazi, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtUvjet, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnTrazi, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(73, 73, 73)
@@ -299,7 +298,7 @@ public class Klijenti extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnTrazi, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtTrazi))
+                            .addComponent(txtUvjet))
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1))
                     .addComponent(pnlPodaci, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -391,11 +390,11 @@ public class Klijenti extends javax.swing.JFrame {
         ucitajPodatke();
     }//GEN-LAST:event_btnTraziActionPerformed
 
-    private void txtTraziKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTraziKeyReleased
+    private void txtUvjetKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUvjetKeyReleased
         if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
             ucitajPodatke();
         }
-    }//GEN-LAST:event_txtTraziKeyReleased
+    }//GEN-LAST:event_txtUvjetKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -422,12 +421,14 @@ public class Klijenti extends javax.swing.JFrame {
     private javax.swing.JTextField txtIme;
     private javax.swing.JTextField txtKontaktBroj;
     private javax.swing.JTextField txtPrezime;
-    private javax.swing.JTextField txtTrazi;
+    private javax.swing.JTextField txtUvjet;
     // End of variables declaration//GEN-END:variables
 
     private void ucitajPodatke() {
-        DefaultListModel<Klijent> m = new DefaultListModel<>();
-        obrada.getPodaci().forEach(k -> m.addElement(k));
+       DefaultListModel<Klijent> m = new DefaultListModel<>();
+
+      
+        obrada.getPodaci(txtUvjet.getText()).forEach(s -> m.addElement(s));
 
         lstKlijenti.setModel(m);
 
