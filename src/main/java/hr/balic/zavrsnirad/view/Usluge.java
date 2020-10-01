@@ -11,10 +11,7 @@ import hr.balic.zavrsnirad.utility.ZavrsniRadException;
 import java.awt.Component;
 import java.awt.event.KeyEvent;
 import java.math.BigDecimal;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
-import javax.swing.JComboBox;
-import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**

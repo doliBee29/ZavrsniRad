@@ -7,7 +7,6 @@ package hr.balic.zavrsnirad.view;
 
 import hr.balic.zavrsnirad.controller.ObradaOperater;
 import hr.balic.zavrsnirad.model.Operater;
-import java.awt.Color;
 import java.awt.event.KeyEvent;
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;

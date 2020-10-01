@@ -6,7 +6,6 @@
 package hr.balic.zavrsnirad.controller;
 
 import hr.balic.zavrsnirad.model.Usluga;
-import hr.balic.zavrsnirad.model.Zaposlenik;
 import hr.balic.zavrsnirad.utility.ZavrsniRadException;
 import java.math.BigDecimal;
 import java.util.List;

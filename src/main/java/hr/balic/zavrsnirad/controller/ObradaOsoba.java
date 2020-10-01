@@ -7,7 +7,6 @@ package hr.balic.zavrsnirad.controller;
 
 import hr.balic.zavrsnirad.model.Osoba;
 import hr.balic.zavrsnirad.utility.ZavrsniRadException;
-import java.util.List;
 
 /**
  *
