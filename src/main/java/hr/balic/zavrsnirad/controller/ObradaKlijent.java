@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author Kira
  */
-public class ObradaKlijent extends Obrada<Klijent> {
+public class ObradaKlijent extends ObradaOsoba<Klijent> {
 
    
 
@@ -38,6 +38,8 @@ public class ObradaKlijent extends Obrada<Klijent> {
 
     @Override
     protected void kontrolaCreate() throws ZavrsniRadException {
+        
+        super.kontrolaCreate();
         kontrolaSpol();
         kontrolaTelefon();
        
@@ -46,7 +48,8 @@ public class ObradaKlijent extends Obrada<Klijent> {
 
     @Override
     protected void kontrolaUpdate() throws ZavrsniRadException {
-
+        kontrolaSpol();
+        kontrolaTelefon();
     }
 
     @Override
