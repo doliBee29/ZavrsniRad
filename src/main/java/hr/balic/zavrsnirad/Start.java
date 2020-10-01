@@ -12,19 +12,17 @@ import hr.balic.zavrsnirad.utility.PocetniInsert;
 import hr.balic.zavrsnirad.view.Autorizacija;
 import hr.balic.zavrsnirad.view.Izbornik;
 
-
 /**
  *
  * @author Kira
  */
 public class Start {
-    
+
     public static void main(String[] args) {
-        
-      //new Autorizacija().setVisible(true);
-      
-        HibernateUtil.getSessionFactory().openSession();
-     PocetniInsert.izvedi();
+
+        new Autorizacija().setVisible(true);
+//        HibernateUtil.getSessionFactory().openSession();
+//        PocetniInsert.izvedi();
     }
-    
+
 }

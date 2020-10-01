@@ -15,8 +15,10 @@ import java.util.List;
  */
 public class ObradaKlijent extends Obrada<Klijent> {
 
-    public ObradaKlijent(Klijent klijent) {
-        super(klijent);
+   
+
+    public ObradaKlijent() {
+       
     }
 
     @Override

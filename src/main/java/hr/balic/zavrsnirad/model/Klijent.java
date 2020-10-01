@@ -8,7 +8,6 @@ package hr.balic.zavrsnirad.model;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.ManyToOne;
 
 /**
  *
@@ -43,4 +42,8 @@ public class Klijent extends Osoba {
         this.spol = spol;
     }
 
+    @Override
+    public String toString() {
+        return getImePrezime();
+    }
 }

@@ -42,6 +42,8 @@ public abstract class Osoba extends Entitet {
         this.prezime = prezime;
     }
 
-   
+    public String getImePrezime() {
+        return getIme() + " " + getPrezime();
+    }
 
 }
