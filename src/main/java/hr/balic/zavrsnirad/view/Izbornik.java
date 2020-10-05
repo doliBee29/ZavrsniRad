@@ -68,7 +68,7 @@ public class Izbornik extends javax.swing.JFrame {
         lblUsluga = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         pnlKlijenti = new javax.swing.JPanel();
-        lblPostavke = new javax.swing.JLabel();
+        lblKlijenti = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -87,15 +87,23 @@ public class Izbornik extends javax.swing.JFrame {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 pnlZaposlenikMousePressed(evt);
             }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                pnlZaposlenikMouseReleased(evt);
+            }
         });
 
         lblZaposlenik.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblZaposlenik.setForeground(new java.awt.Color(255, 255, 255));
         lblZaposlenik.setText("Zaposlenik");
+        lblZaposlenik.setMaximumSize(new java.awt.Dimension(49, 20));
+        lblZaposlenik.setMinimumSize(new java.awt.Dimension(49, 20));
         lblZaposlenik.setPreferredSize(new java.awt.Dimension(49, 20));
         lblZaposlenik.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 lblZaposlenikMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lblZaposlenikMouseReleased(evt);
             }
         });
 
@@ -108,8 +116,8 @@ public class Izbornik extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlZaposlenikLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblZaposlenik, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(lblZaposlenik, javax.swing.GroupLayout.DEFAULT_SIZE, 86, Short.MAX_VALUE))
         );
         pnlZaposlenikLayout.setVerticalGroup(
             pnlZaposlenikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,7 +157,7 @@ public class Izbornik extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblPocetna, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblPocetna, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
                 .addContainerGap())
         );
         pnlPocetnaLayout.setVerticalGroup(
@@ -174,6 +182,8 @@ public class Izbornik extends javax.swing.JFrame {
         lblTermin.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblTermin.setForeground(new java.awt.Color(255, 255, 255));
         lblTermin.setText("Termin");
+        lblTermin.setMaximumSize(new java.awt.Dimension(49, 20));
+        lblTermin.setMinimumSize(new java.awt.Dimension(49, 20));
         lblTermin.setPreferredSize(new java.awt.Dimension(49, 20));
         lblTermin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -191,7 +201,7 @@ public class Izbornik extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(lblTermin, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(lblTermin, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE))
         );
         pnlTerminLayout.setVerticalGroup(
             pnlTerminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,7 +224,9 @@ public class Izbornik extends javax.swing.JFrame {
 
         lblUsluga.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblUsluga.setForeground(new java.awt.Color(255, 255, 255));
-        lblUsluga.setText("Usluga");
+        lblUsluga.setText(" Usluga");
+        lblUsluga.setMaximumSize(new java.awt.Dimension(49, 20));
+        lblUsluga.setMinimumSize(new java.awt.Dimension(49, 20));
         lblUsluga.setPreferredSize(new java.awt.Dimension(49, 20));
         lblUsluga.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -232,7 +244,7 @@ public class Izbornik extends javax.swing.JFrame {
         pnlUslugaLayout.setHorizontalGroup(
             pnlUslugaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlUslugaLayout.createSequentialGroup()
-                .addGap(0, 10, Short.MAX_VALUE)
+                .addGap(10, 10, 10)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lblUsluga, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -260,10 +272,17 @@ public class Izbornik extends javax.swing.JFrame {
             }
         });
 
-        lblPostavke.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblPostavke.setForeground(new java.awt.Color(255, 255, 255));
-        lblPostavke.setText("Klijenti");
-        lblPostavke.setPreferredSize(new java.awt.Dimension(49, 20));
+        lblKlijenti.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblKlijenti.setForeground(new java.awt.Color(255, 255, 255));
+        lblKlijenti.setText("Klijenti");
+        lblKlijenti.setMaximumSize(new java.awt.Dimension(49, 20));
+        lblKlijenti.setMinimumSize(new java.awt.Dimension(49, 20));
+        lblKlijenti.setPreferredSize(new java.awt.Dimension(49, 20));
+        lblKlijenti.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lblKlijentiMouseReleased(evt);
+            }
+        });
 
         jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_card_payment_24px.png")); // NOI18N
 
@@ -272,10 +291,10 @@ public class Izbornik extends javax.swing.JFrame {
         pnlKlijentiLayout.setHorizontalGroup(
             pnlKlijentiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlKlijentiLayout.createSequentialGroup()
-                .addGap(0, 10, Short.MAX_VALUE)
+                .addGap(10, 10, 10)
                 .addComponent(jLabel5)
                 .addGap(18, 18, 18)
-                .addComponent(lblPostavke, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(lblKlijenti, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
                 .addContainerGap())
         );
         pnlKlijentiLayout.setVerticalGroup(
@@ -283,7 +302,7 @@ public class Izbornik extends javax.swing.JFrame {
             .addGroup(pnlKlijentiLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlKlijentiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblPostavke, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                    .addComponent(lblKlijenti, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -395,6 +414,18 @@ public class Izbornik extends javax.swing.JFrame {
         new Usluge().setVisible(true);
     }//GEN-LAST:event_lblUslugaMouseReleased
 
+    private void pnlZaposlenikMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlZaposlenikMouseReleased
+        new Zaposlenici().setVisible(true);
+    }//GEN-LAST:event_pnlZaposlenikMouseReleased
+
+    private void lblKlijentiMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKlijentiMouseReleased
+        new Klijenti().setVisible(true);
+    }//GEN-LAST:event_lblKlijentiMouseReleased
+
+    private void lblZaposlenikMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblZaposlenikMouseReleased
+          new Zaposlenici().setVisible(true);
+    }//GEN-LAST:event_lblZaposlenikMouseReleased
+
     /**
      * @param args the command line arguments
      */
@@ -410,9 +441,9 @@ public class Izbornik extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblDateTime;
+    private javax.swing.JLabel lblKlijenti;
     private javax.swing.JLabel lblNaslovnaSlika;
     private javax.swing.JLabel lblPocetna;
-    private javax.swing.JLabel lblPostavke;
     private javax.swing.JLabel lblTermin;
     private javax.swing.JLabel lblUsluga;
     private javax.swing.JLabel lblZaposlenik;
