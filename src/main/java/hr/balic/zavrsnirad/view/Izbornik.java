@@ -6,9 +6,12 @@
 package hr.balic.zavrsnirad.view;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import javax.swing.JPanel;
+import javax.swing.Timer;
 
 /**
  *
@@ -16,22 +19,32 @@ import javax.swing.JPanel;
  */
 public class Izbornik extends javax.swing.JFrame {
 
+    Timer timer;
+
     /**
      * Creates new form Izbornik
      */
     public Izbornik() {
         initComponents();
         setTitle("Beauty salon");
-        curDateTime();
+       
+
+        ActionListener actionListener = new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");
+                LocalDateTime now = LocalDateTime.now();
+                lblDateTime.setText(dtf.format(now));
+            }
+        };
+
+        timer = new Timer(1000, actionListener);
+        timer.setInitialDelay(0);
+        timer.start();
+      
     }
 
-    
-    public void curDateTime() {
-        
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");
-        LocalDateTime now = LocalDateTime.now();
-        lblDateTime.setText(dtf.format(now));
-    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -288,7 +301,7 @@ public class Izbornik extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(71, 120, 197));
 
         lblDateTime.setBackground(new java.awt.Color(123, 156, 225));
-        lblDateTime.setFont(new java.awt.Font("Rockwell", 0, 18)); // NOI18N
+        lblDateTime.setFont(new java.awt.Font("Microsoft New Tai Lue", 0, 16)); // NOI18N
         lblDateTime.setForeground(new java.awt.Color(255, 255, 255));
         lblDateTime.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
@@ -411,14 +424,14 @@ public class Izbornik extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void setColor(JPanel panel) {
-        
+
         panel.setBackground(new Color(41, 57, 80));
     }
-    
+
     private void resetColor(JPanel panel) {
-        
+
         panel.setBackground(new Color(23, 35, 51));
-        
+
     }
-    
+
 }
