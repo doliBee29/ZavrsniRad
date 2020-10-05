@@ -6,7 +6,8 @@
 package hr.balic.zavrsnirad.view;
 
 import java.awt.Color;
-import javax.swing.JLabel;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import javax.swing.JPanel;
 
 /**
@@ -21,9 +22,16 @@ public class Izbornik extends javax.swing.JFrame {
     public Izbornik() {
         initComponents();
         setTitle("Beauty salon");
-
+        curDateTime();
     }
 
+    
+    public void curDateTime() {
+        
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        lblDateTime.setText(dtf.format(now));
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -52,8 +60,7 @@ public class Izbornik extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jPanel2 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
+        lblDateTime = new javax.swing.JLabel();
         lblNaslovnaSlika = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -200,6 +207,9 @@ public class Izbornik extends javax.swing.JFrame {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 lblUslugaMousePressed(evt);
             }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lblUslugaMouseReleased(evt);
+            }
         });
 
         jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_service_24px.png")); // NOI18N
@@ -231,6 +241,9 @@ public class Izbornik extends javax.swing.JFrame {
         pnlKlijenti.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 pnlKlijentiMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                pnlKlijentiMouseReleased(evt);
             }
         });
 
@@ -274,32 +287,25 @@ public class Izbornik extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(71, 120, 197));
 
-        jTextField1.setBackground(new java.awt.Color(123, 156, 225));
-        jTextField1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(0, 0, 102));
-        jTextField1.setBorder(null);
-        jTextField1.setPreferredSize(new java.awt.Dimension(2, 20));
-
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons8_search_24px.png")); // NOI18N
+        lblDateTime.setBackground(new java.awt.Color(123, 156, 225));
+        lblDateTime.setFont(new java.awt.Font("Rockwell", 0, 18)); // NOI18N
+        lblDateTime.setForeground(new java.awt.Color(255, 255, 255));
+        lblDateTime.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(659, Short.MAX_VALUE)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47))
+                .addContainerGap(681, Short.MAX_VALUE)
+                .addComponent(lblDateTime, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblDateTime, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -368,6 +374,14 @@ public class Izbornik extends javax.swing.JFrame {
         resetColor(pnlZaposlenik);
     }//GEN-LAST:event_pnlKlijentiMousePressed
 
+    private void pnlKlijentiMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlKlijentiMouseReleased
+        new Klijenti().setVisible(true);
+    }//GEN-LAST:event_pnlKlijentiMouseReleased
+
+    private void lblUslugaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblUslugaMouseReleased
+        new Usluge().setVisible(true);
+    }//GEN-LAST:event_lblUslugaMouseReleased
+
     /**
      * @param args the command line arguments
      */
@@ -379,11 +393,10 @@ public class Izbornik extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel lblDateTime;
     private javax.swing.JLabel lblNaslovnaSlika;
     private javax.swing.JLabel lblPocetna;
     private javax.swing.JLabel lblPostavke;
@@ -398,14 +411,14 @@ public class Izbornik extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void setColor(JPanel panel) {
-
+        
         panel.setBackground(new Color(41, 57, 80));
     }
-
+    
     private void resetColor(JPanel panel) {
-
+        
         panel.setBackground(new Color(23, 35, 51));
-
+        
     }
-
+    
 }
