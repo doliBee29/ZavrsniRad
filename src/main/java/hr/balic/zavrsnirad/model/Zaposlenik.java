@@ -17,6 +17,8 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Zaposlenik extends Osoba {
 
+   
+
     @ManyToOne
     private Usluga usluga;
 

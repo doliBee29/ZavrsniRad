@@ -13,16 +13,27 @@ import java.util.List;
  *
  * @author Kira
  */
-public class ObradaZaposlenik extends Obrada<Zaposlenik> {
+public class ObradaZaposlenik extends ObradaOsoba <Zaposlenik> {
 
-    public ObradaZaposlenik(Zaposlenik zaposlenik) {
-        super(zaposlenik);
+  
+
+    public ObradaZaposlenik() {
+       
     }
 
     @Override
     public List<Zaposlenik> getPodaci() {
         return session.createQuery("from Zaposlenik").list();
 
+    }
+    
+    public List<Zaposlenik> getPodaci(String uvjet) {
+        return session.createQuery("from Zaposlenik z "
+                + " where concat(z.ime, ' ', z.prezime, ' ', z.zanimanje) "
+                + " like :uvjet ")
+                .setParameter("uvjet", "%" + uvjet + "%")
+                .setMaxResults(20)
+                .list();
     }
 
     @Override
