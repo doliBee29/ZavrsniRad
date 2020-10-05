@@ -8,11 +8,14 @@ package hr.balic.zavrsnirad.view;
 import hr.balic.zavrsnirad.controller.ObradaKlijent;
 import hr.balic.zavrsnirad.model.Klijent;
 import hr.balic.zavrsnirad.model.Klijent.Spol;
+import hr.balic.zavrsnirad.model.Zaposlenik;
+import hr.balic.zavrsnirad.model.Zaposlenik.Zanimanje;
 import hr.balic.zavrsnirad.utility.ZavrsniRadException;
 import java.awt.Component;
 import java.awt.event.KeyEvent;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
+import javax.swing.JComboBox;
 import javax.swing.JTextField;
 
 /**
@@ -32,10 +35,10 @@ public class Klijenti extends javax.swing.JFrame {
         lstKlijenti.setCellRenderer(new OsobaCellRenderer());
         obrada = new ObradaKlijent();
         ucitajPodatke();
-
+        
         cmbxSpol.setRenderer(new MyComboBoxRenderer("Odaberite spol"));
         cmbxSpol.setSelectedIndex(-1); // po default-u odabire prvi item, no potrebno postaviti bez odabira
-
+        
         setTitle("Klijenti");
     }
 
@@ -331,6 +334,7 @@ public class Klijenti extends javax.swing.JFrame {
         txtPrezime.setText(entitet.getPrezime());
         txtKontaktBroj.setText(entitet.getKontaktBroj());
         txtEmail.setText(entitet.getEmail());
+        cmbxSpol.setSelectedItem(entitet.getSpol());
     }//GEN-LAST:event_lstKlijentiValueChanged
 
     private void btnDodajActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDodajActionPerformed
