@@ -90,4 +90,11 @@ public class Termin extends Entitet {
         this.usluge = usluge;
     }
 
+    @Override
+    public String toString() {
+        return getId() +". TERMIN:" + "Klijent(" + getKlijent() + ")" + " [Zaposlenik:" + getZaposlenik().getImePrezime() +"] ";
+                 
+    }
+
+    
 }

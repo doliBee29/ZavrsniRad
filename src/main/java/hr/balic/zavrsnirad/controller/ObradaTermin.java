@@ -5,6 +5,7 @@
  */
 package hr.balic.zavrsnirad.controller;
 
+import hr.balic.zavrsnirad.model.Klijent;
 import hr.balic.zavrsnirad.model.Termin;
 import hr.balic.zavrsnirad.utility.ZavrsniRadException;
 import java.util.List;
@@ -28,6 +29,9 @@ public class ObradaTermin extends Obrada<Termin> {
         return session.createQuery("from Termin").list();
 
     }
+    
+    
+   
 
     @Override
     protected void kontrolaCreate() throws ZavrsniRadException {
