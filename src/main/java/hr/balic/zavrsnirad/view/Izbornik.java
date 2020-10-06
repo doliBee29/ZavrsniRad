@@ -189,6 +189,9 @@ public class Izbornik extends javax.swing.JFrame {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 lblTerminMousePressed(evt);
             }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lblTerminMouseReleased(evt);
+            }
         });
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_phone_time_24px.png")); // NOI18N
@@ -425,6 +428,10 @@ public class Izbornik extends javax.swing.JFrame {
     private void lblZaposlenikMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblZaposlenikMouseReleased
           new Zaposlenici().setVisible(true);
     }//GEN-LAST:event_lblZaposlenikMouseReleased
+
+    private void lblTerminMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTerminMouseReleased
+        new Termini().setVisible(true);
+    }//GEN-LAST:event_lblTerminMouseReleased
 
     /**
      * @param args the command line arguments

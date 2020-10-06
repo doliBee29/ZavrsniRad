@@ -19,6 +19,10 @@ public class ObradaTermin extends Obrada<Termin> {
         super(termin);
     }
 
+    public ObradaTermin() {
+        
+    }
+
     @Override
     public List<Termin> getPodaci() {
         return session.createQuery("from Termin").list();
