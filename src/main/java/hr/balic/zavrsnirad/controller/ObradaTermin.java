@@ -20,7 +20,7 @@ public class ObradaTermin extends Obrada<Termin> {
     }
 
     public ObradaTermin() {
-        
+
     }
 
     @Override
@@ -55,7 +55,6 @@ public class ObradaTermin extends Obrada<Termin> {
     private void kontrolaZavrsetakTermina() throws ZavrsniRadException {
         if (entitet.getVrijemeZavrsetka() == null) {
             throw new ZavrsniRadException("Obavezan unos završetka termina!");
-
         }
 
     }

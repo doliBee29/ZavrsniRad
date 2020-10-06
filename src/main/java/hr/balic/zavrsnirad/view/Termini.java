@@ -37,7 +37,7 @@ public class Termini extends javax.swing.JFrame {
         obradaUsluga = new ObradaUsluga();
 
         ucitajPodatke();
-        
+
         DefaultComboBoxModel<Klijent> kl = new DefaultComboBoxModel<>();
         new ObradaKlijent().getPodaci().forEach(s -> {
             kl.addElement(s);
@@ -45,7 +45,7 @@ public class Termini extends javax.swing.JFrame {
         cmbxKlijent.setModel(kl);
         cmbxKlijent.setRenderer(new MyComboBoxRenderer("Klijenti"));
         cmbxKlijent.setSelectedIndex(-1);
-        
+
         DefaultComboBoxModel<Zaposlenik> zpl = new DefaultComboBoxModel<>();
         new ObradaZaposlenik().getPodaci().forEach(p -> {
             zpl.addElement(p);
@@ -54,7 +54,7 @@ public class Termini extends javax.swing.JFrame {
         cmbxZaposlenik.setModel(zpl);
         cmbxZaposlenik.setRenderer(new MyComboBoxRenderer("Zaposlenici"));
         cmbxZaposlenik.setSelectedIndex(-1);
-         
+
     }
 
     /**
@@ -86,7 +86,7 @@ public class Termini extends javax.swing.JFrame {
         btnPromijeni = new javax.swing.JButton();
         btnObrisi = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(23, 35, 51));
 
@@ -261,7 +261,7 @@ public class Termini extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnObrisi))
                             .addComponent(pnlPodaci, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(547, Short.MAX_VALUE))
+                .addContainerGap(527, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -270,7 +270,7 @@ public class Termini extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1)
                     .addComponent(pnlPodaci, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -286,11 +286,17 @@ public class Termini extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(72, 72, 72))
         );
 
         pack();
@@ -306,7 +312,6 @@ public class Termini extends javax.swing.JFrame {
             return;
         }
 
-        
         DefaultComboBoxModel<Klijent> ms = (DefaultComboBoxModel<Klijent>) cmbxKlijent.getModel();
         for (int i = 0; i < ms.getSize(); i++) {
             if (ms.getElementAt(i).getId().equals(entitet.getKlijent().getId())) {
@@ -321,15 +326,15 @@ public class Termini extends javax.swing.JFrame {
                 break;
             }
         }
-        
+
         chbxOtkazan.setSelected(entitet.getOtkazan());
-        
-        if(null!=entitet.getVrijemePocetka()) {
-          dtpPocetak.setDateTimePermissive(entitet.getVrijemePocetka().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime());
+
+        if (null != entitet.getVrijemePocetka()) {
+            dtpPocetak.setDateTimePermissive(entitet.getVrijemePocetka().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime());
         }
-        
-         if(null!=entitet.getVrijemeZavrsetka()) {
-          dtpZavrsetak.setDateTimePermissive(entitet.getVrijemeZavrsetka().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime());
+
+        if (null != entitet.getVrijemeZavrsetka()) {
+            dtpZavrsetak.setDateTimePermissive(entitet.getVrijemeZavrsetka().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime());
         }
     }//GEN-LAST:event_lstTerminiValueChanged
 
@@ -420,16 +425,15 @@ public class Termini extends javax.swing.JFrame {
         entitet.setKlijent((Klijent) cmbxKlijent.getSelectedItem());
         entitet.setZaposlenik((Zaposlenik) cmbxZaposlenik.getSelectedItem());
         entitet.setOtkazan(chbxOtkazan.isSelected());
-        
-        if(dtpPocetak.getDateTimePermissive()!=null) {
-          entitet.setVrijemePocetka(Date.from(dtpPocetak.getDateTimePermissive().atZone(ZoneId.systemDefault()).toInstant()));  
+
+        if (dtpPocetak.getDateTimePermissive() != null) {
+            entitet.setVrijemePocetka(Date.from(dtpPocetak.getDateTimePermissive().atZone(ZoneId.systemDefault()).toInstant()));
+        }
+
+        if (dtpZavrsetak.getDateTimePermissive() != null) {
+            entitet.setVrijemeZavrsetka(Date.from(dtpZavrsetak.getDateTimePermissive().atZone(ZoneId.systemDefault()).toInstant()));
         }
         
-         if(dtpZavrsetak.getDateTimePermissive()!=null) {
-          entitet.setVrijemePocetka(Date.from(dtpZavrsetak.getDateTimePermissive().atZone(ZoneId.systemDefault()).toInstant()));  
-        }
-        }
+        obrada.setEntitet(entitet);
     }
-
-  
-
+}

@@ -161,6 +161,8 @@ public class PocetniInsert {
 
     }
 
+    
+    
     private static Usluga kreirajUslugu(String naziv, BigDecimal cijena, String opis, String vrsta) {
         Usluga usluga = new Usluga();
         usluga.setNaziv(naziv);
