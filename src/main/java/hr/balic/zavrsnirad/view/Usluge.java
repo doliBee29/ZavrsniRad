@@ -6,11 +6,14 @@
 package hr.balic.zavrsnirad.view;
 
 import hr.balic.zavrsnirad.controller.ObradaUsluga;
+import hr.balic.zavrsnirad.controller.ObradaZaposlenik;
 import hr.balic.zavrsnirad.model.Usluga;
+import hr.balic.zavrsnirad.model.Zaposlenik;
 import hr.balic.zavrsnirad.utility.ZavrsniRadException;
 import java.awt.Component;
 import java.awt.event.KeyEvent;
 import java.math.BigDecimal;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JTextField;
 
@@ -32,6 +35,14 @@ public class Usluge extends javax.swing.JFrame {
         obrada = new ObradaUsluga();
         ucitajPodatke();
 
+       
+        DefaultComboBoxModel<Zaposlenik> mp = new DefaultComboBoxModel<>();
+        new ObradaZaposlenik().getPodaci().forEach(z -> {
+            mp.addElement(z);
+        });
+        cmbxZaposlenik.setModel(mp);
+         cmbxZaposlenik.setRenderer(new MyComboBoxRenderer("Zaposlenici"));
+        cmbxZaposlenik.setSelectedIndex(-1);
         
         cmbxVrstaUsluge.addItem("Feniranje i njega kose");
         cmbxVrstaUsluge.addItem("Šišanje");
@@ -44,6 +55,7 @@ public class Usluge extends javax.swing.JFrame {
 
         cmbxVrstaUsluge.setRenderer(new MyComboBoxRenderer("Vrsta usluge"));
         cmbxVrstaUsluge.setSelectedIndex(-1);
+        
         setTitle("Usluge");
     }
 
@@ -72,6 +84,7 @@ public class Usluge extends javax.swing.JFrame {
         txtOpis = new javax.swing.JTextField();
         lblPoruka = new javax.swing.JLabel();
         cmbxVrstaUsluge = new javax.swing.JComboBox<>();
+        cmbxZaposlenik = new javax.swing.JComboBox<>();
         btnDodaj = new javax.swing.JButton();
         btnPromijeni = new javax.swing.JButton();
         btnObrisi = new javax.swing.JButton();
@@ -179,6 +192,7 @@ public class Usluge extends javax.swing.JFrame {
                     .addComponent(lblPoruka, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pnlPodaciLayout.createSequentialGroup()
                         .addGroup(pnlPodaciLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cmbxZaposlenik, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtOpis, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cmbxVrstaUsluge, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtNaziv, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -202,11 +216,13 @@ public class Usluge extends javax.swing.JFrame {
                 .addComponent(txtCijena, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(25, 25, 25)
                 .addComponent(cmbxVrstaUsluge, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
+                .addComponent(cmbxZaposlenik, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtOpis, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(txtOpis, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblPoruka, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE))
         );
 
@@ -319,6 +335,14 @@ public class Usluge extends javax.swing.JFrame {
         txtOpis.setText(entitet.getOpis());
         txtCijena.setText(entitet.getCijena().toString());
         cmbxVrstaUsluge.setSelectedItem(entitet.getVrsta());
+        
+         DefaultComboBoxModel<Zaposlenik> mp = (DefaultComboBoxModel<Zaposlenik>) cmbxZaposlenik.getModel();
+        for (int i = 0; i < mp.getSize(); i++) {
+            if (mp.getElementAt(i).getId().equals(entitet.getZaposlenik().getId())) {
+                cmbxZaposlenik.setSelectedIndex(i);
+                break;
+            }
+        }
 
     }//GEN-LAST:event_lstUslugeValueChanged
 
@@ -394,6 +418,7 @@ public class Usluge extends javax.swing.JFrame {
     private javax.swing.JButton btnPromijeni;
     private javax.swing.JButton btnTrazi;
     private javax.swing.JComboBox<String> cmbxVrstaUsluge;
+    private javax.swing.JComboBox<Zaposlenik> cmbxZaposlenik;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -431,6 +456,7 @@ public class Usluge extends javax.swing.JFrame {
             entitet.setCijena(BigDecimal.ZERO);
         }
         entitet.setVrsta((String) cmbxVrstaUsluge.getSelectedItem());
+        entitet.setZaposlenik((Zaposlenik) cmbxZaposlenik.getSelectedItem());
         obrada.setEntitet(entitet);
     }
 

@@ -110,6 +110,8 @@ public class PocetniInsert {
         session.save(depilacijaDva);
         session.save(depilacijaTri);
         session.save(depilacijaCetiri);
+        
+        
 
         Faker faker = new Faker();
 
@@ -136,6 +138,8 @@ public class PocetniInsert {
             }
         }
 
+        
+        
         Klijent k;
         for (int i = 0; i < 50; i++) {
             k = new Klijent();

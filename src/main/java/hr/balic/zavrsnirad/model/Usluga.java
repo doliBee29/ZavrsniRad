@@ -7,6 +7,8 @@ package hr.balic.zavrsnirad.model;
 
 import java.math.BigDecimal;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -19,6 +21,10 @@ public class Usluga extends Entitet {
     private BigDecimal cijena;
     private String vrsta;
     private String opis;
+    
+    @ManyToOne
+   
+    private Zaposlenik zaposlenik;
 
     public String getNaziv() {
         return naziv;
@@ -51,5 +57,21 @@ public class Usluga extends Entitet {
     public void setOpis(String opis) {
         this.opis = opis;
     }
+
+    public Zaposlenik getZaposlenik() {
+        return zaposlenik;
+    }
+
+    public void setZaposlenik(Zaposlenik zaposlenik) {
+        this.zaposlenik = zaposlenik;
+    }
+
+    
+    @Override
+    public String toString() {
+        return getNaziv();
+    }
+    
+    
 
 }

@@ -18,6 +18,8 @@ import javax.swing.ListCellRenderer;
  */
 public class OsobaCellRenderer extends JLabel implements ListCellRenderer<Osoba> {
 
+ 
+
    
 
     @Override

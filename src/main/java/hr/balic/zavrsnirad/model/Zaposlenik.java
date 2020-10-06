@@ -19,8 +19,8 @@ public class Zaposlenik extends Osoba {
 
    
 
-    @ManyToOne
-    private Usluga usluga;
+//    @ManyToOne
+//    private Usluga usluga;
 
     @Enumerated(EnumType.STRING)
     private Zanimanje zanimanje;
@@ -34,13 +34,13 @@ public class Zaposlenik extends Osoba {
 
     }
 
-    public Usluga getUsluga() {
-        return usluga;
-    }
-
-    public void setUsluga(Usluga usluga) {
-        this.usluga = usluga;
-    }
+//    public Usluga getUsluga() {
+//        return usluga;
+//    }
+//
+//    public void setUsluga(Usluga usluga) {
+//        this.usluga = usluga;
+//    }
 
     
 
@@ -52,4 +52,12 @@ public class Zaposlenik extends Osoba {
         this.zanimanje = zanimanje;
     }
 
+    @Override
+    public String toString() {
+        return getIme() + " " + getPrezime() + " - " + getZanimanje();
+    }
+
+   
+
+    
 }
