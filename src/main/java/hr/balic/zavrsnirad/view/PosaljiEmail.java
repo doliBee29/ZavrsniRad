@@ -12,6 +12,7 @@ import javax.mail.Session;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import javax.mail.Transport;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -26,6 +27,7 @@ public class PosaljiEmail extends javax.swing.JFrame {
         initComponents();
 
         txtFrom.setText("beautysalon2911@gmail.com");
+        txtSubject.setText("Podsjetnik na ugovoreni termin");
 
     }
 
@@ -221,7 +223,10 @@ public class PosaljiEmail extends javax.swing.JFrame {
             
             Transport.send(message);
             
+            JOptionPane.showMessageDialog(this, "Email je uspješno poslan");
+            
         } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Ooops, nešto nije u redu!");
             System.out.println("" + e);
         }
         
