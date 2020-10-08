@@ -54,7 +54,7 @@ public class PosaljiEmail extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(23, 35, 51));
 
@@ -191,6 +191,8 @@ public class PosaljiEmail extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
+        
 
         String ToEmail = txtTOEmail.getText();
         String FromEmail = txtFrom.getText(); //"beautysalon2911@gmail.com"
@@ -226,10 +228,20 @@ public class PosaljiEmail extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Email je uspješno poslan");
             
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(this, "Ooops, nešto nije u redu!");
+            JOptionPane.showMessageDialog(this, "Ooops, nešto nije u redu! \nProvjerite adresu pošiljatelja!");
+            
+            
             System.out.println("" + e);
         }
         
+        if(jTextArea1.getText().hashCode()==0) {
+            JOptionPane.showMessageDialog(rootPane, "Niste unijeli poruku, nije moguće poslati prazan mail!");
+            jTextArea1.requestFocus();
+            return;
+        }
+        
+        
+           
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
