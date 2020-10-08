@@ -55,18 +55,22 @@ public class Izbornik extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        pnlZaposlenik = new javax.swing.JPanel();
-        lblZaposlenik = new javax.swing.JLabel();
+        pnlKlijent = new javax.swing.JPanel();
+        lblKlijenti = new javax.swing.JLabel();
         pnlPocetna = new javax.swing.JPanel();
         lblPocetna = new javax.swing.JLabel();
         pnlTermin = new javax.swing.JPanel();
         lblTermin = new javax.swing.JLabel();
         pnlUsluga = new javax.swing.JPanel();
         lblUsluga = new javax.swing.JLabel();
-        pnlKlijenti = new javax.swing.JPanel();
-        lblKlijenti = new javax.swing.JLabel();
+        pnlZaposlenik = new javax.swing.JPanel();
+        lblZaposlenik = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        pnlOperateri = new javax.swing.JPanel();
+        lblOperateri = new javax.swing.JLabel();
+        pnlIzadi = new javax.swing.JPanel();
+        lblIzadi = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         lblDateTime = new javax.swing.JLabel();
         lblNaslovnaSlika = new javax.swing.JLabel();
@@ -77,7 +81,176 @@ public class Izbornik extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(23, 35, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        pnlKlijent.setBackground(new java.awt.Color(23, 35, 51));
+        pnlKlijent.setPreferredSize(new java.awt.Dimension(140, 50));
+        pnlKlijent.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                pnlKlijentMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                pnlKlijentMouseReleased(evt);
+            }
+        });
+
+        lblKlijenti.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblKlijenti.setForeground(new java.awt.Color(255, 255, 255));
+        lblKlijenti.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_card_payment_24px.png")); // NOI18N
+        lblKlijenti.setText("Klijenti");
+        lblKlijenti.setMaximumSize(new java.awt.Dimension(49, 20));
+        lblKlijenti.setMinimumSize(new java.awt.Dimension(49, 20));
+        lblKlijenti.setPreferredSize(new java.awt.Dimension(49, 20));
+        lblKlijenti.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblKlijentiMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lblKlijentiMouseReleased(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlKlijentLayout = new javax.swing.GroupLayout(pnlKlijent);
+        pnlKlijent.setLayout(pnlKlijentLayout);
+        pnlKlijentLayout.setHorizontalGroup(
+            pnlKlijentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlKlijentLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(lblKlijenti, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
+                .addGap(27, 27, 27))
+        );
+        pnlKlijentLayout.setVerticalGroup(
+            pnlKlijentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlKlijentLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblKlijenti, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanel1.add(pnlKlijent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, -1, -1));
+
+        pnlPocetna.setBackground(new java.awt.Color(41, 57, 80));
+        pnlPocetna.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                pnlPocetnaMousePressed(evt);
+            }
+        });
+
+        lblPocetna.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblPocetna.setForeground(new java.awt.Color(255, 255, 255));
+        lblPocetna.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_home_24px.png")); // NOI18N
+        lblPocetna.setText("Početna");
+        lblPocetna.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblPocetnaMousePressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlPocetnaLayout = new javax.swing.GroupLayout(pnlPocetna);
+        pnlPocetna.setLayout(pnlPocetnaLayout);
+        pnlPocetnaLayout.setHorizontalGroup(
+            pnlPocetnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPocetnaLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(lblPocetna, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
+        );
+        pnlPocetnaLayout.setVerticalGroup(
+            pnlPocetnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPocetnaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblPocetna, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanel1.add(pnlPocetna, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 140, -1));
+
+        pnlTermin.setBackground(new java.awt.Color(23, 35, 51));
+        pnlTermin.setPreferredSize(new java.awt.Dimension(140, 50));
+        pnlTermin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                pnlTerminMousePressed(evt);
+            }
+        });
+
+        lblTermin.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblTermin.setForeground(new java.awt.Color(255, 255, 255));
+        lblTermin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_phone_time_24px.png")); // NOI18N
+        lblTermin.setText("Termin");
+        lblTermin.setMaximumSize(new java.awt.Dimension(49, 20));
+        lblTermin.setMinimumSize(new java.awt.Dimension(49, 20));
+        lblTermin.setPreferredSize(new java.awt.Dimension(49, 20));
+        lblTermin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblTerminMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lblTerminMouseReleased(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlTerminLayout = new javax.swing.GroupLayout(pnlTermin);
+        pnlTermin.setLayout(pnlTerminLayout);
+        pnlTerminLayout.setHorizontalGroup(
+            pnlTerminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlTerminLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(lblTermin, javax.swing.GroupLayout.DEFAULT_SIZE, 88, Short.MAX_VALUE)
+                .addGap(31, 31, 31))
+        );
+        pnlTerminLayout.setVerticalGroup(
+            pnlTerminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTerminLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblTermin, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanel1.add(pnlTermin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, -1, -1));
+
+        pnlUsluga.setBackground(new java.awt.Color(23, 35, 51));
+        pnlUsluga.setPreferredSize(new java.awt.Dimension(140, 50));
+        pnlUsluga.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                pnlUslugaMousePressed(evt);
+            }
+        });
+
+        lblUsluga.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblUsluga.setForeground(new java.awt.Color(255, 255, 255));
+        lblUsluga.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_service_24px.png")); // NOI18N
+        lblUsluga.setText("Usluga");
+        lblUsluga.setMaximumSize(new java.awt.Dimension(49, 20));
+        lblUsluga.setMinimumSize(new java.awt.Dimension(49, 20));
+        lblUsluga.setPreferredSize(new java.awt.Dimension(49, 20));
+        lblUsluga.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblUslugaMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lblUslugaMouseReleased(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlUslugaLayout = new javax.swing.GroupLayout(pnlUsluga);
+        pnlUsluga.setLayout(pnlUslugaLayout);
+        pnlUslugaLayout.setHorizontalGroup(
+            pnlUslugaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlUslugaLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(lblUsluga, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+        pnlUslugaLayout.setVerticalGroup(
+            pnlUslugaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlUslugaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblUsluga, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanel1.add(pnlUsluga, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, -1, -1));
+
         pnlZaposlenik.setBackground(new java.awt.Color(23, 35, 51));
+        pnlZaposlenik.setPreferredSize(new java.awt.Dimension(140, 50));
         pnlZaposlenik.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 pnlZaposlenikMousePressed(evt);
@@ -108,190 +281,105 @@ public class Izbornik extends javax.swing.JFrame {
         pnlZaposlenikLayout.setHorizontalGroup(
             pnlZaposlenikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlZaposlenikLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(lblZaposlenik, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(19, 19, 19)
+                .addComponent(lblZaposlenik, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                .addGap(24, 24, 24))
         );
         pnlZaposlenikLayout.setVerticalGroup(
             pnlZaposlenikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlZaposlenikLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblZaposlenik, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(lblZaposlenik, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jPanel1.add(pnlZaposlenik, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, -1, -1));
-
-        pnlPocetna.setBackground(new java.awt.Color(41, 57, 80));
-        pnlPocetna.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                pnlPocetnaMousePressed(evt);
-            }
-        });
-
-        lblPocetna.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblPocetna.setForeground(new java.awt.Color(255, 255, 255));
-        lblPocetna.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_home_24px.png")); // NOI18N
-        lblPocetna.setText("Početna");
-        lblPocetna.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                lblPocetnaMousePressed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout pnlPocetnaLayout = new javax.swing.GroupLayout(pnlPocetna);
-        pnlPocetna.setLayout(pnlPocetnaLayout);
-        pnlPocetnaLayout.setHorizontalGroup(
-            pnlPocetnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlPocetnaLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(lblPocetna, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
-        );
-        pnlPocetnaLayout.setVerticalGroup(
-            pnlPocetnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlPocetnaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblPocetna, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jPanel1.add(pnlPocetna, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, -1, -1));
-
-        pnlTermin.setBackground(new java.awt.Color(23, 35, 51));
-        pnlTermin.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                pnlTerminMousePressed(evt);
-            }
-        });
-
-        lblTermin.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblTermin.setForeground(new java.awt.Color(255, 255, 255));
-        lblTermin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_phone_time_24px.png")); // NOI18N
-        lblTermin.setText("Termin");
-        lblTermin.setMaximumSize(new java.awt.Dimension(49, 20));
-        lblTermin.setMinimumSize(new java.awt.Dimension(49, 20));
-        lblTermin.setPreferredSize(new java.awt.Dimension(49, 20));
-        lblTermin.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                lblTerminMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                lblTerminMouseReleased(evt);
-            }
-        });
-
-        javax.swing.GroupLayout pnlTerminLayout = new javax.swing.GroupLayout(pnlTermin);
-        pnlTermin.setLayout(pnlTerminLayout);
-        pnlTerminLayout.setHorizontalGroup(
-            pnlTerminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlTerminLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(lblTermin, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
-                .addGap(31, 31, 31))
-        );
-        pnlTerminLayout.setVerticalGroup(
-            pnlTerminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTerminLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblTermin, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jPanel1.add(pnlTermin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, -1, -1));
-
-        pnlUsluga.setBackground(new java.awt.Color(23, 35, 51));
-        pnlUsluga.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                pnlUslugaMousePressed(evt);
-            }
-        });
-
-        lblUsluga.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblUsluga.setForeground(new java.awt.Color(255, 255, 255));
-        lblUsluga.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_service_24px.png")); // NOI18N
-        lblUsluga.setText("Usluga");
-        lblUsluga.setMaximumSize(new java.awt.Dimension(49, 20));
-        lblUsluga.setMinimumSize(new java.awt.Dimension(49, 20));
-        lblUsluga.setPreferredSize(new java.awt.Dimension(49, 20));
-        lblUsluga.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                lblUslugaMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                lblUslugaMouseReleased(evt);
-            }
-        });
-
-        javax.swing.GroupLayout pnlUslugaLayout = new javax.swing.GroupLayout(pnlUsluga);
-        pnlUsluga.setLayout(pnlUslugaLayout);
-        pnlUslugaLayout.setHorizontalGroup(
-            pnlUslugaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlUslugaLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(lblUsluga, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
-        );
-        pnlUslugaLayout.setVerticalGroup(
-            pnlUslugaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlUslugaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblUsluga, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jPanel1.add(pnlUsluga, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, -1, -1));
-
-        pnlKlijenti.setBackground(new java.awt.Color(23, 35, 51));
-        pnlKlijenti.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                pnlKlijentiMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                pnlKlijentiMouseReleased(evt);
-            }
-        });
-
-        lblKlijenti.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblKlijenti.setForeground(new java.awt.Color(255, 255, 255));
-        lblKlijenti.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_card_payment_24px.png")); // NOI18N
-        lblKlijenti.setText("Klijenti");
-        lblKlijenti.setMaximumSize(new java.awt.Dimension(49, 20));
-        lblKlijenti.setMinimumSize(new java.awt.Dimension(49, 20));
-        lblKlijenti.setPreferredSize(new java.awt.Dimension(49, 20));
-        lblKlijenti.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                lblKlijentiMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                lblKlijentiMouseReleased(evt);
-            }
-        });
-
-        javax.swing.GroupLayout pnlKlijentiLayout = new javax.swing.GroupLayout(pnlKlijenti);
-        pnlKlijenti.setLayout(pnlKlijentiLayout);
-        pnlKlijentiLayout.setHorizontalGroup(
-            pnlKlijentiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlKlijentiLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(lblKlijenti, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
-                .addGap(41, 41, 41))
-        );
-        pnlKlijentiLayout.setVerticalGroup(
-            pnlKlijentiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlKlijentiLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblKlijenti, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        jPanel1.add(pnlKlijenti, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, -1, -1));
+        jPanel1.add(pnlZaposlenik, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 140, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Beauty Salon");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 120, 50));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 110, 30));
+
+        pnlOperateri.setBackground(new java.awt.Color(23, 35, 51));
+        pnlOperateri.setForeground(new java.awt.Color(255, 255, 255));
+        pnlOperateri.setPreferredSize(new java.awt.Dimension(140, 50));
+        pnlOperateri.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                pnlOperateriMousePressed(evt);
+            }
+        });
+
+        lblOperateri.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblOperateri.setForeground(new java.awt.Color(255, 255, 255));
+        lblOperateri.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_more_info_24px.png")); // NOI18N
+        lblOperateri.setText("Operatori");
+        lblOperateri.setMaximumSize(new java.awt.Dimension(49, 20));
+        lblOperateri.setMinimumSize(new java.awt.Dimension(49, 20));
+        lblOperateri.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblOperateriMousePressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlOperateriLayout = new javax.swing.GroupLayout(pnlOperateri);
+        pnlOperateri.setLayout(pnlOperateriLayout);
+        pnlOperateriLayout.setHorizontalGroup(
+            pnlOperateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlOperateriLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(lblOperateri, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+        pnlOperateriLayout.setVerticalGroup(
+            pnlOperateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlOperateriLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblOperateri, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jPanel1.add(pnlOperateri, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 140, 50));
+
+        pnlIzadi.setBackground(new java.awt.Color(23, 35, 51));
+        pnlIzadi.setForeground(new java.awt.Color(255, 255, 255));
+        pnlIzadi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                pnlIzadiMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                pnlIzadiMouseReleased(evt);
+            }
+        });
+
+        lblIzadi.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        lblIzadi.setForeground(new java.awt.Color(255, 255, 255));
+        lblIzadi.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_exit_24px.png")); // NOI18N
+        lblIzadi.setText("Izlaz");
+        lblIzadi.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lblIzadiMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lblIzadiMouseReleased(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlIzadiLayout = new javax.swing.GroupLayout(pnlIzadi);
+        pnlIzadi.setLayout(pnlIzadiLayout);
+        pnlIzadiLayout.setHorizontalGroup(
+            pnlIzadiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlIzadiLayout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addComponent(lblIzadi, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+        pnlIzadiLayout.setVerticalGroup(
+            pnlIzadiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlIzadiLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblIzadi, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanel1.add(pnlIzadi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 520, 140, 50));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 610));
 
@@ -313,7 +401,7 @@ public class Izbornik extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblDateTime, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
                 .addContainerGap())
@@ -330,87 +418,105 @@ public class Izbornik extends javax.swing.JFrame {
 
     private void lblPocetnaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPocetnaMousePressed
         setColor(pnlPocetna);
-        resetColor(pnlKlijenti);
+        resetColor(pnlZaposlenik);
         resetColor(pnlTermin);
         resetColor(pnlUsluga);
-        resetColor(pnlZaposlenik);
+        resetColor(pnlKlijent);
+        resetColor(pnlIzadi);
+        resetColor(pnlOperateri);
     }//GEN-LAST:event_lblPocetnaMousePressed
 
     private void lblTerminMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTerminMousePressed
         setColor(pnlTermin);
-        resetColor(pnlKlijenti);
+        resetColor(pnlZaposlenik);
         resetColor(pnlPocetna);
         resetColor(pnlUsluga);
-        resetColor(pnlZaposlenik);
+        resetColor(pnlKlijent);
+        resetColor(pnlIzadi);
+        resetColor(pnlOperateri);
     }//GEN-LAST:event_lblTerminMousePressed
 
     private void lblUslugaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblUslugaMousePressed
         setColor(pnlUsluga);
-        resetColor(pnlKlijenti);
+        resetColor(pnlZaposlenik);
         resetColor(pnlTermin);
         resetColor(pnlPocetna);
-        resetColor(pnlZaposlenik);
+        resetColor(pnlKlijent);
+        resetColor(pnlIzadi);
+        resetColor(pnlOperateri);
     }//GEN-LAST:event_lblUslugaMousePressed
 
     private void lblZaposlenikMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblZaposlenikMousePressed
         setColor(pnlZaposlenik);
-        resetColor(pnlKlijenti);
+        resetColor(pnlKlijent);
         resetColor(pnlTermin);
         resetColor(pnlUsluga);
         resetColor(pnlPocetna);
+        resetColor(pnlIzadi);
+        resetColor(pnlOperateri);
     }//GEN-LAST:event_lblZaposlenikMousePressed
 
     private void pnlPocetnaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlPocetnaMousePressed
         setColor(pnlPocetna);
-        resetColor(pnlKlijenti);
+        resetColor(pnlZaposlenik);
         resetColor(pnlTermin);
         resetColor(pnlUsluga);
-        resetColor(pnlZaposlenik);
+        resetColor(pnlKlijent);
+        resetColor(pnlIzadi);
+        resetColor(pnlOperateri);
     }//GEN-LAST:event_pnlPocetnaMousePressed
 
     private void pnlTerminMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlTerminMousePressed
         setColor(pnlTermin);
-        resetColor(pnlKlijenti);
+        resetColor(pnlZaposlenik);
         resetColor(pnlPocetna);
         resetColor(pnlUsluga);
-        resetColor(pnlZaposlenik);
+        resetColor(pnlKlijent);
+        resetColor(pnlIzadi);
+        resetColor(pnlOperateri);
     }//GEN-LAST:event_pnlTerminMousePressed
 
     private void pnlUslugaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlUslugaMousePressed
         setColor(pnlUsluga);
-        resetColor(pnlKlijenti);
+        resetColor(pnlZaposlenik);
         resetColor(pnlTermin);
         resetColor(pnlPocetna);
-        resetColor(pnlZaposlenik);
+        resetColor(pnlKlijent);
+        resetColor(pnlIzadi);
+        resetColor(pnlOperateri);
     }//GEN-LAST:event_pnlUslugaMousePressed
+
+    private void pnlKlijentMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlKlijentMousePressed
+        setColor(pnlKlijent);
+        resetColor(pnlZaposlenik);
+        resetColor(pnlTermin);
+        resetColor(pnlUsluga);
+        resetColor(pnlPocetna);
+        resetColor(pnlIzadi);
+        resetColor(pnlOperateri);
+    }//GEN-LAST:event_pnlKlijentMousePressed
 
     private void pnlZaposlenikMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlZaposlenikMousePressed
         setColor(pnlZaposlenik);
-        resetColor(pnlKlijenti);
+        resetColor(pnlPocetna);
         resetColor(pnlTermin);
         resetColor(pnlUsluga);
-        resetColor(pnlPocetna);
+        resetColor(pnlKlijent);
+        resetColor(pnlIzadi);
+        resetColor(pnlOperateri);
     }//GEN-LAST:event_pnlZaposlenikMousePressed
 
-    private void pnlKlijentiMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlKlijentiMousePressed
-        setColor(pnlKlijenti);
-        resetColor(pnlPocetna);
-        resetColor(pnlTermin);
-        resetColor(pnlUsluga);
-        resetColor(pnlZaposlenik);
-    }//GEN-LAST:event_pnlKlijentiMousePressed
-
-    private void pnlKlijentiMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlKlijentiMouseReleased
+    private void pnlZaposlenikMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlZaposlenikMouseReleased
         new Klijenti().setVisible(true);
-    }//GEN-LAST:event_pnlKlijentiMouseReleased
+    }//GEN-LAST:event_pnlZaposlenikMouseReleased
 
     private void lblUslugaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblUslugaMouseReleased
         new Usluge().setVisible(true);
     }//GEN-LAST:event_lblUslugaMouseReleased
 
-    private void pnlZaposlenikMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlZaposlenikMouseReleased
+    private void pnlKlijentMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlKlijentMouseReleased
         new Zaposlenici().setVisible(true);
-    }//GEN-LAST:event_pnlZaposlenikMouseReleased
+    }//GEN-LAST:event_pnlKlijentMouseReleased
 
     private void lblKlijentiMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKlijentiMouseReleased
         new Klijenti().setVisible(true);
@@ -427,12 +533,62 @@ public class Izbornik extends javax.swing.JFrame {
     private void lblKlijentiMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKlijentiMousePressed
         // TODO add your handling code here:
         
-        setColor(pnlKlijenti);
-        resetColor(pnlPocetna);
+       setColor(pnlKlijent);
+        resetColor(pnlZaposlenik);
         resetColor(pnlTermin);
         resetColor(pnlUsluga);
-        resetColor(pnlZaposlenik);
+        resetColor(pnlPocetna);
+        resetColor(pnlIzadi);
+        resetColor(pnlOperateri);
     }//GEN-LAST:event_lblKlijentiMousePressed
+
+    private void lblOperateriMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOperateriMousePressed
+        setColor(pnlOperateri);
+        resetColor(pnlZaposlenik);
+        resetColor(pnlTermin);
+        resetColor(pnlUsluga);
+        resetColor(pnlPocetna);
+        resetColor(pnlIzadi);
+        resetColor(pnlKlijent);
+    }//GEN-LAST:event_lblOperateriMousePressed
+
+    private void pnlOperateriMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlOperateriMousePressed
+        setColor(pnlOperateri);
+        resetColor(pnlZaposlenik);
+        resetColor(pnlTermin);
+        resetColor(pnlUsluga);
+        resetColor(pnlPocetna);
+        resetColor(pnlIzadi);
+        resetColor(pnlKlijent);
+    }//GEN-LAST:event_pnlOperateriMousePressed
+
+    private void pnlIzadiMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlIzadiMousePressed
+        setColor(pnlIzadi);
+        resetColor(pnlZaposlenik);
+        resetColor(pnlTermin);
+        resetColor(pnlUsluga);
+        resetColor(pnlPocetna);
+        resetColor(pnlOperateri);
+        resetColor(pnlKlijent);
+    }//GEN-LAST:event_pnlIzadiMousePressed
+
+    private void lblIzadiMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblIzadiMousePressed
+        setColor(pnlIzadi);
+        resetColor(pnlZaposlenik);
+        resetColor(pnlTermin);
+        resetColor(pnlUsluga);
+        resetColor(pnlPocetna);
+        resetColor(pnlOperateri);
+        resetColor(pnlKlijent);
+    }//GEN-LAST:event_lblIzadiMousePressed
+
+    private void lblIzadiMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblIzadiMouseReleased
+        dispose();
+    }//GEN-LAST:event_lblIzadiMouseReleased
+
+    private void pnlIzadiMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlIzadiMouseReleased
+        dispose();
+    }//GEN-LAST:event_pnlIzadiMouseReleased
 
     /**
      * @param args the command line arguments
@@ -444,13 +600,17 @@ public class Izbornik extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblDateTime;
+    private javax.swing.JLabel lblIzadi;
     private javax.swing.JLabel lblKlijenti;
     private javax.swing.JLabel lblNaslovnaSlika;
+    private javax.swing.JLabel lblOperateri;
     private javax.swing.JLabel lblPocetna;
     private javax.swing.JLabel lblTermin;
     private javax.swing.JLabel lblUsluga;
     private javax.swing.JLabel lblZaposlenik;
-    private javax.swing.JPanel pnlKlijenti;
+    private javax.swing.JPanel pnlIzadi;
+    private javax.swing.JPanel pnlKlijent;
+    private javax.swing.JPanel pnlOperateri;
     private javax.swing.JPanel pnlPocetna;
     private javax.swing.JPanel pnlTermin;
     private javax.swing.JPanel pnlUsluga;
