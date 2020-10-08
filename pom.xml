@@ -53,10 +53,22 @@
             <artifactId>mail</artifactId>
             <version>1.5.0-b01</version>
         </dependency>
+        
+        
         <dependency>
             <groupId>com.github.lgooddatepicker</groupId>
             <artifactId>LGoodDatePicker</artifactId>
             <version>11.0.2</version>
         </dependency>
+        
+        <!-- https://javaee.github.io/javamail/#API_Documentation -->
+            <dependency>
+                <groupId>com.sun.mail</groupId>
+                <artifactId>javax.mail</artifactId>
+                <version>1.6.2</version>
+            </dependency>
+       
+        
+        
     </dependencies>
 </project>
