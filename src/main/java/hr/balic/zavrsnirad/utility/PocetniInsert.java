@@ -28,14 +28,16 @@ public class PocetniInsert {
         Session session = HibernateUtil.getSessionFactory().openSession();
 
         Operater operater = new Operater();
-        operater.setIme("Dolores");
-        operater.setPrezime("Balić");
-        operater.setUloga("operater");
+        operater.setIme("Operater");
+        operater.setPrezime("Operater");
+        operater.setUloga("Operater");
         operater.setEmail("dolores.balic@gmail.com");
         operater.setLozinka(BCrypt.hashpw("db", BCrypt.gensalt()));
 
         ObradaOperater oo = new ObradaOperater();
+
         oo.setEntitet(operater);
+
         try {
             oo.create();
         } catch (ZavrsniRadException ex) {
@@ -49,6 +51,7 @@ public class PocetniInsert {
         Usluga sisanjeJedan = kreirajUslugu("Šišanje za žene sa prirodnim sušenjem", new BigDecimal(70.00), "", "Šišanje");
         Usluga sisanjeDva = kreirajUslugu("Šišanje za žene sa fen frizurom", new BigDecimal(100.00), "", "Šišanje");
         Usluga muskarciJedan = kreirajUslugu("Muško šišanje bez pranja kose", new BigDecimal(50.00), "", "Muškarci");
+        Usluga muskarciCetiri = kreirajUslugu("Muško šišanje sa pranjem kose", new BigDecimal(60.00), "", "Muškarci");
         Usluga muskarciDva = kreirajUslugu("Muško šišanje brade", new BigDecimal(15.00), "", "Muškarci");
         Usluga muskarciTri = kreirajUslugu("Muško bojanje kose sa šišanjem", new BigDecimal(100.00), "", "Muškarci");
         Usluga koloracijaJedan = kreirajUslugu("Bojanje kose + fen frizura", new BigDecimal(245.00), "", "Koloracija");
@@ -75,7 +78,19 @@ public class PocetniInsert {
         Usluga depilacijaDva = kreirajUslugu("Depilacija potkoljenica", new BigDecimal(60.00), "Depilacija šećernom pastom", "Kozmetičke usluge za tijelo");
         Usluga depilacijaTri = kreirajUslugu("Depilacija natkoljenica", new BigDecimal(70.00), "Depilacija šećernom pastom", "Kozmetičke usluge za tijelo");
         Usluga depilacijaCetiri = kreirajUslugu("Depilacija pazuha", new BigDecimal(40.00), "Depilacija šećernom pastom", "Kozmetičke usluge za tijelo");
-// dodati usluge masaže...
+        Usluga depilacijaPet = kreirajUslugu("Depilacija leđa", new BigDecimal(130.00), "Depilacija šećernom pastom", "Kozmetičke usluge za tijelo");
+        Usluga depilacijaSest = kreirajUslugu("Brazilska depilacija", new BigDecimal(40.00), "Depilacija šećernom pastom", "Kozmetičke usluge za tijelo");
+        Usluga lice = kreirajUslugu("Veliki tretman lica", new BigDecimal(260.00), "Skidanje šminke, piling, parenje, špatula, čišćenje, masaža, maska", "Kozmetičke usluge za lice");
+        Usluga liceJedan = kreirajUslugu("Mali tretman lica", new BigDecimal(190.00), "'Skidanje šminke, piling, parenje, špatula, čišćenje, maska", "Kozmetičke usluge za lice");
+        Usluga liceDva = kreirajUslugu("Korekcija obrva", new BigDecimal(20.00), "Korekcija se može napraviti sa voskom ili pincetom", "Kozmetičke usluge za lice");
+        Usluga liceTri = kreirajUslugu("Korekcija + bojanje obrva", new BigDecimal(50.00), "Korekcija se može napraviti sa voskom ili pincetom", "Kozmetičke usluge za lice");
+        Usluga masazaJedan = kreirajUslugu("Opuštajuća masaža", new BigDecimal(140.00), "Masaža cijelog tijela, u trajanju od 60 minuta", "Masaža tijela");
+        Usluga masazaDva = kreirajUslugu("Opuštajuća masaža parcijalna", new BigDecimal(70.00), "Masaža pojedinog dijela tijela, u trajanju od 30 minuta", "Masaža tijela");
+        Usluga masaTri = kreirajUslugu("Medicinska masaža", new BigDecimal(170.00), "Masaža cijelog tijela, u trajanju od 60 minuta", "Masaža tijela");
+        Usluga masazaCetiri = kreirajUslugu("Medicinska masažaBigDecimal(100.00), \"Masaža pojedinog dijela tijela, u trajanju od 30 minuta\", \"Masaža tijela\"); parcijalna", new BigDecimal(80.00), "Masaža pojedinog dijela tijela, u trajanju od 30 minuta", "Masaža tijela");
+        Usluga masazaPet = kreirajUslugu("Sportska masaža", new BigDecimal(200.00), "Masaža cijelog tijela, u trajanju od 60 minuta", "Masaža tijela");
+        Usluga masazaSest = kreirajUslugu("Sportska masaža parcijalna", new BigDecimal(100.00), "Masaža pojedinog dijela tijela, u trajanju od 30 minuta", "Masaža tijela");
+        Usluga masazaSedam = kreirajUslugu("Anticelulitna masaža", new BigDecimal(110.00), "Masaža dijelova tijela zahvaćenih celulitom s korištenjem posebnih ulja, u trajanju od 60 minuta", "Masaža tijela");
 
         session.beginTransaction();
         session.save(feniranje);
@@ -110,8 +125,6 @@ public class PocetniInsert {
         session.save(depilacijaDva);
         session.save(depilacijaTri);
         session.save(depilacijaCetiri);
-        
-        
 
         Faker faker = new Faker();
 
@@ -138,8 +151,6 @@ public class PocetniInsert {
             }
         }
 
-        
-        
         Klijent k;
         for (int i = 0; i < 50; i++) {
             k = new Klijent();
@@ -161,8 +172,6 @@ public class PocetniInsert {
 
     }
 
-    
-    
     private static Usluga kreirajUslugu(String naziv, BigDecimal cijena, String opis, String vrsta) {
         Usluga usluga = new Usluga();
         usluga.setNaziv(naziv);
@@ -172,4 +181,21 @@ public class PocetniInsert {
         return usluga;
     }
 
+    public static void adminOperater() {
+        Operater admin = new Operater();
+        admin.setIme("Dolores");
+        admin.setPrezime("Balić");
+        admin.setUloga("Admin");
+        admin.setEmail("beautysalon2911@gmail.com");
+        admin.setLozinka(BCrypt.hashpw("bs", BCrypt.gensalt()));
+
+        ObradaOperater ad = new ObradaOperater();
+        ad.setEntitet(admin);
+        try {
+            ad.create();
+        } catch (ZavrsniRadException ex) {
+            ex.printStackTrace();
+        }
+
+    }
 }

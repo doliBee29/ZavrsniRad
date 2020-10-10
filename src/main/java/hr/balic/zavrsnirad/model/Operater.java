@@ -12,8 +12,8 @@ import javax.persistence.Entity;
  * @author Kira
  */
 @Entity
-public class Operater extends Osoba{
-    
+public class Operater extends Osoba {
+
     private String lozinka;
     private String uloga;
 
@@ -32,7 +32,5 @@ public class Operater extends Osoba{
     public void setUloga(String uloga) {
         this.uloga = uloga;
     }
-    
-    
-    
+
 }
