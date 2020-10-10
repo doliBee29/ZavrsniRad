@@ -196,7 +196,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Kira\Desktop\icons\icons8_more_than_30px.png"/>
+                  <Image iconType="3" name="/icons/icons8_more_than_30px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Klijenti"/>
               </Properties>
@@ -210,7 +210,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Kira\Desktop\icons\icons8_more_than_40px.png"/>
+                  <Image iconType="3" name="/icons/icons8_more_than_40px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Upravljanje Klijentima"/>
               </Properties>
@@ -414,7 +414,7 @@
         <Component class="javax.swing.JButton" name="btnPromijeni">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Kira\Desktop\icons\icons8_update_user_30px.png"/>
+              <Image iconType="3" name="/icons/icons8_add_user_group_woman_man_30px.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Promijeni"/>
           </Properties>
@@ -425,7 +425,7 @@
         <Component class="javax.swing.JButton" name="btnObrisi">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Kira\Desktop\icons\icons8_delete_bin_30px.png"/>
+              <Image iconType="3" name="/icons/icons8_delete_bin_30px.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Obri&#x161;i"/>
           </Properties>
@@ -441,7 +441,7 @@
         <Component class="javax.swing.JButton" name="btnTrazi">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Kira\Desktop\icons\icons8_search_30px_1.png"/>
+              <Image iconType="3" name="/icons/icons8_search_30px_1.png"/>
             </Property>
           </Properties>
           <Events>

@@ -116,12 +116,12 @@ public class Termini extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(41, 57, 80));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_more_than_30px.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_more_than_30px.png"))); // NOI18N
         jLabel1.setText("Termini");
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_more_than_40px.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_more_than_40px.png"))); // NOI18N
         jLabel3.setText("Upravljanje Terminima");
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -243,7 +243,7 @@ public class Termini extends javax.swing.JFrame {
 
         pnlPodaciLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {dtpPocetak, dtpZavrsetak});
 
-        btnDodaj.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_add_user_group_woman_man_30px.png")); // NOI18N
+        btnDodaj.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_add_user_group_woman_man_30px.png"))); // NOI18N
         btnDodaj.setText("Dodaj");
         btnDodaj.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnDodaj.addActionListener(new java.awt.event.ActionListener() {
@@ -252,7 +252,7 @@ public class Termini extends javax.swing.JFrame {
             }
         });
 
-        btnPromijeni.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_update_user_30px.png")); // NOI18N
+        btnPromijeni.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_update_user_30px.png"))); // NOI18N
         btnPromijeni.setText("Promijeni");
         btnPromijeni.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnPromijeni.addActionListener(new java.awt.event.ActionListener() {
@@ -261,7 +261,7 @@ public class Termini extends javax.swing.JFrame {
             }
         });
 
-        btnObrisi.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_delete_bin_30px.png")); // NOI18N
+        btnObrisi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_delete_bin_30px.png"))); // NOI18N
         btnObrisi.setText("Obriši");
         btnObrisi.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnObrisi.addActionListener(new java.awt.event.ActionListener() {
@@ -289,14 +289,14 @@ public class Termini extends javax.swing.JFrame {
             }
         });
 
-        btnTrazi.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_search_30px_1.png")); // NOI18N
+        btnTrazi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_search_30px_1.png"))); // NOI18N
         btnTrazi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTraziActionPerformed(evt);
             }
         });
 
-        btnDodajUsluguUTermin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_add_30px_1.png")); // NOI18N
+        btnDodajUsluguUTermin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_add_30px_1.png"))); // NOI18N
         btnDodajUsluguUTermin.setText("Dodaj");
         btnDodajUsluguUTermin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -304,7 +304,7 @@ public class Termini extends javax.swing.JFrame {
             }
         });
 
-        btnMakniUsluguIzTermina.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_minus_30px_1.png")); // NOI18N
+        btnMakniUsluguIzTermina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_minus_30px_1.png"))); // NOI18N
         btnMakniUsluguIzTermina.setText("Makni");
         btnMakniUsluguIzTermina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -398,7 +398,7 @@ public class Termini extends javax.swing.JFrame {
         jPanel5.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_reminder_30px.png")); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_reminder_30px.png"))); // NOI18N
         jLabel6.setText("Pošalji podsjetnik");
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -412,11 +412,15 @@ public class Termini extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -434,7 +438,7 @@ public class Termini extends javax.swing.JFrame {
                         .addGap(26, 26, 26)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 337, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
+                        .addGap(80, 80, 80)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

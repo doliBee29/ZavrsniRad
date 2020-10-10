@@ -94,7 +94,7 @@ public class Izbornik extends javax.swing.JFrame {
 
         lblKlijenti.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblKlijenti.setForeground(new java.awt.Color(255, 255, 255));
-        lblKlijenti.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_card_payment_24px.png")); // NOI18N
+        lblKlijenti.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_card_payment_24px.png"))); // NOI18N
         lblKlijenti.setText("Klijenti");
         lblKlijenti.setMaximumSize(new java.awt.Dimension(49, 20));
         lblKlijenti.setMinimumSize(new java.awt.Dimension(49, 20));
@@ -136,7 +136,7 @@ public class Izbornik extends javax.swing.JFrame {
 
         lblPocetna.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblPocetna.setForeground(new java.awt.Color(255, 255, 255));
-        lblPocetna.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_home_24px.png")); // NOI18N
+        lblPocetna.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_home_24px.png"))); // NOI18N
         lblPocetna.setText("Početna");
         lblPocetna.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -173,7 +173,7 @@ public class Izbornik extends javax.swing.JFrame {
 
         lblTermin.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblTermin.setForeground(new java.awt.Color(255, 255, 255));
-        lblTermin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_phone_time_24px.png")); // NOI18N
+        lblTermin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_phone_time_24px.png"))); // NOI18N
         lblTermin.setText("Termin");
         lblTermin.setMaximumSize(new java.awt.Dimension(49, 20));
         lblTermin.setMinimumSize(new java.awt.Dimension(49, 20));
@@ -216,7 +216,7 @@ public class Izbornik extends javax.swing.JFrame {
 
         lblUsluga.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblUsluga.setForeground(new java.awt.Color(255, 255, 255));
-        lblUsluga.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_service_24px.png")); // NOI18N
+        lblUsluga.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_service_24px.png"))); // NOI18N
         lblUsluga.setText("Usluga");
         lblUsluga.setMaximumSize(new java.awt.Dimension(49, 20));
         lblUsluga.setMinimumSize(new java.awt.Dimension(49, 20));
@@ -262,7 +262,7 @@ public class Izbornik extends javax.swing.JFrame {
 
         lblZaposlenik.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblZaposlenik.setForeground(new java.awt.Color(255, 255, 255));
-        lblZaposlenik.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_management_24px.png")); // NOI18N
+        lblZaposlenik.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_management_24px.png"))); // NOI18N
         lblZaposlenik.setText("Zaposlenik");
         lblZaposlenik.setMaximumSize(new java.awt.Dimension(49, 20));
         lblZaposlenik.setMinimumSize(new java.awt.Dimension(49, 20));
@@ -309,7 +309,7 @@ public class Izbornik extends javax.swing.JFrame {
 
         lblOperateri.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblOperateri.setForeground(new java.awt.Color(255, 255, 255));
-        lblOperateri.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_more_info_24px.png")); // NOI18N
+        lblOperateri.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_more_info_24px.png"))); // NOI18N
         lblOperateri.setText("Operatori");
         lblOperateri.setMaximumSize(new java.awt.Dimension(49, 20));
         lblOperateri.setMinimumSize(new java.awt.Dimension(49, 20));
@@ -351,7 +351,7 @@ public class Izbornik extends javax.swing.JFrame {
 
         lblIzadi.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         lblIzadi.setForeground(new java.awt.Color(255, 255, 255));
-        lblIzadi.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_exit_24px.png")); // NOI18N
+        lblIzadi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_exit_24px.png"))); // NOI18N
         lblIzadi.setText("Izlaz");
         lblIzadi.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -409,7 +409,7 @@ public class Izbornik extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 930, 60));
 
-        lblNaslovnaSlika.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\naslovna1.jpg")); // NOI18N
+        lblNaslovnaSlika.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pics_screenshots/naslovna1.jpg"))); // NOI18N
         getContentPane().add(lblNaslovnaSlika, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 930, 550));
 
         pack();

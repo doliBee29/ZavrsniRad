@@ -90,7 +90,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Kira\Desktop\icons\icons8_card_payment_24px.png"/>
+                  <Image iconType="3" name="/icons/icons8_card_payment_24px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Klijenti"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -155,7 +155,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Kira\Desktop\icons\icons8_home_24px.png"/>
+                  <Image iconType="3" name="/icons/icons8_home_24px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Po&#x10d;etna"/>
               </Properties>
@@ -213,7 +213,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Kira\Desktop\icons\icons8_phone_time_24px.png"/>
+                  <Image iconType="3" name="/icons/icons8_phone_time_24px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Termin"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -281,7 +281,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Kira\Desktop\icons\icons8_service_24px.png"/>
+                  <Image iconType="3" name="/icons/icons8_service_24px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Usluga"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -346,7 +346,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Kira\Desktop\icons\icons8_management_24px.png"/>
+                  <Image iconType="3" name="/icons/icons8_management_24px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Zaposlenik"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -440,7 +440,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Kira\Desktop\icons\icons8_more_info_24px.png"/>
+                  <Image iconType="3" name="/icons/icons8_more_info_24px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Operatori"/>
                 <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -505,7 +505,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Kira\Desktop\icons\icons8_exit_24px.png"/>
+                  <Image iconType="3" name="/icons/icons8_exit_24px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Izlaz"/>
               </Properties>
@@ -570,7 +570,7 @@
     <Component class="javax.swing.JLabel" name="lblNaslovnaSlika">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Kira\Desktop\naslovna1.jpg"/>
+          <Image iconType="3" name="/pics_screenshots/naslovna1.jpg"/>
         </Property>
       </Properties>
       <Constraints>

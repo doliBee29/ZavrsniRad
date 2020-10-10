@@ -66,12 +66,12 @@ public class Autorizacija extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_new_post_32px.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_new_post_32px.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_lock_32px.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_lock_32px.png"))); // NOI18N
 
         pswLozinka.setBackground(new java.awt.Color(41, 57, 80));
         pswLozinka.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -89,7 +89,7 @@ public class Autorizacija extends javax.swing.JFrame {
         lblPrijava.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lblPrijava.setForeground(new java.awt.Color(255, 255, 255));
         lblPrijava.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblPrijava.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_update_30px.png")); // NOI18N
+        lblPrijava.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_update_30px.png"))); // NOI18N
         lblPrijava.setText("Prijava");
         lblPrijava.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
