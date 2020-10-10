@@ -224,7 +224,7 @@ public class Klijenti extends javax.swing.JFrame {
                 .addComponent(lblPoruka, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
         );
 
-        btnDodaj.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\icons\\icons8_add_user_group_woman_man_30px.png")); // NOI18N
+        btnDodaj.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_add_user_group_woman_man_30px.png"))); // NOI18N
         btnDodaj.setText("Dodaj");
         btnDodaj.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
