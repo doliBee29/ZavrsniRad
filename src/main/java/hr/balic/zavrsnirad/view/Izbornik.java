@@ -6,8 +6,12 @@
 package hr.balic.zavrsnirad.view;
 
 import java.awt.Color;
+import java.awt.Desktop;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import javax.swing.JPanel;
@@ -27,7 +31,6 @@ public class Izbornik extends javax.swing.JFrame {
     public Izbornik() {
         initComponents();
         setTitle("Beauty salon");
-       
 
         ActionListener actionListener = new ActionListener() {
 
@@ -42,7 +45,13 @@ public class Izbornik extends javax.swing.JFrame {
         timer = new Timer(1000, actionListener);
         timer.setInitialDelay(0);
         timer.start();
-      
+
+        lblZaposlenik.setVisible(Aplikacija.isAdmin());
+        pnlZaposlenik.setVisible(Aplikacija.isAdmin());
+
+        lblUsluga.setVisible(Aplikacija.isAdmin());
+        pnlUsluga.setVisible(Aplikacija.isAdmin());
+
     }
 
     /**
@@ -54,78 +63,75 @@ public class Izbornik extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        pnlKlijent = new javax.swing.JPanel();
-        lblKlijenti = new javax.swing.JLabel();
+        jPanelJedan = new javax.swing.JPanel();
+        pnlUsluga = new javax.swing.JPanel();
+        lblUsluga = new javax.swing.JLabel();
         pnlPocetna = new javax.swing.JPanel();
         lblPocetna = new javax.swing.JLabel();
         pnlTermin = new javax.swing.JPanel();
         lblTermin = new javax.swing.JLabel();
-        pnlUsluga = new javax.swing.JPanel();
-        lblUsluga = new javax.swing.JLabel();
+        pnlKlijenti = new javax.swing.JPanel();
+        lblKlijenti = new javax.swing.JLabel();
         pnlZaposlenik = new javax.swing.JPanel();
         lblZaposlenik = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        pnlOperateri = new javax.swing.JPanel();
-        lblOperateri = new javax.swing.JLabel();
+        lblNaslov = new javax.swing.JLabel();
+        sprtJedan = new javax.swing.JSeparator();
         pnlIzadi = new javax.swing.JPanel();
         lblIzadi = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        PnlDva = new javax.swing.JPanel();
         lblDateTime = new javax.swing.JLabel();
+        lblInstagram = new javax.swing.JLabel();
+        lblFacebook = new javax.swing.JLabel();
         lblNaslovnaSlika = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(23, 35, 51));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanelJedan.setBackground(new java.awt.Color(23, 35, 51));
+        jPanelJedan.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        pnlKlijent.setBackground(new java.awt.Color(23, 35, 51));
-        pnlKlijent.setPreferredSize(new java.awt.Dimension(140, 50));
-        pnlKlijent.addMouseListener(new java.awt.event.MouseAdapter() {
+        pnlUsluga.setBackground(new java.awt.Color(23, 35, 51));
+        pnlUsluga.setPreferredSize(new java.awt.Dimension(140, 50));
+        pnlUsluga.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                pnlKlijentMousePressed(evt);
+                pnlUslugaMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                pnlKlijentMouseReleased(evt);
+                pnlUslugaMouseReleased(evt);
             }
         });
 
-        lblKlijenti.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblKlijenti.setForeground(new java.awt.Color(255, 255, 255));
-        lblKlijenti.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_card_payment_24px.png"))); // NOI18N
-        lblKlijenti.setText("Klijenti");
-        lblKlijenti.setMaximumSize(new java.awt.Dimension(49, 20));
-        lblKlijenti.setMinimumSize(new java.awt.Dimension(49, 20));
-        lblKlijenti.setPreferredSize(new java.awt.Dimension(49, 20));
-        lblKlijenti.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblUsluga.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblUsluga.setForeground(new java.awt.Color(255, 255, 255));
+        lblUsluga.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_service_24px.png"))); // NOI18N
+        lblUsluga.setText("Usluga");
+        lblUsluga.setMaximumSize(new java.awt.Dimension(49, 20));
+        lblUsluga.setMinimumSize(new java.awt.Dimension(49, 20));
+        lblUsluga.setPreferredSize(new java.awt.Dimension(49, 20));
+        lblUsluga.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                lblKlijentiMousePressed(evt);
+                lblUslugaMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                lblKlijentiMouseReleased(evt);
+                lblUslugaMouseReleased(evt);
             }
         });
 
-        javax.swing.GroupLayout pnlKlijentLayout = new javax.swing.GroupLayout(pnlKlijent);
-        pnlKlijent.setLayout(pnlKlijentLayout);
-        pnlKlijentLayout.setHorizontalGroup(
-            pnlKlijentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlKlijentLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(lblKlijenti, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
-                .addGap(27, 27, 27))
+        javax.swing.GroupLayout pnlUslugaLayout = new javax.swing.GroupLayout(pnlUsluga);
+        pnlUsluga.setLayout(pnlUslugaLayout);
+        pnlUslugaLayout.setHorizontalGroup(
+            pnlUslugaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlUslugaLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(lblUsluga, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(32, Short.MAX_VALUE))
         );
-        pnlKlijentLayout.setVerticalGroup(
-            pnlKlijentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlKlijentLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblKlijenti, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                .addContainerGap())
+        pnlUslugaLayout.setVerticalGroup(
+            pnlUslugaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblUsluga, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jPanel1.add(pnlKlijent, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, -1, -1));
+        jPanelJedan.add(pnlUsluga, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, -1, -1));
 
         pnlPocetna.setBackground(new java.awt.Color(41, 57, 80));
         pnlPocetna.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -155,13 +161,10 @@ public class Izbornik extends javax.swing.JFrame {
         );
         pnlPocetnaLayout.setVerticalGroup(
             pnlPocetnaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlPocetnaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblPocetna, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(lblPocetna, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jPanel1.add(pnlPocetna, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 140, -1));
+        jPanelJedan.add(pnlPocetna, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 140, -1));
 
         pnlTermin.setBackground(new java.awt.Color(23, 35, 51));
         pnlTermin.setPreferredSize(new java.awt.Dimension(140, 50));
@@ -198,56 +201,50 @@ public class Izbornik extends javax.swing.JFrame {
         );
         pnlTerminLayout.setVerticalGroup(
             pnlTerminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlTerminLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblTermin, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(lblTermin, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jPanel1.add(pnlTermin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, -1, -1));
+        jPanelJedan.add(pnlTermin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, -1, -1));
 
-        pnlUsluga.setBackground(new java.awt.Color(23, 35, 51));
-        pnlUsluga.setPreferredSize(new java.awt.Dimension(140, 50));
-        pnlUsluga.addMouseListener(new java.awt.event.MouseAdapter() {
+        pnlKlijenti.setBackground(new java.awt.Color(23, 35, 51));
+        pnlKlijenti.setPreferredSize(new java.awt.Dimension(140, 50));
+        pnlKlijenti.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                pnlUslugaMousePressed(evt);
+                pnlKlijentiMousePressed(evt);
             }
         });
 
-        lblUsluga.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblUsluga.setForeground(new java.awt.Color(255, 255, 255));
-        lblUsluga.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_service_24px.png"))); // NOI18N
-        lblUsluga.setText("Usluga");
-        lblUsluga.setMaximumSize(new java.awt.Dimension(49, 20));
-        lblUsluga.setMinimumSize(new java.awt.Dimension(49, 20));
-        lblUsluga.setPreferredSize(new java.awt.Dimension(49, 20));
-        lblUsluga.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblKlijenti.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblKlijenti.setForeground(new java.awt.Color(255, 255, 255));
+        lblKlijenti.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_card_payment_24px.png"))); // NOI18N
+        lblKlijenti.setText("Klijenti");
+        lblKlijenti.setMaximumSize(new java.awt.Dimension(49, 20));
+        lblKlijenti.setMinimumSize(new java.awt.Dimension(49, 20));
+        lblKlijenti.setPreferredSize(new java.awt.Dimension(49, 20));
+        lblKlijenti.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                lblUslugaMousePressed(evt);
+                lblKlijentiMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                lblUslugaMouseReleased(evt);
+                lblKlijentiMouseReleased(evt);
             }
         });
 
-        javax.swing.GroupLayout pnlUslugaLayout = new javax.swing.GroupLayout(pnlUsluga);
-        pnlUsluga.setLayout(pnlUslugaLayout);
-        pnlUslugaLayout.setHorizontalGroup(
-            pnlUslugaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlUslugaLayout.createSequentialGroup()
+        javax.swing.GroupLayout pnlKlijentiLayout = new javax.swing.GroupLayout(pnlKlijenti);
+        pnlKlijenti.setLayout(pnlKlijentiLayout);
+        pnlKlijentiLayout.setHorizontalGroup(
+            pnlKlijentiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlKlijentiLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(lblUsluga, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addComponent(lblKlijenti, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
         );
-        pnlUslugaLayout.setVerticalGroup(
-            pnlUslugaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlUslugaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblUsluga, javax.swing.GroupLayout.DEFAULT_SIZE, 28, Short.MAX_VALUE)
-                .addContainerGap())
+        pnlKlijentiLayout.setVerticalGroup(
+            pnlKlijentiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(lblKlijenti, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jPanel1.add(pnlUsluga, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, -1, -1));
+        jPanelJedan.add(pnlKlijenti, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, -1, -1));
 
         pnlZaposlenik.setBackground(new java.awt.Color(23, 35, 51));
         pnlZaposlenik.setPreferredSize(new java.awt.Dimension(140, 50));
@@ -281,62 +278,22 @@ public class Izbornik extends javax.swing.JFrame {
         pnlZaposlenikLayout.setHorizontalGroup(
             pnlZaposlenikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlZaposlenikLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
+                .addGap(18, 18, 18)
                 .addComponent(lblZaposlenik, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
-                .addGap(24, 24, 24))
+                .addGap(25, 25, 25))
         );
         pnlZaposlenikLayout.setVerticalGroup(
             pnlZaposlenikLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(lblZaposlenik, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
         );
 
-        jPanel1.add(pnlZaposlenik, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 140, -1));
+        jPanelJedan.add(pnlZaposlenik, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 140, -1));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Beauty Salon");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 120, 50));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 110, 30));
-
-        pnlOperateri.setBackground(new java.awt.Color(23, 35, 51));
-        pnlOperateri.setForeground(new java.awt.Color(255, 255, 255));
-        pnlOperateri.setPreferredSize(new java.awt.Dimension(140, 50));
-        pnlOperateri.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                pnlOperateriMousePressed(evt);
-            }
-        });
-
-        lblOperateri.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblOperateri.setForeground(new java.awt.Color(255, 255, 255));
-        lblOperateri.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_more_info_24px.png"))); // NOI18N
-        lblOperateri.setText("Operatori");
-        lblOperateri.setMaximumSize(new java.awt.Dimension(49, 20));
-        lblOperateri.setMinimumSize(new java.awt.Dimension(49, 20));
-        lblOperateri.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                lblOperateriMousePressed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout pnlOperateriLayout = new javax.swing.GroupLayout(pnlOperateri);
-        pnlOperateri.setLayout(pnlOperateriLayout);
-        pnlOperateriLayout.setHorizontalGroup(
-            pnlOperateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlOperateriLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(lblOperateri, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-        pnlOperateriLayout.setVerticalGroup(
-            pnlOperateriLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlOperateriLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblOperateri, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        jPanel1.add(pnlOperateri, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 140, 50));
+        lblNaslov.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblNaslov.setForeground(new java.awt.Color(255, 255, 255));
+        lblNaslov.setText("Beauty Salon");
+        jPanelJedan.add(lblNaslov, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 120, 50));
+        jPanelJedan.add(sprtJedan, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 110, 30));
 
         pnlIzadi.setBackground(new java.awt.Color(23, 35, 51));
         pnlIzadi.setForeground(new java.awt.Color(255, 255, 255));
@@ -379,35 +336,60 @@ public class Izbornik extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel1.add(pnlIzadi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 520, 140, 50));
+        jPanelJedan.add(pnlIzadi, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 520, 140, 50));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 610));
+        getContentPane().add(jPanelJedan, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 140, 610));
 
-        jPanel2.setBackground(new java.awt.Color(71, 120, 197));
+        PnlDva.setBackground(new java.awt.Color(71, 120, 197));
 
         lblDateTime.setBackground(new java.awt.Color(123, 156, 225));
-        lblDateTime.setFont(new java.awt.Font("Microsoft New Tai Lue", 0, 16)); // NOI18N
+        lblDateTime.setFont(new java.awt.Font("Tunga", 0, 20)); // NOI18N
         lblDateTime.setForeground(new java.awt.Color(255, 255, 255));
-        lblDateTime.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblDateTime.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(681, Short.MAX_VALUE)
-                .addComponent(lblDateTime, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+        lblInstagram.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblInstagram.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\iconfinder_social_media_social_media_logo_instagram_2993766.png")); // NOI18N
+        lblInstagram.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lblInstagramMouseReleased(evt);
+            }
+        });
+
+        lblFacebook.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblFacebook.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\iconfinder_social_media_social_media_logo_facebook_2993778.png")); // NOI18N
+        lblFacebook.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                lblFacebookMouseReleased(evt);
+            }
+        });
+
+        javax.swing.GroupLayout PnlDvaLayout = new javax.swing.GroupLayout(PnlDva);
+        PnlDva.setLayout(PnlDvaLayout);
+        PnlDvaLayout.setHorizontalGroup(
+            PnlDvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PnlDvaLayout.createSequentialGroup()
+                .addContainerGap(651, Short.MAX_VALUE)
+                .addComponent(lblInstagram, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(1, 1, 1)
+                .addComponent(lblFacebook, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblDateTime, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        PnlDvaLayout.setVerticalGroup(
+            PnlDvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PnlDvaLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblDateTime, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGroup(PnlDvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PnlDvaLayout.createSequentialGroup()
+                        .addGroup(PnlDvaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblInstagram, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                            .addComponent(lblFacebook, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
+                    .addComponent(lblDateTime, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 930, 60));
+        getContentPane().add(PnlDva, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 0, 930, 60));
 
         lblNaslovnaSlika.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pics_screenshots/naslovna1.jpg"))); // NOI18N
         getContentPane().add(lblNaslovnaSlika, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 930, 550));
@@ -420,20 +402,20 @@ public class Izbornik extends javax.swing.JFrame {
         setColor(pnlPocetna);
         resetColor(pnlZaposlenik);
         resetColor(pnlTermin);
+        resetColor(pnlKlijenti);
         resetColor(pnlUsluga);
-        resetColor(pnlKlijent);
         resetColor(pnlIzadi);
-        resetColor(pnlOperateri);
+
     }//GEN-LAST:event_lblPocetnaMousePressed
 
     private void lblTerminMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTerminMousePressed
         setColor(pnlTermin);
         resetColor(pnlZaposlenik);
         resetColor(pnlPocetna);
+        resetColor(pnlKlijenti);
         resetColor(pnlUsluga);
-        resetColor(pnlKlijent);
         resetColor(pnlIzadi);
-        resetColor(pnlOperateri);
+
     }//GEN-LAST:event_lblTerminMousePressed
 
     private void lblUslugaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblUslugaMousePressed
@@ -441,69 +423,69 @@ public class Izbornik extends javax.swing.JFrame {
         resetColor(pnlZaposlenik);
         resetColor(pnlTermin);
         resetColor(pnlPocetna);
-        resetColor(pnlKlijent);
+        resetColor(pnlKlijenti);
         resetColor(pnlIzadi);
-        resetColor(pnlOperateri);
+
     }//GEN-LAST:event_lblUslugaMousePressed
 
     private void lblZaposlenikMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblZaposlenikMousePressed
         setColor(pnlZaposlenik);
-        resetColor(pnlKlijent);
-        resetColor(pnlTermin);
         resetColor(pnlUsluga);
+        resetColor(pnlTermin);
+        resetColor(pnlKlijenti);
         resetColor(pnlPocetna);
         resetColor(pnlIzadi);
-        resetColor(pnlOperateri);
+
     }//GEN-LAST:event_lblZaposlenikMousePressed
 
     private void pnlPocetnaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlPocetnaMousePressed
         setColor(pnlPocetna);
         resetColor(pnlZaposlenik);
         resetColor(pnlTermin);
+        resetColor(pnlKlijenti);
         resetColor(pnlUsluga);
-        resetColor(pnlKlijent);
         resetColor(pnlIzadi);
-        resetColor(pnlOperateri);
+
     }//GEN-LAST:event_pnlPocetnaMousePressed
 
     private void pnlTerminMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlTerminMousePressed
         setColor(pnlTermin);
         resetColor(pnlZaposlenik);
         resetColor(pnlPocetna);
+        resetColor(pnlKlijenti);
         resetColor(pnlUsluga);
-        resetColor(pnlKlijent);
         resetColor(pnlIzadi);
-        resetColor(pnlOperateri);
+
     }//GEN-LAST:event_pnlTerminMousePressed
+
+    private void pnlKlijentiMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlKlijentiMousePressed
+        setColor(pnlKlijenti);
+        resetColor(pnlZaposlenik);
+        resetColor(pnlTermin);
+        resetColor(pnlPocetna);
+        resetColor(pnlUsluga);
+        resetColor(pnlIzadi);
+
+    }//GEN-LAST:event_pnlKlijentiMousePressed
 
     private void pnlUslugaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlUslugaMousePressed
         setColor(pnlUsluga);
         resetColor(pnlZaposlenik);
         resetColor(pnlTermin);
+        resetColor(pnlKlijenti);
         resetColor(pnlPocetna);
-        resetColor(pnlKlijent);
         resetColor(pnlIzadi);
-        resetColor(pnlOperateri);
-    }//GEN-LAST:event_pnlUslugaMousePressed
 
-    private void pnlKlijentMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlKlijentMousePressed
-        setColor(pnlKlijent);
-        resetColor(pnlZaposlenik);
-        resetColor(pnlTermin);
-        resetColor(pnlUsluga);
-        resetColor(pnlPocetna);
-        resetColor(pnlIzadi);
-        resetColor(pnlOperateri);
-    }//GEN-LAST:event_pnlKlijentMousePressed
+    }//GEN-LAST:event_pnlUslugaMousePressed
 
     private void pnlZaposlenikMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlZaposlenikMousePressed
         setColor(pnlZaposlenik);
         resetColor(pnlPocetna);
         resetColor(pnlTermin);
+        resetColor(pnlKlijenti);
         resetColor(pnlUsluga);
-        resetColor(pnlKlijent);
         resetColor(pnlIzadi);
-        resetColor(pnlOperateri);
+
     }//GEN-LAST:event_pnlZaposlenikMousePressed
 
     private void pnlZaposlenikMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlZaposlenikMouseReleased
@@ -514,16 +496,16 @@ public class Izbornik extends javax.swing.JFrame {
         new Usluge().setVisible(true);
     }//GEN-LAST:event_lblUslugaMouseReleased
 
-    private void pnlKlijentMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlKlijentMouseReleased
+    private void pnlUslugaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlUslugaMouseReleased
         new Zaposlenici().setVisible(true);
-    }//GEN-LAST:event_pnlKlijentMouseReleased
+    }//GEN-LAST:event_pnlUslugaMouseReleased
 
     private void lblKlijentiMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKlijentiMouseReleased
         new Klijenti().setVisible(true);
     }//GEN-LAST:event_lblKlijentiMouseReleased
 
     private void lblZaposlenikMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblZaposlenikMouseReleased
-          new Zaposlenici().setVisible(true);
+        new Zaposlenici().setVisible(true);
     }//GEN-LAST:event_lblZaposlenikMouseReleased
 
     private void lblTerminMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTerminMouseReleased
@@ -532,54 +514,32 @@ public class Izbornik extends javax.swing.JFrame {
 
     private void lblKlijentiMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKlijentiMousePressed
         // TODO add your handling code here:
-        
-       setColor(pnlKlijent);
+
+        setColor(pnlKlijenti);
         resetColor(pnlZaposlenik);
         resetColor(pnlTermin);
         resetColor(pnlUsluga);
         resetColor(pnlPocetna);
         resetColor(pnlIzadi);
-        resetColor(pnlOperateri);
+
     }//GEN-LAST:event_lblKlijentiMousePressed
-
-    private void lblOperateriMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOperateriMousePressed
-        setColor(pnlOperateri);
-        resetColor(pnlZaposlenik);
-        resetColor(pnlTermin);
-        resetColor(pnlUsluga);
-        resetColor(pnlPocetna);
-        resetColor(pnlIzadi);
-        resetColor(pnlKlijent);
-    }//GEN-LAST:event_lblOperateriMousePressed
-
-    private void pnlOperateriMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlOperateriMousePressed
-        setColor(pnlOperateri);
-        resetColor(pnlZaposlenik);
-        resetColor(pnlTermin);
-        resetColor(pnlUsluga);
-        resetColor(pnlPocetna);
-        resetColor(pnlIzadi);
-        resetColor(pnlKlijent);
-    }//GEN-LAST:event_pnlOperateriMousePressed
 
     private void pnlIzadiMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlIzadiMousePressed
         setColor(pnlIzadi);
         resetColor(pnlZaposlenik);
         resetColor(pnlTermin);
-        resetColor(pnlUsluga);
+        resetColor(pnlKlijenti);
         resetColor(pnlPocetna);
-        resetColor(pnlOperateri);
-        resetColor(pnlKlijent);
+        resetColor(pnlUsluga);
     }//GEN-LAST:event_pnlIzadiMousePressed
 
     private void lblIzadiMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblIzadiMousePressed
         setColor(pnlIzadi);
         resetColor(pnlZaposlenik);
         resetColor(pnlTermin);
-        resetColor(pnlUsluga);
+        resetColor(pnlKlijenti);
         resetColor(pnlPocetna);
-        resetColor(pnlOperateri);
-        resetColor(pnlKlijent);
+        resetColor(pnlUsluga);
     }//GEN-LAST:event_lblIzadiMousePressed
 
     private void lblIzadiMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblIzadiMouseReleased
@@ -590,31 +550,47 @@ public class Izbornik extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_pnlIzadiMouseReleased
 
+    private void lblFacebookMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblFacebookMouseReleased
+        try {
+            Desktop.getDesktop().browse(new URI("https://www.facebook.com/"));
+        } catch (URISyntaxException | IOException ex) {
+            System.out.println("Došlo je do poteškoće...");
+        }
+    }//GEN-LAST:event_lblFacebookMouseReleased
+
+    private void lblInstagramMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblInstagramMouseReleased
+         try {
+            Desktop.getDesktop().browse(new URI("https://www.instagram.com/?hl=en"));
+        } catch (URISyntaxException | IOException ex) {
+            System.out.println("Došlo je do poteškoće...");
+        }
+    }//GEN-LAST:event_lblInstagramMouseReleased
+
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JPanel PnlDva;
+    private javax.swing.JPanel jPanelJedan;
     private javax.swing.JLabel lblDateTime;
+    private javax.swing.JLabel lblFacebook;
+    private javax.swing.JLabel lblInstagram;
     private javax.swing.JLabel lblIzadi;
     private javax.swing.JLabel lblKlijenti;
+    private javax.swing.JLabel lblNaslov;
     private javax.swing.JLabel lblNaslovnaSlika;
-    private javax.swing.JLabel lblOperateri;
     private javax.swing.JLabel lblPocetna;
     private javax.swing.JLabel lblTermin;
     private javax.swing.JLabel lblUsluga;
     private javax.swing.JLabel lblZaposlenik;
     private javax.swing.JPanel pnlIzadi;
-    private javax.swing.JPanel pnlKlijent;
-    private javax.swing.JPanel pnlOperateri;
+    private javax.swing.JPanel pnlKlijenti;
     private javax.swing.JPanel pnlPocetna;
     private javax.swing.JPanel pnlTermin;
     private javax.swing.JPanel pnlUsluga;
     private javax.swing.JPanel pnlZaposlenik;
+    private javax.swing.JSeparator sprtJedan;
     // End of variables declaration//GEN-END:variables
 
     private void setColor(JPanel panel) {

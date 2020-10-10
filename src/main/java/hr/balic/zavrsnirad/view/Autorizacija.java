@@ -27,7 +27,8 @@ public class Autorizacija extends javax.swing.JFrame {
         initComponents();
 
         txtEmail.requestFocus();
-        txtEmail.setText("dolores.balic@gmail.com");
+        txtEmail.setText("beautysalon2911@gmail.com");
+        pswLozinka.setText("bs");
 //        jPanel1.setBackground( new Color(0, 0, 0, 65));
 //        jPanel1.setOpaque(false);
 
@@ -277,6 +278,8 @@ public class Autorizacija extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Nesipravna kombinacija emaila i lozinke!");
             return;
         }
+        
+        Aplikacija.operater = operater;
 
         new Izbornik().setVisible(true);
         dispose();
