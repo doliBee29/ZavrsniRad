@@ -21,7 +21,7 @@ public class ObradaUsluga extends Obrada<Usluga> {
     }
 
     public ObradaUsluga() {
-        
+
     }
 
     @Override
@@ -29,7 +29,7 @@ public class ObradaUsluga extends Obrada<Usluga> {
         return session.createQuery("from Usluga").list();
 
     }
-    
+
     public List<Usluga> getPodaci(String uvjet) {
         return session.createQuery("from Usluga u"
                 + " where concat(u.naziv) "
@@ -43,16 +43,19 @@ public class ObradaUsluga extends Obrada<Usluga> {
     protected void kontrolaCreate() throws ZavrsniRadException {
         kontrolaNaziv();
         kontrolaCijena();
+        
     }
 
     @Override
     protected void kontrolaUpdate() throws ZavrsniRadException {
-
+        kontrolaNaziv();
+        kontrolaCijena();
     }
 
     @Override
     protected void kontrolaDelete() throws ZavrsniRadException {
-
+        kontrolaNaziv();
+        kontrolaCijena();
     }
 
     private void kontrolaNaziv() throws ZavrsniRadException {
@@ -87,5 +90,7 @@ public class ObradaUsluga extends Obrada<Usluga> {
         }
 
     }
+
+   
 
 }

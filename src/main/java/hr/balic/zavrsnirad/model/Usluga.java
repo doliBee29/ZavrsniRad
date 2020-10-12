@@ -23,8 +23,7 @@ public class Usluga extends Entitet {
     private String opis;
     
     @ManyToOne
-   
-    private Zaposlenik zaposlenik;
+   private Zaposlenik zaposlenik;
 
     public String getNaziv() {
         return naziv;

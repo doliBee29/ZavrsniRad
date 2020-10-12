@@ -365,6 +365,7 @@ public class Usluge extends javax.swing.JFrame {
             lblPoruka.setText(ex.getPoruka());
         }
 
+        lblPoruka.setText("Uspješno dodana usluga pod nazivom : " + entitet.getNaziv() + " !");
     }//GEN-LAST:event_btnDodajActionPerformed
 
     private void btnPromijeniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPromijeniActionPerformed
@@ -382,6 +383,7 @@ public class Usluge extends javax.swing.JFrame {
         } catch (ZavrsniRadException e) {
             lblPoruka.setText(e.getPoruka());
         }
+        lblPoruka.setText("Uspješno izmijenjena usluga pod nazivom : " + entitet.getNaziv() + " !");
 
     }//GEN-LAST:event_btnPromijeniActionPerformed
 
@@ -400,6 +402,8 @@ public class Usluge extends javax.swing.JFrame {
         } catch (ZavrsniRadException e) {
             lblPoruka.setText(e.getPoruka());
         }
+        
+        lblPoruka.setText("Uspješno izbrisana usluga pod nazivom : " + entitet.getNaziv() + " !");
     }//GEN-LAST:event_btnObrisiActionPerformed
 
     private void btnTraziActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTraziActionPerformed
@@ -473,5 +477,13 @@ public class Usluge extends javax.swing.JFrame {
         }
         lblPoruka.setText("");
     }
+    
+    
+//    private void vrstaUsluge() {
+//        if (cmbxVrstaUsluge.getSelectedIndex() == -1){
+//            System.out.println("Obavezan odabir vrste usluge!");
+//}
+    }
+    
 
 }
