@@ -40,8 +40,7 @@ public class Zaposlenici extends javax.swing.JFrame {
 
         cmbxZanimanje.setRenderer(new MyComboBoxRenderer("Odaberite zanimanje"));
         cmbxZanimanje.setSelectedIndex(-1); // po default-u odabire prvi item, no potrebno postaviti bez odabira
-        
-        
+
         setTitle("Zaposlenici");
     }
 
@@ -339,9 +338,9 @@ public class Zaposlenici extends javax.swing.JFrame {
         } catch (ZavrsniRadException ex) {
             lblPoruka.setText(ex.getPoruka());
         }
-        
-        
-        
+
+        lblPoruka.setText("Uspješno dodan zaposlenik: " + entitet.getImePrezime() + " !");
+
 
     }//GEN-LAST:event_btnDodajActionPerformed
 
@@ -361,6 +360,8 @@ public class Zaposlenici extends javax.swing.JFrame {
             lblPoruka.setText(e.getPoruka());
         }
 
+        lblPoruka.setText("Uspješno promijenjen zaposlenik: " + entitet.getImePrezime() + " !");
+
     }//GEN-LAST:event_btnPromijeniActionPerformed
 
     private void btnObrisiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnObrisiActionPerformed
@@ -378,6 +379,9 @@ public class Zaposlenici extends javax.swing.JFrame {
         } catch (ZavrsniRadException e) {
             lblPoruka.setText(e.getPoruka());
         }
+
+        lblPoruka.setText("Uspješno obrisan zaposlenik: " + entitet.getImePrezime() + " !");
+
     }//GEN-LAST:event_btnObrisiActionPerformed
 
     private void btnTraziActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTraziActionPerformed
@@ -416,9 +420,8 @@ public class Zaposlenici extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void ucitajPodatke() {
-       DefaultListModel<Zaposlenik> z = new DefaultListModel<>();
+        DefaultListModel<Zaposlenik> z = new DefaultListModel<>();
 
-      
         obrada.getPodaci(txtUvjet.getText()).forEach(s -> z.addElement(s));
 
         lstZaposlenici.setModel(z);
