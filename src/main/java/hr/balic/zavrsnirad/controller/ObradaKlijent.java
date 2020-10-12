@@ -30,7 +30,7 @@ public class ObradaKlijent extends ObradaOsoba<Klijent> {
                 + " where concat(k.ime, ' ', k.prezime) "
                 + " like :uvjet ")
                 .setParameter("uvjet", "%" + uvjet + "%")
-                .setMaxResults(20)
+                .setMaxResults(100)
                 .list();
     }
 

@@ -344,6 +344,7 @@ public class Klijenti extends javax.swing.JFrame {
             obrada.create();
             ucitajPodatke();
             ocistiPolja();
+            lblPoruka.setText("Uspješno dodan klijent: " + entitet.getImePrezime().toUpperCase() + "!");
         } catch (ZavrsniRadException ex) {
             lblPoruka.setText(ex.getPoruka());
         }
@@ -361,7 +362,7 @@ public class Klijenti extends javax.swing.JFrame {
             obrada.update();
             ucitajPodatke();
             ocistiPolja();
-
+            lblPoruka.setText("Uspješno izmijenjen klijent: " + entitet.getImePrezime().toUpperCase() + "!");
         } catch (ZavrsniRadException e) {
             lblPoruka.setText(e.getPoruka());
         }
@@ -380,6 +381,7 @@ public class Klijenti extends javax.swing.JFrame {
             obrada.delete();
             ucitajPodatke();
             ocistiPolja();
+            lblPoruka.setText("Uspješno obrisan klijent: " + entitet.getImePrezime().toUpperCase() + "!");
         } catch (ZavrsniRadException e) {
             lblPoruka.setText(e.getPoruka());
         }

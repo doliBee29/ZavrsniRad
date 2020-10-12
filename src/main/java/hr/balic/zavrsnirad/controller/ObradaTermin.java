@@ -7,6 +7,7 @@ package hr.balic.zavrsnirad.controller;
 
 import hr.balic.zavrsnirad.model.Klijent;
 import hr.balic.zavrsnirad.model.Termin;
+import hr.balic.zavrsnirad.model.Usluga;
 import hr.balic.zavrsnirad.utility.ZavrsniRadException;
 import java.util.List;
 
@@ -30,7 +31,14 @@ public class ObradaTermin extends Obrada<Termin> {
 
     }
     
-    
+    public List<Usluga> getPodaci(String uvjet) {
+        return session.createQuery("from Termin t"
+                + " where concat(t.id + ' ' + t.vrijemepocetka) "
+                + " like :uvjet ")
+                .setParameter("uvjet", "%" + uvjet + "%")
+                .setMaxResults(100)
+                .list();
+    }
    
 
     @Override

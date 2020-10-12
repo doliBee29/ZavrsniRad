@@ -335,11 +335,10 @@ public class Zaposlenici extends javax.swing.JFrame {
             obrada.create();
             ucitajPodatke();
             ocistiPolja();
+            lblPoruka.setText("Uspješno dodan zaposlenik: " + entitet.getImePrezime().toUpperCase() + "!");
         } catch (ZavrsniRadException ex) {
             lblPoruka.setText(ex.getPoruka());
         }
-
-        lblPoruka.setText("Uspješno dodan zaposlenik: " + entitet.getImePrezime() + " !");
 
 
     }//GEN-LAST:event_btnDodajActionPerformed
@@ -355,12 +354,11 @@ public class Zaposlenici extends javax.swing.JFrame {
             obrada.update();
             ucitajPodatke();
             ocistiPolja();
-
+            lblPoruka.setText("Uspješno promijenjen zaposlenik: " + entitet.getImePrezime().toUpperCase() + "!");
         } catch (ZavrsniRadException e) {
             lblPoruka.setText(e.getPoruka());
         }
 
-        lblPoruka.setText("Uspješno promijenjen zaposlenik: " + entitet.getImePrezime() + " !");
 
     }//GEN-LAST:event_btnPromijeniActionPerformed
 
@@ -376,11 +374,12 @@ public class Zaposlenici extends javax.swing.JFrame {
             obrada.delete();
             ucitajPodatke();
             ocistiPolja();
+            lblPoruka.setText("Uspješno obrisan zaposlenik: " + entitet.getImePrezime() + " !");
         } catch (ZavrsniRadException e) {
             lblPoruka.setText(e.getPoruka());
         }
 
-        lblPoruka.setText("Uspješno obrisan zaposlenik: " + entitet.getImePrezime() + " !");
+        
 
     }//GEN-LAST:event_btnObrisiActionPerformed
 

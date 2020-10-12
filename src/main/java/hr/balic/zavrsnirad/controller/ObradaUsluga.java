@@ -35,7 +35,7 @@ public class ObradaUsluga extends Obrada<Usluga> {
                 + " where concat(u.naziv) "
                 + " like :uvjet ")
                 .setParameter("uvjet", "%" + uvjet + "%")
-                .setMaxResults(20)
+                .setMaxResults(100)
                 .list();
     }
 
@@ -43,7 +43,8 @@ public class ObradaUsluga extends Obrada<Usluga> {
     protected void kontrolaCreate() throws ZavrsniRadException {
         kontrolaNaziv();
         kontrolaCijena();
-        
+        kontrolaVrstaUsluge();
+        kontrolaZaposlenik();
     }
 
     @Override
@@ -89,6 +90,19 @@ public class ObradaUsluga extends Obrada<Usluga> {
             throw new ZavrsniRadException(poruka);
         }
 
+    }
+
+    private void kontrolaVrstaUsluge() throws ZavrsniRadException{
+        if(entitet.getVrsta()==null) {
+          throw new ZavrsniRadException("Obavezan odabir usluge iz padajućeg izbornika!");   
+        }
+        
+    }
+    
+    private void kontrolaZaposlenik() throws ZavrsniRadException {
+        if(entitet.getZaposlenik() == null) {
+            throw new ZavrsniRadException("Obavezan odabir zaposlenika iz padajućeg izbornika!");
+        }
     }
 
    
