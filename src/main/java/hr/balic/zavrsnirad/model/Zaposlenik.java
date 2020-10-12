@@ -5,10 +5,13 @@
  */
 package hr.balic.zavrsnirad.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -17,11 +20,8 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Zaposlenik extends Osoba {
 
-   
-
 //    @ManyToOne
 //    private Usluga usluga;
-
     @Enumerated(EnumType.STRING)
     private Zanimanje zanimanje;
 
@@ -34,15 +34,8 @@ public class Zaposlenik extends Osoba {
 
     }
 
-//    public Usluga getUsluga() {
-//        return usluga;
-//    }
-//
-//    public void setUsluga(Usluga usluga) {
-//        this.usluga = usluga;
-//    }
-
-    
+    @OneToMany(mappedBy = "zaposlenik")
+    private List<Termin> termini = new ArrayList<>();
 
     public Zanimanje getZanimanje() {
         return zanimanje;
@@ -52,12 +45,19 @@ public class Zaposlenik extends Osoba {
         this.zanimanje = zanimanje;
     }
 
+    public List<Termin> getTermini() {
+        return termini;
+    }
+
+    public void setTermini(List<Termin> termini) {
+        this.termini = termini;
+    }
+
+    
+    
     @Override
     public String toString() {
         return getIme() + " " + getPrezime() + " - " + getZanimanje();
     }
 
-   
-
-    
 }

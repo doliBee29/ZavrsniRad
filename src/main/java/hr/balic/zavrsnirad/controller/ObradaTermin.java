@@ -35,6 +35,7 @@ public class ObradaTermin extends Obrada<Termin> {
 
     @Override
     protected void kontrolaCreate() throws ZavrsniRadException {
+        
         kontrolaPocetakTermina();
         kontrolaZavrsetakTermina();
         kontrolaOtkazan();

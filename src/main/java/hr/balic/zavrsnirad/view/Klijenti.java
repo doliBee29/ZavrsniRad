@@ -8,18 +8,12 @@ package hr.balic.zavrsnirad.view;
 import hr.balic.zavrsnirad.controller.ObradaKlijent;
 import hr.balic.zavrsnirad.model.Klijent;
 import hr.balic.zavrsnirad.model.Klijent.Spol;
-import hr.balic.zavrsnirad.model.Zaposlenik;
-import hr.balic.zavrsnirad.model.Zaposlenik.Zanimanje;
 import hr.balic.zavrsnirad.utility.ZavrsniRadException;
-import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.KeyEvent;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
-import javax.swing.JComboBox;
 import javax.swing.JTextField;
-import javax.swing.UIManager;
-import javax.swing.plaf.ColorUIResource;
 
 /**
  *

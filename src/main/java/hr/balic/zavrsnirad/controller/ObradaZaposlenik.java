@@ -13,12 +13,10 @@ import java.util.List;
  *
  * @author Kira
  */
-public class ObradaZaposlenik extends ObradaOsoba <Zaposlenik> {
-
-  
+public class ObradaZaposlenik extends ObradaOsoba<Zaposlenik> {
 
     public ObradaZaposlenik() {
-       
+
     }
 
     @Override
@@ -26,7 +24,7 @@ public class ObradaZaposlenik extends ObradaOsoba <Zaposlenik> {
         return session.createQuery("from Zaposlenik").list();
 
     }
-    
+
     public List<Zaposlenik> getPodaci(String uvjet) {
         return session.createQuery("from Zaposlenik z "
                 + " where concat(z.ime, ' ', z.prezime, ' ', z.zanimanje) "
@@ -38,23 +36,33 @@ public class ObradaZaposlenik extends ObradaOsoba <Zaposlenik> {
 
     @Override
     protected void kontrolaCreate() throws ZavrsniRadException {
+        kontrolaIme();
+        kontrolaPrezime();
+        kontrolaEmail();
         kontrolaZanimanje();
     }
 
     @Override
     protected void kontrolaUpdate() throws ZavrsniRadException {
-
+        kontrolaIme();
+        kontrolaPrezime();
+        //kontrolaEmail();
+        kontrolaZanimanje();
     }
 
     @Override
     protected void kontrolaDelete() throws ZavrsniRadException {
-
-    }
+        if(entitet.getTermini().size()>0) {
+            throw new ZavrsniRadException("Zaposlenik se ne može obrisati jer ima ugovorene termine!");
+        }
+   }
 
     private void kontrolaZanimanje() throws ZavrsniRadException {
         if (entitet.getZanimanje() == null) {
             throw new ZavrsniRadException("Obavezan unos vrste zaposlenika(zanimanje)!");
         }
     }
+    
+    
 
 }

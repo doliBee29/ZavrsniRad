@@ -59,7 +59,8 @@ public abstract class ObradaOsoba<T extends Osoba> extends Obrada<T> {
         if (entitet.getEmail().isEmpty()) {
             throw new ZavrsniRadException("Email ne smije biti prazan!");
         }
-        if (entitet.getEmail().length() >= 50) {
+        //validacija s regexom zbog testiranja, kako bi se omogućio insert fake email adresa
+        if (!entitet.getEmail().matches("[a-zA-Z0-9]+[._a-zA-Z0-9!#$%&'*+-/=?^_`{|}~]*[a-zA-Z]*@[a-zA-Z0-9]{2,8}.[a-zA-Z.]{2,6}")) {
             throw new ZavrsniRadException("Email nije valjan!");
         }
 
