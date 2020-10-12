@@ -13,6 +13,7 @@ import hr.balic.zavrsnirad.model.Klijent;
 import hr.balic.zavrsnirad.model.Termin;
 import hr.balic.zavrsnirad.model.Usluga;
 import hr.balic.zavrsnirad.model.Zaposlenik;
+import hr.balic.zavrsnirad.utility.ExcelMaker;
 import hr.balic.zavrsnirad.utility.ZavrsniRadException;
 import java.awt.Component;
 import java.awt.event.KeyEvent;
@@ -43,6 +44,7 @@ public class Termini extends javax.swing.JFrame {
         obradaUsluga = new ObradaUsluga();
 
         ucitajPodatke();
+        ucitajUsluge();
 
         DefaultComboBoxModel<Klijent> kl = new DefaultComboBoxModel<>();
         new ObradaKlijent().getPodaci().forEach(s -> {
@@ -424,8 +426,13 @@ public class Termini extends javax.swing.JFrame {
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\iconfinder_logo_brand_brands_logos_word_2993664.png")); // NOI18N
-        jButton1.setText("jButton1");
+        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\iconfinder_logo_brand_brands_logos_excel_2993694.png")); // NOI18N
+        jButton1.setText("Export");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -554,7 +561,7 @@ public class Termini extends javax.swing.JFrame {
             obrada.create();
             ucitajPodatke();
             ocistiPolja();
-
+            lblPoruka.setText("Uspješno dodan termin!");
         } catch (ZavrsniRadException ex) {
             lblPoruka.setText(ex.getPoruka());
         }
@@ -571,7 +578,7 @@ public class Termini extends javax.swing.JFrame {
             obrada.update();
             ucitajPodatke();
             ocistiPolja();
-
+            lblPoruka.setText("Uspješno izmijenjen termin!");
         } catch (ZavrsniRadException e) {
             lblPoruka.setText(e.getPoruka());
         }
@@ -589,6 +596,7 @@ public class Termini extends javax.swing.JFrame {
             obrada.delete();
             ucitajPodatke();
             ocistiPolja();
+            lblPoruka.setText("Uspješno obrisan termin!");
         } catch (ZavrsniRadException e) {
             lblPoruka.setText(e.getPoruka());
         }
@@ -653,6 +661,10 @@ public class Termini extends javax.swing.JFrame {
     private void jLabel6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MousePressed
         new PosaljiEmail().setVisible(true);
     }//GEN-LAST:event_jLabel6MousePressed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        ExcelMaker.terminUExcel(obrada.getPodaci());
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
