@@ -5,6 +5,7 @@
  */
 package hr.balic.zavrsnirad.utility;
 
+import hr.balic.zavrsnirad.model.Klijent;
 import hr.balic.zavrsnirad.model.Termin;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -29,19 +30,12 @@ public class ExcelMaker {
     private static final String FILTER_DESC = "Excel datoteka(.xls)";
     private static final String FILTER_EXTENSION = "xls";
     private static final String FILTER_TITLE = "Odaberite datoteku za pohranu";
-    private static SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
-    
-    
+    private static SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy.");
 
     private static String getFilepath(String name) {
 
         FileNameExtensionFilter filter = new FileNameExtensionFilter(FILTER_DESC, FILTER_EXTENSION);
 
-//        try {
-//            UIManager.setLookAndFeel(new DarculaLaf());
-//        } catch (UnsupportedLookAndFeelException ex) {
-//            Logger.getLogger(ExcelMaker.class.getName()).log(Level.SEVERE, null, ex);
-//        }
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setFileFilter(filter);
         fileChooser.setDialogTitle(FILTER_TITLE);
@@ -51,11 +45,7 @@ public class ExcelMaker {
         if (userSelection == JFileChooser.APPROVE_OPTION) {
             return fileChooser.getSelectedFile().getAbsolutePath();
         }
-//        try {
-//            UIManager.setLookAndFeel(new NimbusLookAndFeel());
-//        } catch (UnsupportedLookAndFeelException ex) {
-//            Logger.getLogger(ExcelMaker.class.getName()).log(Level.SEVERE, null, ex);
-//      }
+
         return null;
 
     }
@@ -84,19 +74,19 @@ public class ExcelMaker {
             kolona = 0;
             row = wb.getSheetAt(0).createRow(red++);
             cell = row.createCell(kolona++);
-            cell.setCellValue("Broj termina");
+            cell.setCellValue("BROJ TERMINA");
             cell = row.createCell(kolona++);
-            cell.setCellValue("Ime klijenta");
+            cell.setCellValue("IME KLIJENTA");
             cell = row.createCell(kolona++);
-            cell.setCellValue("Prezime klijenta");
+            cell.setCellValue("PREZIME KLIJENTA");
             cell = row.createCell(kolona++);
-            cell.setCellValue("Vrijeme početka");
+            cell.setCellValue("VRIJEME POČETKA");
             cell = row.createCell(kolona++);
-            cell.setCellValue("Vrijeme završetka");
+            cell.setCellValue("VRIJEME ZAVRŠETKA");
             cell = row.createCell(kolona++);
-            cell.setCellValue("Zaposlenik");
+            cell.setCellValue("ZAPOSLENIK");
             cell = row.createCell(kolona);
-            cell.setCellValue("Otkazan");
+            cell.setCellValue("OTKAZAN");
 
             for (Termin t : termini) {
 
@@ -134,4 +124,59 @@ public class ExcelMaker {
         fileOut.close();
     }
 
+    public static void klijentiUExcel(List<Klijent> klijenti) {
+
+        String filepath = getFilepath("Klijenti " + sdf.format(new Date()));
+
+        if (filepath == null) {
+
+            return;
+        }
+
+        try {
+
+            HSSFWorkbook wb = new HSSFWorkbook();
+
+            Row row;
+            Cell cell;
+            int red = 0;
+            int kolona;
+
+            wb.createSheet("Klijenti");
+            kolona = 0;
+            row = wb.getSheetAt(0).createRow(red++);
+            cell = row.createCell(kolona++);
+            cell.setCellValue("IME");
+            cell = row.createCell(kolona++);
+            cell.setCellValue("PREZIME");
+            cell = row.createCell(kolona++);
+            cell.setCellValue("E-MAIL");
+            cell = row.createCell(kolona++);
+            cell.setCellValue("KONTAKT BROJ");
+            cell = row.createCell(kolona);
+            cell.setCellValue("SPOL");
+
+            for (Klijent k : klijenti) {
+
+                kolona = 0;
+                row = wb.getSheetAt(0).createRow(red++);
+                cell = row.createCell(kolona++);
+                cell.setCellValue(k.getIme());
+                cell = row.createCell(kolona++);
+                cell.setCellValue(k.getPrezime());
+                cell = row.createCell(kolona++);
+                cell.setCellValue(k.getEmail());
+                cell = row.createCell(kolona++);
+                cell.setCellValue(k.getKontaktBroj());
+                cell = row.createCell(kolona);
+                cell.setCellValue(k.getSpol().toString());
+
+            }
+            
+            writeFile(wb, filepath);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
