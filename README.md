@@ -70,7 +70,8 @@ mogućnost uvida u sve kategorije aplikacije, dok operateri imaju mogućnost uvi
 <img src="https://github.com/doliBee29/ZavrsniRad/blob/master/src/main/resources/pics_screenshots/termini_mail_screenshot.PNG" />
 </p><br />
 
-<img src="https://github.com/doliBee29/ZavrsniRad/blob/master/src/main/resources/pics_screenshots/mail_poslan_screenshot.PNG" width ="425"/> <img src="https://github.com/doliBee29/ZavrsniRad/blob/master/src/main/resources/pics_screenshots/gmail_screenshot.PNG" /></p><br />
+<img src="https://github.com/doliBee29/ZavrsniRad/blob/master/src/main/resources/pics_screenshots/mail_poslan_screenshot.PNG" width="425"/> <img src="https://github.com/doliBee29/ZavrsniRad/blob/master/src/main/resources/pics_screenshots/gmail_screenshot.PNG" width="425"/> 
+
 <br />
 <br />
 
