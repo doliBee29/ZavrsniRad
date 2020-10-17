@@ -170,7 +170,7 @@ public class Klijenti extends javax.swing.JFrame {
             }
         });
 
-        lblPoruka.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblPoruka.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblPoruka.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout pnlPodaciLayout = new javax.swing.GroupLayout(pnlPodaci);
@@ -179,21 +179,18 @@ public class Klijenti extends javax.swing.JFrame {
             pnlPodaciLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlPodaciLayout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addGroup(pnlPodaciLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblPoruka, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(pnlPodaciLayout.createSequentialGroup()
-                        .addGroup(pnlPodaciLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtIme, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtPrezime, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtKontaktBroj, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cmbxSpol, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 66, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGroup(pnlPodaciLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txtIme, javax.swing.GroupLayout.DEFAULT_SIZE, 308, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtPrezime)
+                    .addComponent(txtKontaktBroj)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtEmail)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cmbxSpol, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPoruka, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlPodaciLayout.setVerticalGroup(
             pnlPodaciLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,8 +213,9 @@ public class Klijenti extends javax.swing.JFrame {
                 .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(cmbxSpol, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lblPoruka, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblPoruka, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5))
         );
 
         btnDodaj.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/icons8_add_user_group_woman_man_30px.png"))); // NOI18N
@@ -286,14 +284,14 @@ public class Klijenti extends javax.swing.JFrame {
                                     .addComponent(btnTrazi, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(73, 73, 73)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(btnDodaj, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(24, 24, 24)
                                 .addComponent(btnPromijeni, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnObrisi, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(pnlPodaci, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(pnlPodaci, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(56, Short.MAX_VALUE))
         );
 
@@ -371,6 +369,8 @@ public class Klijenti extends javax.swing.JFrame {
 
     private void btnPromijeniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPromijeniActionPerformed
         entitet = lstKlijenti.getSelectedValue();
+        
+        
         if (entitet == null) {
             return;
         }
@@ -380,7 +380,7 @@ public class Klijenti extends javax.swing.JFrame {
             obrada.update();
             ucitajPodatke();
             ocistiPolja();
-            lblPoruka.setText("Uspješno izmijenjen klijent: " + entitet.getImePrezime().toUpperCase() + "!");
+            lblPoruka.setText("Uspješno izmijenjen klijent!");
         } catch (ZavrsniRadException e) {
             lblPoruka.setText(e.getPoruka());
         }
@@ -399,7 +399,7 @@ public class Klijenti extends javax.swing.JFrame {
             obrada.delete();
             ucitajPodatke();
             ocistiPolja();
-            lblPoruka.setText("Uspješno obrisan klijent: " + entitet.getImePrezime().toUpperCase() + "!");
+            lblPoruka.setText("Uspješno obrisan klijent!");
         } catch (ZavrsniRadException e) {
             lblPoruka.setText(e.getPoruka());
         }

@@ -119,6 +119,7 @@ public class Termini extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         lblPoruka = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         btnDodaj = new javax.swing.JButton();
         btnPromijeni = new javax.swing.JButton();
         btnObrisi = new javax.swing.JButton();
@@ -224,10 +225,11 @@ public class Termini extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
 
         lblPoruka.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lblPoruka.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        lblPoruka.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        lblPoruka.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblPoruka.setForeground(new java.awt.Color(255, 255, 255));
         lblPoruka.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+
+        jLabel10.setText("jLabel10");
 
         javax.swing.GroupLayout pnlPodaciLayout = new javax.swing.GroupLayout(pnlPodaci);
         pnlPodaci.setLayout(pnlPodaciLayout);
@@ -236,7 +238,6 @@ public class Termini extends javax.swing.JFrame {
             .addGroup(pnlPodaciLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlPodaciLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblPoruka, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pnlPodaciLayout.createSequentialGroup()
                         .addGroup(pnlPodaciLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cmbxZaposlenik, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -246,9 +247,10 @@ public class Termini extends javax.swing.JFrame {
                                 .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(dtpPocetak, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(cmbxKlijent, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 28, Short.MAX_VALUE)))
-                .addContainerGap())
+                            .addComponent(cmbxKlijent, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel10))
+                        .addContainerGap(38, Short.MAX_VALUE))
+                    .addComponent(lblPoruka, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         pnlPodaciLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {chbxOtkazan, cmbxKlijent, cmbxZaposlenik, dtpPocetak, dtpZavrsetak});
@@ -270,8 +272,11 @@ public class Termini extends javax.swing.JFrame {
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dtpZavrsetak, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lblPoruka, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblPoruka, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pnlPodaciLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {chbxOtkazan, cmbxKlijent, cmbxZaposlenik});
@@ -740,6 +745,7 @@ public class Termini extends javax.swing.JFrame {
     private com.github.lgooddatepicker.components.DateTimePicker dtpZavrsetak;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

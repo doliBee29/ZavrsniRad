@@ -169,7 +169,7 @@ public class Usluge extends javax.swing.JFrame {
 
         txtCijena.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
 
-        lblPoruka.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblPoruka.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblPoruka.setForeground(new java.awt.Color(255, 255, 255));
 
         cmbxVrstaUsluge.addActionListener(new java.awt.event.ActionListener() {
@@ -383,7 +383,7 @@ public class Usluge extends javax.swing.JFrame {
             obrada.update();
             ucitajPodatke();
             ocistiPolja();
-            lblPoruka.setText("Uspješno izmijenjena usluga pod nazivom : " + entitet.getNaziv().toUpperCase() + "!");
+            lblPoruka.setText("Uspješno ste izmijenili uslugu!");
 
         } catch (ZavrsniRadException e) {
             lblPoruka.setText(e.getPoruka());
@@ -404,7 +404,7 @@ public class Usluge extends javax.swing.JFrame {
             obrada.delete();
             ucitajPodatke();
             ocistiPolja();
-            lblPoruka.setText("Uspješno izbrisana usluga pod nazivom : " + entitet.getNaziv().toUpperCase() + "!");
+            lblPoruka.setText("Uspješno ste izbrisali uslugu!");
         } catch (ZavrsniRadException e) {
             lblPoruka.setText(e.getPoruka());
         }

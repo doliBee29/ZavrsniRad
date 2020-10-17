@@ -6,18 +6,13 @@
 package hr.balic.zavrsnirad.view;
 
 import hr.balic.zavrsnirad.controller.ObradaZaposlenik;
-import hr.balic.zavrsnirad.model.Klijent;
-import hr.balic.zavrsnirad.model.Klijent.Spol;
 import hr.balic.zavrsnirad.model.Zaposlenik;
 import hr.balic.zavrsnirad.model.Zaposlenik.Zanimanje;
 import hr.balic.zavrsnirad.utility.ZavrsniRadException;
 import java.awt.Component;
 import java.awt.event.KeyEvent;
-import javax.mail.internet.AddressException;
-import javax.mail.internet.InternetAddress;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -165,7 +160,7 @@ public class Zaposlenici extends javax.swing.JFrame {
             }
         });
 
-        lblPoruka.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        lblPoruka.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblPoruka.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout pnlPodaciLayout = new javax.swing.GroupLayout(pnlPodaci);
@@ -354,7 +349,7 @@ public class Zaposlenici extends javax.swing.JFrame {
             obrada.update();
             ucitajPodatke();
             ocistiPolja();
-            lblPoruka.setText("Uspješno promijenjen zaposlenik: " + entitet.getImePrezime().toUpperCase() + "!");
+            lblPoruka.setText("Uspješno ste promijenili zaposlenika!");
         } catch (ZavrsniRadException e) {
             lblPoruka.setText(e.getPoruka());
         }
@@ -374,7 +369,7 @@ public class Zaposlenici extends javax.swing.JFrame {
             obrada.delete();
             ucitajPodatke();
             ocistiPolja();
-            lblPoruka.setText("Uspješno obrisan zaposlenik: " + entitet.getImePrezime() + " !");
+            lblPoruka.setText("Uspješno ste obrisali zaposlenik!");
         } catch (ZavrsniRadException e) {
             lblPoruka.setText(e.getPoruka());
         }

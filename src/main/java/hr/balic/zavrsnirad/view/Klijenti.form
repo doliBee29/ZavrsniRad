@@ -64,7 +64,7 @@
                               <Component id="jButton1" linkSize="1" min="-2" pref="108" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="btnDodaj" linkSize="1" min="-2" pref="124" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
@@ -72,7 +72,7 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="btnObrisi" min="-2" pref="124" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="pnlPodaci" min="-2" max="-2" attributes="0"/>
+                              <Component id="pnlPodaci" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -256,24 +256,19 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="lblPoruka" max="32767" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="txtIme" min="-2" pref="308" max="-2" attributes="0"/>
-                                  <Component id="jLabel4" min="-2" pref="67" max="-2" attributes="0"/>
-                                  <Component id="jLabel5" min="-2" pref="67" max="-2" attributes="0"/>
-                                  <Component id="txtPrezime" min="-2" pref="308" max="-2" attributes="0"/>
-                                  <Component id="txtKontaktBroj" min="-2" pref="308" max="-2" attributes="0"/>
-                                  <Component id="jLabel7" min="-2" pref="67" max="-2" attributes="0"/>
-                                  <Component id="txtEmail" min="-2" pref="308" max="-2" attributes="0"/>
-                                  <Component id="jLabel6" alignment="0" min="-2" pref="112" max="-2" attributes="0"/>
-                                  <Component id="cmbxSpol" alignment="0" min="-2" pref="151" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="0" pref="66" max="32767" attributes="0"/>
-                          </Group>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="txtIme" pref="308" max="32767" attributes="0"/>
+                          <Component id="jLabel4" min="-2" pref="67" max="-2" attributes="0"/>
+                          <Component id="jLabel5" min="-2" pref="67" max="-2" attributes="0"/>
+                          <Component id="txtPrezime" max="32767" attributes="0"/>
+                          <Component id="txtKontaktBroj" max="32767" attributes="0"/>
+                          <Component id="jLabel7" min="-2" pref="67" max="-2" attributes="0"/>
+                          <Component id="txtEmail" max="32767" attributes="0"/>
+                          <Component id="jLabel6" alignment="0" min="-2" pref="112" max="-2" attributes="0"/>
+                          <Component id="cmbxSpol" alignment="0" min="-2" pref="151" max="-2" attributes="0"/>
+                          <Component id="lblPoruka" alignment="0" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -298,8 +293,9 @@
                       <Component id="txtEmail" min="-2" pref="35" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Component id="cmbxSpol" min="-2" pref="33" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="lblPoruka" pref="32" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lblPoruka" min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -396,7 +392,7 @@
             <Component class="javax.swing.JLabel" name="lblPoruka">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="0"/>
+                  <Font name="Tahoma" size="14" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
