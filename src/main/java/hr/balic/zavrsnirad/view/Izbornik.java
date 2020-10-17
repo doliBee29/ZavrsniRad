@@ -348,7 +348,7 @@ public class Izbornik extends javax.swing.JFrame {
         lblDateTime.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         lblInstagram.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblInstagram.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\iconfinder_social_media_social_media_logo_instagram_2993766.png")); // NOI18N
+        lblInstagram.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/iconfinder_social-instagram-new-circle_1164349.png"))); // NOI18N
         lblInstagram.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 lblInstagramMouseReleased(evt);
@@ -356,7 +356,7 @@ public class Izbornik extends javax.swing.JFrame {
         });
 
         lblFacebook.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblFacebook.setIcon(new javax.swing.ImageIcon("C:\\Users\\Kira\\Desktop\\iconfinder_social_media_social_media_logo_facebook_2993778.png")); // NOI18N
+        lblFacebook.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/iconfinder_social-facebook-circle_771367 (1).png"))); // NOI18N
         lblFacebook.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 lblFacebookMouseReleased(evt);

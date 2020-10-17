@@ -498,7 +498,7 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Kira\Desktop\iconfinder_social_media_social_media_logo_instagram_2993766.png"/>
+              <Image iconType="3" name="/icons/iconfinder_social-instagram-new-circle_1164349.png"/>
             </Property>
           </Properties>
           <Events>
@@ -509,7 +509,7 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Kira\Desktop\iconfinder_social_media_social_media_logo_facebook_2993778.png"/>
+              <Image iconType="3" name="/icons/iconfinder_social-facebook-circle_771367 (1).png"/>
             </Property>
           </Properties>
           <Events>

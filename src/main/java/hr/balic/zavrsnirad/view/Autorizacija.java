@@ -182,7 +182,7 @@ public class Autorizacija extends javax.swing.JFrame {
         );
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\jp22\\ZavrsniRad\\src\\main\\resources\\pics_screenshots\\autorizacija.jpg")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pics_screenshots/autorizacija.jpg"))); // NOI18N
         jLabel3.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

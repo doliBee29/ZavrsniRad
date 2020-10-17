@@ -283,7 +283,7 @@
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="D:\jp22\ZavrsniRad\src\main\resources\pics_screenshots\autorizacija.jpg"/>
+              <Image iconType="3" name="/pics_screenshots/autorizacija.jpg"/>
             </Property>
             <Property name="verticalAlignment" type="int" value="3"/>
           </Properties>
