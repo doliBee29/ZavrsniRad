@@ -92,7 +92,7 @@ public class Termin extends Entitet {
 
     @Override
     public String toString() {
-        return getId() +". TERMIN:" + "Klijent(" + getKlijent() + ")" + " [Zaposlenik:" + getZaposlenik().getImePrezime() +"] ";
+        return getId() +". TERMIN:" + "Klijent(" + getKlijent() + ")";
                  
     }
 

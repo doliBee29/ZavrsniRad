@@ -47,6 +47,8 @@ public class ObradaTermin extends Obrada<Termin> {
         kontrolaPocetakTermina();
         kontrolaZavrsetakTermina();
         kontrolaOtkazan();
+        kontrolaUsluge();
+        
     }
 
     @Override
@@ -80,4 +82,14 @@ public class ObradaTermin extends Obrada<Termin> {
         }
 
     }
-}
+
+    private void kontrolaUsluge() throws ZavrsniRadException{
+        if(entitet.getUsluge().isEmpty()) {
+            throw new ZavrsniRadException("Obavezan odabir usluge!");
+        }
+    }
+
+
+       
+    }
+

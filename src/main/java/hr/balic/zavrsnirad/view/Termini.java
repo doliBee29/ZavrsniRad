@@ -5,6 +5,7 @@
  */
 package hr.balic.zavrsnirad.view;
 
+import com.github.lgooddatepicker.components.DatePickerSettings;
 import hr.balic.zavrsnirad.controller.ObradaKlijent;
 import hr.balic.zavrsnirad.controller.ObradaTermin;
 import hr.balic.zavrsnirad.controller.ObradaUsluga;
@@ -20,6 +21,7 @@ import java.awt.event.KeyEvent;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Locale;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JTextField;
@@ -63,6 +65,13 @@ public class Termini extends javax.swing.JFrame {
         cmbxZaposlenik.setRenderer(new MyComboBoxRenderer("Zaposlenici"));
         cmbxZaposlenik.setSelectedIndex(-1);
 
+        DatePickerSettings dps = new DatePickerSettings(new Locale("hr", "HR"));
+        dps.setFormatForDatesBeforeCommonEra("dd.MM.yyyy");
+        dtpPocetak.datePicker.setSettings(dps);
+
+        DatePickerSettings dps1 = new DatePickerSettings(new Locale("hr", "HR"));
+        dps1.setFormatForDatesBeforeCommonEra("dd.MM.yyyy");
+        dtpZavrsetak.datePicker.setSettings(dps1);
     }
 
     /**
@@ -278,6 +287,7 @@ public class Termini extends javax.swing.JFrame {
         lstUslugeUBazi.setForeground(new java.awt.Color(255, 255, 255));
         jScrollPane2.setViewportView(lstUslugeUBazi);
 
+        lstUslugeUTerminu.setModel(new DefaultListModel());
         lstUslugeUTerminu.setBackground(new java.awt.Color(23, 35, 51));
         lstUslugeUTerminu.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lstUslugeUTerminu.setForeground(new java.awt.Color(255, 255, 255));
@@ -423,7 +433,7 @@ public class Termini extends javax.swing.JFrame {
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jButton1.setIcon(new javax.swing.ImageIcon("D:\\jp22\\ZavrsniRad\\src\\main\\resources\\icons\\iconfinder_logo_brand_brands_logos_excel_2993694.png")); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/iconfinder_logo_brand_brands_logos_excel_2993694.png"))); // NOI18N
         jButton1.setText("Export");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -543,9 +553,9 @@ public class Termini extends javax.swing.JFrame {
         if (null != entitet.getVrijemeZavrsetka()) {
             dtpZavrsetak.setDateTimePermissive(entitet.getVrijemeZavrsetka().toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime());
         }
-        
+
         DefaultListModel<Usluga> m = new DefaultListModel<>();
-        for (Usluga u: entitet.getUsluge()) {
+        for (Usluga u : entitet.getUsluge()) {
             m.addElement(u);
         }
         lstUslugeUTerminu.setModel(m);
@@ -559,12 +569,15 @@ public class Termini extends javax.swing.JFrame {
 
         try {
             obrada.create();
+
             ucitajPodatke();
             ocistiPolja();
             lblPoruka.setText("Uspješno dodan termin!");
         } catch (ZavrsniRadException ex) {
             lblPoruka.setText(ex.getPoruka());
         }
+
+
     }//GEN-LAST:event_btnDodajActionPerformed
 
     private void btnPromijeniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPromijeniActionPerformed
@@ -613,7 +626,7 @@ public class Termini extends javax.swing.JFrame {
     }//GEN-LAST:event_btnTraziActionPerformed
 
     private void btnDodajUsluguUTerminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDodajUsluguUTerminActionPerformed
-         DefaultListModel<Usluga> m;
+        DefaultListModel<Usluga> m;
         try {
             m = (DefaultListModel<Usluga>) lstUslugeUTerminu.getModel();
             m.get(0).toString();
@@ -639,14 +652,13 @@ public class Termini extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDodajUsluguUTerminActionPerformed
 
     private void btnMakniUsluguIzTerminaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMakniUsluguIzTerminaActionPerformed
-            DefaultListModel<Usluga> m;
+        DefaultListModel<Usluga> m;
         try {
             m = (DefaultListModel<Usluga>) lstUslugeUTerminu.getModel();
         } catch (Exception e) {
             return;
         }
 
-        
         for (Usluga u : lstUslugeUTerminu.getSelectedValuesList()) {
             for (int i = 0; i < m.size(); i++) {
                 if (u.getId().equals(m.getElementAt(i).getId())) {
@@ -728,13 +740,13 @@ public class Termini extends javax.swing.JFrame {
         if (dtpZavrsetak.getDateTimePermissive() != null) {
             entitet.setVrijemeZavrsetka(Date.from(dtpZavrsetak.getDateTimePermissive().atZone(ZoneId.systemDefault()).toInstant()));
         }
-        
+
         entitet.setUsluge(new ArrayList<>());
         DefaultListModel<Usluga> m = (DefaultListModel<Usluga>) lstUslugeUTerminu.getModel();
         for (int i = 0; i < m.size(); i++) {
             entitet.getUsluge().add(m.getElementAt(i));
         }
-
+        
         obrada.setEntitet(entitet);
     }
 
@@ -748,11 +760,12 @@ public class Termini extends javax.swing.JFrame {
     }
 
     private void ucitajUsluge() {
-         DefaultListModel<Usluga> m = new DefaultListModel<>();
+        DefaultListModel<Usluga> m = new DefaultListModel<>();
 
         obradaUsluga.getPodaci(txtUvjet.getText()).forEach(s -> m.addElement(s));
 
         lstUslugeUBazi.setModel(m);
-    
+
     }
+
 }
