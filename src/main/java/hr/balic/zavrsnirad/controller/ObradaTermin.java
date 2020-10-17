@@ -10,6 +10,7 @@ import hr.balic.zavrsnirad.model.Termin;
 import hr.balic.zavrsnirad.model.Usluga;
 import hr.balic.zavrsnirad.utility.ZavrsniRadException;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -30,7 +31,7 @@ public class ObradaTermin extends Obrada<Termin> {
         return session.createQuery("from Termin").list();
 
     }
-    
+
     public List<Usluga> getPodaci(String uvjet) {
         return session.createQuery("from Termin t"
                 + " where concat(t.id + ' ' + t.vrijemepocetka) "
@@ -39,16 +40,17 @@ public class ObradaTermin extends Obrada<Termin> {
                 .setMaxResults(100)
                 .list();
     }
-   
 
     @Override
     protected void kontrolaCreate() throws ZavrsniRadException {
-        
+
+        kontrolaKlijent();
+        kontrolaZaposlenik();
+        kontrolaOtkazan();
         kontrolaPocetakTermina();
         kontrolaZavrsetakTermina();
-        kontrolaOtkazan();
         kontrolaUsluge();
-        
+
     }
 
     @Override
@@ -58,7 +60,7 @@ public class ObradaTermin extends Obrada<Termin> {
 
     @Override
     protected void kontrolaDelete() throws ZavrsniRadException {
-
+        kontrolaBrisanjaUslugaTermin();
     }
 
     private void kontrolaPocetakTermina() throws ZavrsniRadException {
@@ -83,13 +85,34 @@ public class ObradaTermin extends Obrada<Termin> {
 
     }
 
-    private void kontrolaUsluge() throws ZavrsniRadException{
-        if(entitet.getUsluge().isEmpty()) {
+    private void kontrolaUsluge() throws ZavrsniRadException {
+        if (entitet.getUsluge().isEmpty()) {
             throw new ZavrsniRadException("Obavezan odabir usluge!");
         }
     }
 
+    private void kontrolaKlijent() throws ZavrsniRadException {
 
-       
+        if (entitet.getKlijent() == null) {
+            throw new ZavrsniRadException("Obavezno je odabrati klijenta iz padajućeg izbornika!");
+        }
     }
+
+    private void kontrolaZaposlenik() throws ZavrsniRadException {
+        if (entitet.getZaposlenik() == null) {
+            throw new ZavrsniRadException("Obavezno je odabrati zaposlenika iz padajućeg izbornika!");
+        }
+    }
+
+    private void kontrolaBrisanjaUslugaTermin() throws ZavrsniRadException {
+
+       if (!entitet.getUsluge().isEmpty()) {
+            throw new ZavrsniRadException("NIJE MOGUĆE OBRISATI TERMIN! Pritisnite INFO gumb.");
+        }
+
+        }
+        
+   
+    }
+
 
