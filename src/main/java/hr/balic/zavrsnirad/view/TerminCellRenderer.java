@@ -23,6 +23,7 @@ public class TerminCellRenderer extends JLabel implements ListCellRenderer<Termi
 
     @Override
     public Component getListCellRendererComponent(JList<? extends Termin> list, Termin value, int index, boolean isSelected, boolean cellHasFocus) {
+        
         setText(value.getId()+". TERMIN: " + value.getVrijemePocetka() + " (" + value.getZaposlenik().getZanimanje()+ ")");
         if (isSelected) {
             setBackground(new Color(41,57,80));

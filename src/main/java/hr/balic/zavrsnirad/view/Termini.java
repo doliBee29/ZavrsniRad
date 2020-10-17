@@ -6,6 +6,8 @@
 package hr.balic.zavrsnirad.view;
 
 import com.github.lgooddatepicker.components.DatePickerSettings;
+import com.github.lgooddatepicker.components.TimePicker;
+import com.github.lgooddatepicker.components.TimePickerSettings;
 import hr.balic.zavrsnirad.controller.ObradaKlijent;
 import hr.balic.zavrsnirad.controller.ObradaTermin;
 import hr.balic.zavrsnirad.controller.ObradaUsluga;
@@ -19,6 +21,7 @@ import hr.balic.zavrsnirad.utility.ZavrsniRadException;
 import java.awt.Component;
 import java.awt.event.KeyEvent;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Locale;
@@ -72,6 +75,22 @@ public class Termini extends javax.swing.JFrame {
         DatePickerSettings dps1 = new DatePickerSettings(new Locale("hr", "HR"));
         dps1.setFormatForDatesBeforeCommonEra("dd.MM.yyyy");
         dtpZavrsetak.datePicker.setSettings(dps1);
+
+        
+        TimePickerSettings tps = new TimePickerSettings();
+        TimePicker tp = new TimePicker(tps);
+        tps.use24HourClockFormat();
+        tps.generatePotentialMenuTimes(TimePickerSettings.TimeIncrement.FifteenMinutes, null, null);
+        dtpPocetak.timePicker.getSettings().setFormatForMenuTimes(DateTimeFormatter.ISO_TIME);
+        dtpPocetak.timePicker.getSettings().setFormatForDisplayTime(DateTimeFormatter.ISO_TIME);
+
+        TimePickerSettings tps1 = new TimePickerSettings();
+        TimePicker tp1 = new TimePicker(tps);
+        tps.use24HourClockFormat();
+        tps.generatePotentialMenuTimes(TimePickerSettings.TimeIncrement.FifteenMinutes, null, null);
+        dtpZavrsetak.timePicker.getSettings().setFormatForMenuTimes(DateTimeFormatter.ISO_TIME);
+        dtpZavrsetak.timePicker.getSettings().setFormatForDisplayTime(DateTimeFormatter.ISO_TIME);
+
     }
 
     /**
@@ -746,7 +765,7 @@ public class Termini extends javax.swing.JFrame {
         for (int i = 0; i < m.size(); i++) {
             entitet.getUsluge().add(m.getElementAt(i));
         }
-        
+
         obrada.setEntitet(entitet);
     }
 
