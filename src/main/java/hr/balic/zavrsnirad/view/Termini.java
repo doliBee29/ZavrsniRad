@@ -20,6 +20,7 @@ import hr.balic.zavrsnirad.utility.ExcelMaker;
 import hr.balic.zavrsnirad.utility.ZavrsniRadException;
 import java.awt.Component;
 import java.awt.event.KeyEvent;
+import java.time.LocalTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -81,16 +82,19 @@ public class Termini extends javax.swing.JFrame {
         TimePickerSettings tps = new TimePickerSettings();
         TimePicker tp = new TimePicker(tps);
         tps.use24HourClockFormat();
-        tps.generatePotentialMenuTimes(TimePickerSettings.TimeIncrement.FifteenMinutes, null, null);
         dtpPocetak.timePicker.getSettings().setFormatForMenuTimes(DateTimeFormatter.ISO_TIME);
         dtpPocetak.timePicker.getSettings().setFormatForDisplayTime(DateTimeFormatter.ISO_TIME);
+        //dtpPocetak.timePicker.getSettings().generatePotentialMenuTimes(TimePickerSettings.TimeIncrement.FifteenMinutes, null, null);
+        dtpPocetak.timePicker.getSettings().generatePotentialMenuTimes(TimePickerSettings.TimeIncrement.FiveMinutes, LocalTime.of(7, 0), LocalTime.of(19, 0));
 
         TimePickerSettings tps1 = new TimePickerSettings();
         TimePicker tp1 = new TimePicker(tps);
         tps.use24HourClockFormat();
-        tps.generatePotentialMenuTimes(TimePickerSettings.TimeIncrement.FifteenMinutes, null, null);
         dtpZavrsetak.timePicker.getSettings().setFormatForMenuTimes(DateTimeFormatter.ISO_TIME);
         dtpZavrsetak.timePicker.getSettings().setFormatForDisplayTime(DateTimeFormatter.ISO_TIME);
+        //dtpZavrsetak.timePicker.getSettings().generatePotentialMenuTimes(TimePickerSettings.TimeIncrement.FifteenMinutes, null, null);
+        dtpZavrsetak.timePicker.getSettings().generatePotentialMenuTimes(TimePickerSettings.TimeIncrement.FiveMinutes, LocalTime.of(7, 0), LocalTime.of(20, 0));
+
 
     }
 
