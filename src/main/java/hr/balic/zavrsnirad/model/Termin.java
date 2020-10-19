@@ -33,7 +33,7 @@ public class Termin extends Entitet {
     private Klijent klijent;
             
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     @JoinTable(name = "usluga_termin", joinColumns = {
         @JoinColumn(name = "termin_id")},
             inverseJoinColumns = {

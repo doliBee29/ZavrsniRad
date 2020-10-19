@@ -8,6 +8,7 @@ package hr.balic.zavrsnirad.controller;
 import hr.balic.zavrsnirad.model.Termin;
 import hr.balic.zavrsnirad.model.Usluga;
 import hr.balic.zavrsnirad.utility.ZavrsniRadException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 /**
@@ -119,15 +120,20 @@ public class ObradaTermin extends Obrada<Termin> {
         }
 
     private void kontrolaZaposlenikTerminBaza() throws ZavrsniRadException {
+        
+        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm");
+        
        List<Termin> lista = session.createQuery(""
                + " from Termin t "
-               + " where t.vrijemePocetka=:vrijemePocetka and t.zaposlenik=:zaposlenik"
+               + " where t.vrijemePocetka=:vrijemePocetka and t.vrijemeZavrsetka=:vrijemeZavrsetka  and t.zaposlenik=:zaposlenik"
                )
                .setParameter("vrijemePocetka", entitet.getVrijemePocetka())
+               .setParameter("vrijemeZavrsetka", entitet.getVrijemeZavrsetka())
                .setParameter("zaposlenik", entitet.getZaposlenik())
                .list();
        if(lista.size()>0){
-           throw  new ZavrsniRadException("Zaposlenik " + lista.get(0).getZaposlenik().getImePrezime().toUpperCase() + "već ima ugovoren termin: " + lista.get(0).getVrijemePocetka() + ", odaberite drugo vrijeme početka termina");
+           throw  new ZavrsniRadException("Zaposlenik " + lista.get(0).getZaposlenik().getImePrezime().toUpperCase() + "već ima ugovoren termin: " + (sdf.format(lista.get(0).getVrijemePocetka()))
+                   + ", odaberite drugo vrijeme početka termina!");
        }
     }
         
