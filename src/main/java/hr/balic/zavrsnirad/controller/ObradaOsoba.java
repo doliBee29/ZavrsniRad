@@ -40,7 +40,7 @@ public abstract class ObradaOsoba<T extends Osoba> extends Obrada<T> {
             throw new ZavrsniRadException("Unos imena je obavezan!");
         }
 
-        if (!entitet.getIme().matches("[a-žA-Ž]+")) {
+        if (!entitet.getIme().matches("[a-žA-Ž\\s]+")) {
             throw new ZavrsniRadException("Ime ne može sadržavati brojeve!");
         }
 
@@ -50,7 +50,7 @@ public abstract class ObradaOsoba<T extends Osoba> extends Obrada<T> {
         if (entitet.getPrezime().isEmpty() || entitet.getPrezime() == null) {
             throw new ZavrsniRadException("Unos prezimena je obavezan!");
         }
-        if (!entitet.getPrezime().matches(("[a-žA-Ž]+"))) {
+        if (!entitet.getPrezime().matches(("[a-žA-Ž\\s]+"))) {
             throw new ZavrsniRadException("Prezime ne može sadržavati brojeve!");
         }
     }
