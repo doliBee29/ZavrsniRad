@@ -6,9 +6,9 @@
 package hr.balic.zavrsnirad.view;
 
 import hr.balic.zavrsnirad.model.Termin;
-import hr.balic.zavrsnirad.model.Usluga;
 import java.awt.Color;
 import java.awt.Component;
+import java.text.SimpleDateFormat;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
@@ -19,12 +19,16 @@ import javax.swing.ListCellRenderer;
  */
 public class TerminCellRenderer extends JLabel implements ListCellRenderer<Termin> {
 
+    
+    
    
 
     @Override
     public Component getListCellRendererComponent(JList<? extends Termin> list, Termin value, int index, boolean isSelected, boolean cellHasFocus) {
         
-        setText(value.getId()+". TERMIN: " + value.getVrijemePocetka() + " (" + value.getZaposlenik().getZanimanje()+ ")");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy HH:mm");
+        
+        setText(value.getId()+". TERMIN: " + (sdf.format(value.getVrijemePocetka())) + " (" + value.getZaposlenik().getZanimanje()+ ")");
         if (isSelected) {
             setBackground(new Color(41,57,80));
             setForeground(new Color(204, 204, 204));

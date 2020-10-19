@@ -5,12 +5,10 @@
  */
 package hr.balic.zavrsnirad.controller;
 
-import hr.balic.zavrsnirad.model.Klijent;
 import hr.balic.zavrsnirad.model.Termin;
 import hr.balic.zavrsnirad.model.Usluga;
 import hr.balic.zavrsnirad.utility.ZavrsniRadException;
 import java.util.List;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -44,8 +42,9 @@ public class ObradaTermin extends Obrada<Termin> {
     @Override
     protected void kontrolaCreate() throws ZavrsniRadException {
 
-        kontrolaKlijent();
+        kontrolaKlijent(); 
         kontrolaZaposlenik();
+        kontrolaZaposlenikTerminBaza();
         kontrolaOtkazan();
         kontrolaPocetakTermina();
         kontrolaZavrsetakTermina();
@@ -55,6 +54,13 @@ public class ObradaTermin extends Obrada<Termin> {
 
     @Override
     protected void kontrolaUpdate() throws ZavrsniRadException {
+        
+        kontrolaKlijent(); 
+        kontrolaZaposlenik();
+        kontrolaZaposlenikTerminBaza();
+        kontrolaOtkazan();
+        kontrolaPocetakTermina();
+        kontrolaZavrsetakTermina();
 
     }
 
@@ -111,6 +117,19 @@ public class ObradaTermin extends Obrada<Termin> {
         }
 
         }
+
+    private void kontrolaZaposlenikTerminBaza() throws ZavrsniRadException {
+       List<Termin> lista = session.createQuery(""
+               + " from Termin t "
+               + " where t.vrijemePocetka=:vrijemePocetka and t.zaposlenik=:zaposlenik"
+               )
+               .setParameter("vrijemePocetka", entitet.getVrijemePocetka())
+               .setParameter("zaposlenik", entitet.getZaposlenik())
+               .list();
+       if(lista.size()>0){
+           throw  new ZavrsniRadException("Zaposlenik " + lista.get(0).getZaposlenik().getImePrezime().toUpperCase() + "već ima ugovoren termin: " + lista.get(0).getVrijemePocetka() + ", odaberite drugo vrijeme početka termina");
+       }
+    }
         
    
     }
