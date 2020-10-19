@@ -443,7 +443,7 @@ public class Usluge extends javax.swing.JFrame {
     }//GEN-LAST:event_cmbxVrstaUslugeActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JOptionPane.showMessageDialog(null, "1. Potrebno je otići u TERMINE i izbrisati termin koji sadržava uslugu koju želi te izbrisati.\n2. Nakon toga se vratite u USLUGE i"
+        JOptionPane.showMessageDialog(null, "1. Potrebno je otići u TERMINE i izbrisati termin koji sadržava uslugu koju želite izbrisati.\n2. Nakon toga se vratite u USLUGE i"
                 + " obrišite željenu uslugu.\n3.Upute za brisanje termina možete dobiti pritiskom gumba Info u Terminima."
                 + "", "Upute za brisanje usluge", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButton1ActionPerformed
