@@ -36,18 +36,16 @@ public class ObradaZaposlenik extends ObradaOsoba<Zaposlenik> {
 
     @Override
     protected void kontrolaCreate() throws ZavrsniRadException {
-        kontrolaIme();
-        kontrolaPrezime();
-        kontrolaEmail();
+        super.kontrolaCreate();
         kontrolaZanimanje();
+        kontrolaZaposlenikUBazi();
     }
 
     @Override
     protected void kontrolaUpdate() throws ZavrsniRadException {
-        kontrolaIme();
-        kontrolaPrezime();
-        //kontrolaEmail();
+        super.kontrolaUpdate();
         kontrolaZanimanje();
+        kontrolaZaposlenikUBazi();
     }
 
     @Override
@@ -61,6 +59,21 @@ public class ObradaZaposlenik extends ObradaOsoba<Zaposlenik> {
         if (entitet.getZanimanje() == null) {
             throw new ZavrsniRadException("Obavezan unos vrste zaposlenika(zanimanje)!");
         }
+    }
+
+    private void kontrolaZaposlenikUBazi() throws ZavrsniRadException {
+       List<Zaposlenik> lista = session.createQuery(""
+               + " from Zaposlenik z "
+               + " where z.ime=:ime and z.prezime=:prezime and z.email=:email and z.zanimanje=:zanimanje"
+               )
+               .setParameter("ime", entitet.getIme())
+               .setParameter("prezime", entitet.getPrezime())
+                .setParameter("email", entitet.getEmail())
+               .setParameter("zanimanje", entitet.getZanimanje())
+               .list();
+       if(lista.size()>0){
+           throw  new ZavrsniRadException("Zaposlenik " + lista.get(0).getImePrezime().toUpperCase() + "već postoji u bazi!");
+       }
     }
     
     
