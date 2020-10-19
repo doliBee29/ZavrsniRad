@@ -54,7 +54,7 @@ public class ObradaUsluga extends Obrada<Usluga> {
         kontrolaCijena();
         kontrolaVrstaUsluge();
         kontrolaZaposlenik();
-        kontrolaUslugaUBazi();
+
     }
 
     @Override
@@ -79,6 +79,7 @@ public class ObradaUsluga extends Obrada<Usluga> {
     }
 
     private void kontrolaCijena() throws ZavrsniRadException {
+
         kontrolaNull(entitet.getCijena(), "Cijena nije definirana.");
 
         if (entitet.getCijena().compareTo(BigDecimal.ZERO) <= 0) {
@@ -87,6 +88,7 @@ public class ObradaUsluga extends Obrada<Usluga> {
         if (entitet.getCijena().compareTo(new BigDecimal(10000)) == 1) {
             throw new ZavrsniRadException("Cijena ne može biti veća od 10.000,00 kn");
         }
+
     }
 
     private void kontrolaNull(Object o, String poruka) throws ZavrsniRadException {

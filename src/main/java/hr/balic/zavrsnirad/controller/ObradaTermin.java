@@ -74,12 +74,24 @@ public class ObradaTermin extends Obrada<Termin> {
         if (entitet.getVrijemePocetka() == null) {
             throw new ZavrsniRadException("Obavezan unos početka termina!");
         }
+        if(entitet.getVrijemePocetka().after(entitet.getVrijemeZavrsetka())) {
+            throw new ZavrsniRadException("Vrijeme početka ne može biti nakon odabranog vremena završetka!");
+        }
+        
+        
+      
     }
 
     private void kontrolaZavrsetakTermina() throws ZavrsniRadException {
         if (entitet.getVrijemeZavrsetka() == null) {
             throw new ZavrsniRadException("Obavezan unos završetka termina!");
         }
+        
+//        if(entitet.getVrijemePocetka().before(entitet.getVrijemeZavrsetka())) {
+//            throw  new ZavrsniRadException("Vrijeme završetka ne može biti prije vremena početka termina!");
+            
+       
+ //       }
 
     }
 
@@ -125,14 +137,13 @@ public class ObradaTermin extends Obrada<Termin> {
         
        List<Termin> lista = session.createQuery(""
                + " from Termin t "
-               + " where t.vrijemePocetka=:vrijemePocetka and t.vrijemeZavrsetka=:vrijemeZavrsetka  and t.zaposlenik=:zaposlenik"
+               + " where t.vrijemePocetka=:vrijemePocetka and t.zaposlenik=:zaposlenik"
                )
                .setParameter("vrijemePocetka", entitet.getVrijemePocetka())
-               .setParameter("vrijemeZavrsetka", entitet.getVrijemeZavrsetka())
                .setParameter("zaposlenik", entitet.getZaposlenik())
                .list();
        if(lista.size()>0){
-           throw  new ZavrsniRadException("Zaposlenik " + lista.get(0).getZaposlenik().getImePrezime().toUpperCase() + "već ima ugovoren termin: " + (sdf.format(lista.get(0).getVrijemePocetka()))
+           throw  new ZavrsniRadException("Zaposlenik " + lista.get(0).getZaposlenik().getImePrezime().toUpperCase() + " već ima ugovoren termin: " + (sdf.format(lista.get(0).getVrijemePocetka()))
                    + ", odaberite drugo vrijeme početka termina!");
        }
     }

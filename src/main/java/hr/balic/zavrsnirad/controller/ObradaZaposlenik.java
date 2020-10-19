@@ -72,7 +72,7 @@ public class ObradaZaposlenik extends ObradaOsoba<Zaposlenik> {
                .setParameter("zanimanje", entitet.getZanimanje())
                .list();
        if(lista.size()>0){
-           throw  new ZavrsniRadException("Zaposlenik " + lista.get(0).getImePrezime().toUpperCase() + "već postoji u bazi!");
+           throw  new ZavrsniRadException("Zaposlenik " + lista.get(0).getImePrezime().toUpperCase() + " već postoji u bazi!");
        }
     }
     

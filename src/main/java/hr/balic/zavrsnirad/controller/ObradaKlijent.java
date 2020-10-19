@@ -86,7 +86,7 @@ public class ObradaKlijent extends ObradaOsoba<Klijent> {
                 .setParameter("email", entitet.getEmail())
                .list();
        if(lista.size()>0){
-           throw  new ZavrsniRadException("Klijent " + lista.get(0).getImePrezime().toUpperCase() + "već postoji u bazi!");
+           throw  new ZavrsniRadException("Klijent " + lista.get(0).getImePrezime().toUpperCase() + " već postoji u bazi!");
        }
     }
 

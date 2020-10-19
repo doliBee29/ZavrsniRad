@@ -14,6 +14,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.KeyEvent;
 import java.math.BigDecimal;
+import java.text.NumberFormat;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
@@ -486,6 +487,8 @@ public class Usluge extends javax.swing.JFrame {
 
     private void postaviVrijednostiUEntitet() {
 
+       
+        
         entitet.setNaziv(txtNaziv.getText());
         entitet.setOpis(txtOpis.getText());
         try {
