@@ -16,6 +16,7 @@ import java.awt.event.KeyEvent;
 import java.math.BigDecimal;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 /**
@@ -271,6 +272,11 @@ public class Usluge extends javax.swing.JFrame {
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/iconfinder_Information_16.png"))); // NOI18N
         jButton1.setText("Info");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -435,6 +441,12 @@ public class Usluge extends javax.swing.JFrame {
     private void cmbxVrstaUslugeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbxVrstaUslugeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cmbxVrstaUslugeActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        JOptionPane.showMessageDialog(null, "1. Potrebno je otići u TERMINE i izbrisati termin koji sadržava uslugu koju želi te izbrisati.\n2. Nakon toga se vratite u USLUGE i"
+                + " obrišite željenu uslugu.\n3.Upute za brisanje termina možete dobiti pritiskom gumba Info u Terminima."
+                + "", "Upute za brisanje usluge", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
