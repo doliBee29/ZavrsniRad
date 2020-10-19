@@ -6,8 +6,10 @@
 package hr.balic.zavrsnirad.model;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
 /**
@@ -24,6 +26,19 @@ public class Usluga extends Entitet {
     
     @ManyToOne
    private Zaposlenik zaposlenik;
+    
+     @ManyToMany(mappedBy = "usluge")
+      private List<Termin> termini = new ArrayList<>();
+
+    public List<Termin> getTermini() {
+        return termini;
+    }
+
+    public void setTermini(List<Termin> termini) {
+        this.termini = termini;
+    }
+     
+     
 
     public String getNaziv() {
         return naziv;

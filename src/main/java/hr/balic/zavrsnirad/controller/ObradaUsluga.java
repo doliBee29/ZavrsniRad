@@ -45,18 +45,22 @@ public class ObradaUsluga extends Obrada<Usluga> {
         kontrolaCijena();
         kontrolaVrstaUsluge();
         kontrolaZaposlenik();
+        kontrolaUslugaUBazi();
     }
 
     @Override
     protected void kontrolaUpdate() throws ZavrsniRadException {
         kontrolaNaziv();
         kontrolaCijena();
+        kontrolaVrstaUsluge();
+        kontrolaZaposlenik();
+        kontrolaUslugaUBazi();
     }
 
     @Override
     protected void kontrolaDelete() throws ZavrsniRadException {
-        kontrolaNaziv();
-        kontrolaCijena();
+
+        kontrolaUslugaJeUTerminu();
     }
 
     private void kontrolaNaziv() throws ZavrsniRadException {
@@ -65,7 +69,7 @@ public class ObradaUsluga extends Obrada<Usluga> {
         if (entitet.getNaziv().isEmpty()) {
             throw new ZavrsniRadException("Naziv nije postavljen! Unesite naziv.");
         }
-        if (!entitet.getNaziv().matches("[a-žA-Ž]+")) {
+        if (!entitet.getNaziv().matches("[a-žA-Ž\\s]+")) {
             throw new ZavrsniRadException("Naziv ne može sadržavati brojeve!");
         }
         if (entitet.getNaziv().length() > 100) {
@@ -92,19 +96,37 @@ public class ObradaUsluga extends Obrada<Usluga> {
 
     }
 
-    private void kontrolaVrstaUsluge() throws ZavrsniRadException{
-        if(entitet.getVrsta()==null) {
-          throw new ZavrsniRadException("Obavezan odabir usluge iz padajućeg izbornika!");   
+    private void kontrolaVrstaUsluge() throws ZavrsniRadException {
+        if (entitet.getVrsta() == null) {
+            throw new ZavrsniRadException("Obavezan odabir usluge iz padajućeg izbornika!");
         }
-        
+
     }
-    
+
     private void kontrolaZaposlenik() throws ZavrsniRadException {
-        if(entitet.getZaposlenik() == null) {
+        if (entitet.getZaposlenik() == null) {
             throw new ZavrsniRadException("Obavezan odabir zaposlenika iz padajućeg izbornika!");
         }
     }
 
-   
+    private void kontrolaUslugaJeUTerminu() throws ZavrsniRadException {
+
+        if (entitet.getTermini().size() > 0) {
+
+            throw new ZavrsniRadException("Usluga " + entitet.getNaziv().toUpperCase() + " se ne može izbrisati! Odaberite INFO!");
+        }
+    }
+
+    private void kontrolaUslugaUBazi() throws ZavrsniRadException {
+        List<Usluga> lista = session.createQuery(""
+                + " from Usluga u "
+                + " where u.naziv=:naziv"
+        )
+                .setParameter("naziv", entitet.getNaziv())
+                .list();
+        if (lista.size() > 0) {
+            throw new ZavrsniRadException("Usluga pod nazivom " + lista.get(0).getNaziv().toUpperCase() + " već postoji u bazi!");
+        }
+    }
 
 }
