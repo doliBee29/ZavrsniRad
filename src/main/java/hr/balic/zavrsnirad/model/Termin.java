@@ -29,6 +29,7 @@ public class Termin extends Entitet {
     private Zaposlenik zaposlenik;
 
     @ManyToOne
+    @JoinColumn(name = "klijent_id")
     private Klijent klijent;
             
 

@@ -137,7 +137,7 @@ public class Termini extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        Info = new javax.swing.JButton();
+        btnInfo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -463,11 +463,11 @@ public class Termini extends javax.swing.JFrame {
             }
         });
 
-        Info.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/iconfinder_Information_16.png"))); // NOI18N
-        Info.setText("Info");
-        Info.addActionListener(new java.awt.event.ActionListener() {
+        btnInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/iconfinder_Information_16.png"))); // NOI18N
+        btnInfo.setText("Info");
+        btnInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                InfoActionPerformed(evt);
+                btnInfoActionPerformed(evt);
             }
         });
 
@@ -501,9 +501,11 @@ public class Termini extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btnPromijeni, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(Info, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnObrisi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnObrisi)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(10, 10, 10)
+                                        .addComponent(btnInfo)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -533,7 +535,7 @@ public class Termini extends javax.swing.JFrame {
                                 .addComponent(btnObrisi))
                             .addComponent(jButton1))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Info)))
+                        .addComponent(btnInfo)))
                 .addGap(14, 14, 14))
         );
 
@@ -712,10 +714,10 @@ public class Termini extends javax.swing.JFrame {
         ExcelMaker.terminUExcel(obrada.getPodaci());
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void InfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InfoActionPerformed
+    private void btnInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInfoActionPerformed
         JOptionPane.showMessageDialog(null, "1. Potrebno je maknuti sve odabrane usluge i pritisnuti PROMIJENI.\n2. Nakon toga odaberite termin koji želite obrisati i pritisnite OBRIŠI."
                 + "", "Upute za brisanje termina", JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_InfoActionPerformed
+    }//GEN-LAST:event_btnInfoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -725,9 +727,9 @@ public class Termini extends javax.swing.JFrame {
     /* Create and display the form */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Info;
     private javax.swing.JButton btnDodaj;
     private javax.swing.JButton btnDodajUsluguUTermin;
+    private javax.swing.JButton btnInfo;
     private javax.swing.JButton btnMakniUsluguIzTermina;
     private javax.swing.JButton btnObrisi;
     private javax.swing.JButton btnPromijeni;

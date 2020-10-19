@@ -40,6 +40,7 @@ public class ObradaKlijent extends ObradaOsoba<Klijent> {
         super.kontrolaCreate();
         kontrolaSpol();
         kontrolaTelefon();
+        kontrolaKlijentabaza();
 
     }
 
@@ -49,10 +50,13 @@ public class ObradaKlijent extends ObradaOsoba<Klijent> {
         super.kontrolaUpdate();
         kontrolaSpol();
         kontrolaTelefon();
+        kontrolaKlijentabaza();
     }
 
     @Override
     protected void kontrolaDelete() throws ZavrsniRadException {
+        
+        kontrolaKlijentImaTermin();
 
     }
 
@@ -70,6 +74,29 @@ public class ObradaKlijent extends ObradaOsoba<Klijent> {
             throw new ZavrsniRadException("Format unosa broja je 091-123-4567 ili 091 123 4567:");
 
         }
+    }
+
+    private void kontrolaKlijentabaza() throws ZavrsniRadException{
+        List<Klijent> lista = session.createQuery(""
+               + " from Klijent k "
+               + " where k.ime=:ime and k.prezime=:prezime and k.email=:email"
+               )
+               .setParameter("ime", entitet.getIme())
+               .setParameter("prezime", entitet.getPrezime())
+                .setParameter("email", entitet.getEmail())
+               .list();
+       if(lista.size()>0){
+           throw  new ZavrsniRadException("Zaposlenik " + lista.get(0).getImePrezime() + "već postoji u bazi!");
+       }
+    }
+
+    private void kontrolaKlijentImaTermin() throws ZavrsniRadException{
+        
+        if(entitet.getTermini().size()>0) {
+            
+            throw new ZavrsniRadException("Klijent " + entitet.getImePrezime().toUpperCase() + " se ne može obrisati jer ima ugovoren termin! Pristisnite INFO.");
+        }
+        
     }
 
 }

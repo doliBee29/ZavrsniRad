@@ -5,9 +5,13 @@
  */
 package hr.balic.zavrsnirad.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 /**
  *
@@ -25,6 +29,20 @@ public class Klijent extends Osoba {
     }
 
     private String kontaktBroj;
+    
+    @OneToMany
+    @JoinColumn(name = "klijent_id" )
+    private List<Termin> termini = new ArrayList<>();
+
+    public List<Termin> getTermini() {
+        return termini;
+    }
+
+    public void setTermini(List<Termin> termini) {
+        this.termini = termini;
+    }
+
+    
 
     public String getKontaktBroj() {
         return kontaktBroj;
