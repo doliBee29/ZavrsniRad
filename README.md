@@ -72,22 +72,8 @@ mogućnost uvida u sve kategorije aplikacije, dok operateri imaju mogućnost uvi
 
 <img src="https://github.com/doliBee29/ZavrsniRad/blob/master/src/main/resources/pics_screenshots/mail_poslan_screenshot.PNG" width="425"/> <img src="https://github.com/doliBee29/ZavrsniRad/blob/master/src/main/resources/pics_screenshots/gmail_screenshot.PNG" width="425"/> 
 
-<br />
-<br />
-
-* **Značajke koje još želim dodati:**
-  - [x] ~~Excel export kod Termina~~
-  - [x] ~~Excel export kod Klijenta~~
-  - [ ] Excel export kod Zaposlenika
-  - [ ] Excel export kod Usluga
-  - [ ] PDF export Termina
-  - [ ] PDF export Klijenta
-  - [ ] PDF export Usluga
-  
-<br />
 
 
-* **Hvala na pozornosti!**
 
   ![alt-text](https://github.com/doliBee29/ZavrsniRad/blob/master/src/main/resources/pics_screenshots/source.gif)
 
